@@ -1,0 +1,93 @@
+/* Reset some basic styles */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #000;
+  color: #fbbf24; /* yellow text */
+}
+
+header {
+  background-color: #000;
+  color: #fbbf24; /* yellow text */
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+nav ul li a {
+  color: #fbbf24; /* yellow */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #d62828; /* red */
+}
+
+section {
+  padding: 40px 20px;
+  border-bottom: 1px solid #333;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #d62828; /* red */
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+a {
+  color: #fbbf24; /* yellow */
+}
+
+a:hover {
+  color: #d62828; /* red */
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #000;
+  color: #fbbf24; /* yellow */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 30px 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
