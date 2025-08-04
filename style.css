@@ -198,7 +198,7 @@ body {
     font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto 20px auto;
-    color: #CCC; /* Lighter grey for section body text */
+    color: #FFF; /* Lighter grey for section body text */
 }
 
 .section a {
@@ -242,7 +242,7 @@ body {
     margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
     text-align: left; /* Keep text left-aligned */
     line-height: 1.5; /* Slightly reduced line height for compactness */
-    font-size: 1.5em; /* Slightly smaller font size for more text in less space */
+    font-size: 1.3em; /* Slightly smaller font size for more text in less space */
 }
 
 .menu-section .menu-image {
@@ -347,8 +347,8 @@ body {
 }
 
 .contact-text-content p {
-    font-size: 1.1em;
-    color: #CCC; /* Lighter grey for body text */
+    font-size: 1.3em;
+    color: #FFF; /* Lighter grey for body text */
     margin-bottom: 15px;
     line-height: 1.6;
 }
@@ -492,7 +492,7 @@ body {
 .footer-note,
 .footer-section p {
     font-size: 14px;
-    color: #ccc;
+    color: #FFF;
 }
 
 .social-icons a,
