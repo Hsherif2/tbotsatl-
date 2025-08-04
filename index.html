@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-bots Street Food</title>
+    <title>TBots ATL</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
     <div class="video-background-container">
-        <video autoplay muted loop playsinline id="bg-video-left">
-            <source src="video-left.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+        <video autoplay muted loop id="bg-video-left">
+            <source src="backgroundleft.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
         </video>
-        <video autoplay muted loop playsinline id="bg-video-right">
-            <source src="video-right.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+        <video autoplay muted loop id="bg-video-right">
+            <source src="backgroundright.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
         </video>
     </div>
 
+    <div class="ticker-belt">
+        <div class="ticker-content">
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            <span>T-bots Street Food &nbsp; &nbsp;</span>
+            </div>
+    </div>
+
+
+    <header class="hero-overlay">
+        <div class="header-content">
+            <img src="logo.png" alt="TBots ATL Logo" class="logo">
+            <h1>Ignite Your Taste Buds</h1>
+            <p>Savor the best of Atlanta with our mouth-watering tacos and sizzling chicken wings. Unforgettable flavors, unforgettable moments!</p>
+            </div>
+    </header>
+
     <nav class="navbar">
-        <img src="logo.png" alt="TBots ATL Logo" class="navbar-logo"> <div class="nav-links">
+        <div class="nav-links">
+            <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#menu">Menu</a>
             <a href="#locations">Locations</a>
@@ -29,99 +55,71 @@
         </div>
     </nav>
 
-    <header class="hero-overlay">
-        <div class="header-content">
-            <h1>T-bots Street Food</h1>
-            <p>Your crave-worthy destination for gourmet street food and robotic efficiency!</p>
-            <a href="#menu" class="btn-primary">View Our Menu</a>
-        </div>
-    </header>
-
-    <div class="ticker-belt">
-        <div class="ticker-content">
-            <span>&#9733; T-bots Street Food &#9733; Serving up deliciousness with robotic precision &#9733; Find us at our next location &#9733; Catering for your events &#9733; Taste the future of street food &#9733;</span>
-            <span>&#9733; T-bots Street Food &#9733; Serving up deliciousness with robotic precision &#9733; Find us at our next location &#9733; Catering for your events &#9733; Taste the future of street food &#9733;</span>
-            <span>&#9733; T-bots Street Food &#9733; Serving up deliciousness with robotic precision &#9733; Find us at our next location &#9733; Catering for your events &#9733; Taste the future of street food &#9733;</span>
-        </div>
-    </div>
-
     <section id="about" class="section">
-        <h2>About T-bots</h2>
-        <p>At T-bots Street Food, we blend culinary artistry with cutting-edge robotics to bring you an unforgettable dining experience. Our automated chefs ensure every dish is crafted with precision and speed, delivering hot, fresh, and incredibly tasty meals right to your hands.</p>
-        <p>Born from a vision of futuristic dining, T-bots is more than just a food truck; it's a mobile culinary revolution. Join us on this journey as we redefine street food.</p>
+        <h2>About Us</h2>
+        <p>At TBots ATL, we're passionate about bringing you authentic, mouth-watering BBQ and hot chicken. Our recipes are crafted with precision, using the freshest ingredients and a whole lot of love. We're more than just food; we're a community built around flavor.</p>
     </section>
 
-    <section id="menu" class="section">
-        <h2>Our Menu</h2>
-        <p>From sizzling sliders to crispy tacos, and gourmet loaded fries, our menu is designed to tantalize your taste buds. Each item is a masterpiece of flavor, prepared with the finest ingredients and a dash of robotic magic.</p>
-        <img src="menu-example.jpg" alt="Example of T-bots Menu Items" class="menu-image">
-        <p class="menu-note">Specific menu items vary by location and event. Check our social media for daily specials!</p>
-        <a href="#contact" class="btn-secondary">Order Now!</a>
+    <section id="menu" class="section menu-section">
+        <h2>Our Delicious Menu</h2>
+        <p>From tender smoked ribs to crispy, spicy hot chicken, our menu is designed to satisfy every craving. Don't forget our incredible sides and homemade sauces!</p>
+        <img src="menu.png" alt="TBots ATL Menu Items" class="menu-image">
+        <p class="menu-note">Check out our full menu when you visit us!</p>
     </section>
 
-    <section id="locations" class="section">
+    <section id="locations" class="section locations-section">
         <h2>Find Us</h2>
-        <p>T-bots Street Food is always on the move! We frequent popular festivals, corporate parks, and bustling city corners. Check back here or follow our social media for our weekly schedule and pop-up events.</p>
+        <p>Visit one of our convenient locations across Atlanta to experience the TBots ATL difference.</p>
         <div class="location-grid">
-            <p><strong>Downtown Plaza:</strong> Every Tuesday & Thursday, 11 AM - 2 PM</p>
-            <p><strong>Tech Park Campus:</strong> Every Wednesday, 11:30 AM - 1:30 PM</p>
-            <p><strong>Weekend Market:</strong> Saturdays (check schedule), 10 AM - 4 PM</p>
-            <p><strong>Special Events:</strong> Check our social media for announcements!</p>
+            <p><strong>Downtown Atlanta</strong><br>123 Main St, Atlanta, GA 30303<br>(404) 555-1234</p>
+            <p><strong>Midtown Atlanta</strong><br>456 Oak Ave, Atlanta, GA 30308<br>(404) 555-5678</p>
+            <p><strong>Buckhead</strong><br>789 Pine Ln, Atlanta, GA 30305<br>(404) 555-9012</p>
         </div>
-        <p class="location-note">Locations are subject to change. Always confirm our schedule before visiting!</p>
+        <p class="location-note">Opening soon in more neighborhoods!</p>
     </section>
 
-    <section id="catering" class="section">
+    <section id="catering" class="section catering-section">
         <h2>Catering & Events</h2>
-        <p>Bring the future of street food to your next event! T-bots offers unique catering solutions for corporate gatherings, private parties, festivals, and more. Impress your guests with a one-of-a-kind culinary experience powered by our robotic chefs.</p>
-        <p>From customizable menus to seamless service, we handle everything. Contact us today to discuss your catering needs!</p>
-        <a href="#contact" class="btn-primary">Request a Quote</a>
+        <p>Make your next event unforgettable with TBots ATL catering! We bring the flavor directly to you, perfect for parties, corporate events, and family gatherings. Contact us to customize your perfect menu.</p>
+        <a href="#contact" class="btn-primary">Request a Catering Quote</a>
     </section>
 
-    <section id="contact" class="section">
-        <h2>Get in Touch</h2>
-        <p>Have questions, want to book us for an event, or just want to say hello? Reach out to us!</p>
+    <section id="contact" class="section contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions or ready to order? Reach out to us!</p>
+        <p>Email: info@tbotsatl.com<br>Phone: (404) 555-TAST (8278)</p>
         <div class="order-buttons">
-            <a href="mailto:info@tbotsatl.com" class="btn-secondary">Email Us</a>
-            <a href="tel:+15551234567" class="btn-primary">Call Us</a>
-            </div>
-        <p>Follow us on social media for the latest updates, locations, and delicious food photos!</p>
-        <div class="social-icons">
-            <a href="https://facebook.com/tbotsatl" target="_blank"><img src="facebook-icon.png" alt="Facebook" class="social-icon"></a>
-            <a href="https://instagram.com/tbotsatl" target="_blank"><img src="instagram-icon.png" alt="Instagram" class="social-icon"></a>
-            <a href="https://twitter.com/tbotsatl" target="_blank"><img src="twitter-icon.png" alt="Twitter" class="social-icon"></a>
+            <a href="#" class="btn-primary">Order Online (Coming Soon!)</a>
+            <a href="tel:+14045558278" class="btn-secondary">Call Now to Order</a>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Revolutionizing street food with robotic precision and gourmet flavors. Experience the future of fast-casual dining.</p>
+                <h3>TBots ATL</h3>
+                <p>Igniting taste buds across Atlanta with authentic BBQ and hot chicken.</p>
+                <p class="footer-note">&copy; 2025 TBots ATL. All rights reserved.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <p><a href="#about">About</a></p>
+                <p><a href="#about">About Us</a></p>
                 <p><a href="#menu">Menu</a></p>
                 <p><a href="#locations">Locations</a></p>
                 <p><a href="#catering">Catering</a></p>
                 <p><a href="#contact">Contact</a></p>
             </div>
             <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p>Email: <a href="mailto:info@tbotsatl.com">info@tbotsatl.com</a></p>
-                <p>Phone: <a href="tel:+15551234567">555-123-4567</a></p>
+                <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="https://facebook.com/tbotsatl" target="_blank"><img src="facebook-icon.png" alt="Facebook" class="social-icon"></a>
-                    <a href="https://instagram.com/tbotsatl" target="_blank"><img src="instagram-icon.png" alt="Instagram" class="social-icon"></a>
-                    <a href="https://twitter.com/tbotsatl" target="_blank"><img src="twitter-icon.png" alt="Twitter" class="social-icon"></a>
+                    <img src="https://via.placeholder.com/35x35?text=FB" alt="Facebook" class="social-icon">
+                    <img src="https://via.placeholder.com/35x35?text=IG" alt="Instagram" class="social-icon">
+                    <img src="https://via.placeholder.com/35x35?text=TW" alt="Twitter" class="social-icon">
                 </div>
+                <p class="footer-note">Connect with us on social media for updates and specials!</p>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2025 T-bots Street Food. All rights reserved.
-            <p class="footer-note">Website designed by Your Name/Company Name</p>
-        </div>
+        <p class="copyright">Designed with passion by TBots ATL.</p>
     </footer>
 
 </body>
