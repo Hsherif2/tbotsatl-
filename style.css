@@ -192,14 +192,15 @@ body {
 .menu-toggle .bar {
     width: 100%;
     height: 3px;
-    background-color: #FFF;
+    background-color: #FFD700;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 
 /* Hamburger to 'X' animation */
 .menu-toggle.is-active .bar:nth-child(2) {
-    opacity: 0;
+opacity: 0; /* Hide the middle bar */
+    transform: translateX(-50px); /* Optional: move it out for a cleaner look */
 }
 
 .menu-toggle.is-active .bar:nth-child(1) {
@@ -259,9 +260,11 @@ body {
         right: 0; /* Slide into view from the right */
     }
 
-    /* Always show hamburger icon on mobile */
+/* --- Mobile Menu Toggle Display --- */
+/* This media query ensures the hamburger icon only appears on smaller screens */
+@media (max-width: 768px) { /* Adjust breakpoint as per your design */
     .menu-toggle {
-        display: flex;
+        display: flex; /* Show the hamburger icon */
     }
 
     /* Adjust navbar padding for mobile, if needed */
@@ -277,7 +280,7 @@ body {
 
     /* Style individual links within the mobile menu for better touch targets */
     .nav-links a {
-        padding: 15px 20px;
+        padding: 15px 0;
         font-size: 1.3em;
         display: block; /* Make the whole area clickable */
         width: 100%; /* Links should take full width to allow text-align */
@@ -682,15 +685,4 @@ body {
         width: auto; /* Allow links to size to content */
     }
 }
-/* Hamburger to 'X' animation */
-.menu-toggle.is-active .bar:nth-child(2) {
-    opacity: 0 !important; /* Add !important */
-}
 
-.menu-toggle.is-active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg) !important; /* Add !important */
-}
-
-.menu-toggle.is-active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg) !important; /* Add !important */
-}
