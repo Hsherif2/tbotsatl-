@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Or a Google Font like 'Montserrat', 'Open Sans' */
+    font-family: 'Montserrat', sans-serif; /* Using Montserrat as per your HTML link */
     line-height: 1.6;
     color: #FFF; /* Default text color for overlay/sections */
     background-color: #000; /* Fallback if video doesn't load */
@@ -47,7 +47,7 @@ body {
 
 /* Ticker Belt Styles */
 .ticker-belt {
-    position: fixed; /* Explicitly set to fixed */
+    position: fixed; /* Fixed position relative to the viewport */
     bottom: 0; /* Sticks to the bottom */
     width: 100%; /* Full width */
     background-color: var(--dark-bg); /* Changed to black */
@@ -99,8 +99,9 @@ body {
     margin-top: -50px; /* Pull content up slightly if desired */
 }
 
-/* REMOVED @keyframes shake-animation and added @keyframes float-animation */
-/* >>>>>> START OF CHANGES <<<<<< */
+/*
+    >>>>>> START OF MODIFIED/NEW CODE FOR NAVBAR LOGO <<<<<<
+*/
 
 /* Logo Gentle Float Animation (NEW) */
 @keyframes float-animation {
@@ -109,16 +110,15 @@ body {
     100% { transform: translateY(0); }
 }
 
-/* Original .logo rule - MODIFIED to hide it (as it's moved from HTML) */
+/* Original .logo rule - MODIFIED to hide it */
 .logo {
-    display: none; /* Hides the original logo if it's still present in HTML but not desired */
-    /* Remove any other properties of the old logo here if they conflict or are unnecessary */
-    /* e.g., animation: none; */
+    display: none; /* Hides the original logo as it's being moved to the navbar */
+    /* The shake-animation is removed from here as it's no longer needed for this element */
 }
 
 /* NEW: Style for the logo inside the navbar */
 .navbar-logo {
-    height: 50px; /* Adjust height as needed for your design */
+    height: 50px; /* Adjust height as needed to fit your design */
     width: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
@@ -143,8 +143,8 @@ body {
 
 /* Navigation Bar - MODIFIED */
 .navbar {
-    position: fixed; /* Changed from sticky to fixed */
-    top: 0; /* Ensures it sticks to the very top */
+    position: fixed; /* Ensures it sticks to the very top */
+    top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
     padding: 15px 20px; /* <<< MODIFIED: Added horizontal padding to '20px' */
@@ -164,7 +164,9 @@ body {
     align-items: center; /* Vertically center links */
 }
 
-/* >>>>>> END OF CHANGES <<<<<< */
+/*
+    >>>>>> END OF MODIFIED/NEW CODE FOR NAVBAR LOGO <<<<<<
+*/
 
 .nav-links a {
     color: var(--secondary-yellow);
@@ -431,9 +433,9 @@ body {
     }
 
     .nav-links a {
-        padding: 8px 15px;
+        padding: 8px 10px;
         margin: 5px; /* Adjust margin for wrapped links */
-        font-size: 1em;
+        font-size: 0.9em; /* Smaller font for links */
     }
 
     .ticker-belt {
@@ -502,8 +504,8 @@ body {
     }
 
     .nav-links a {
-        font-size: 0.9em;
-        padding: 6px 10px;
+        font-size: 0.85em;
+        padding: 5px 8px;
     }
 
     .ticker-belt {
