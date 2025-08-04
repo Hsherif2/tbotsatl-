@@ -395,11 +395,6 @@ body {
   color: #ffcc00; /* Yellow on hover (or choose any color you want) */
 }
 
-.social-icon:hover {
-    transform: scale(1.1);
-    filter: grayscale(0%) brightness(1); /* Full color on hover */
-}
-
 .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
