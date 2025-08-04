@@ -248,8 +248,8 @@ body {
     }
      /* Specific styling for the DoorDash icon */
     .doordash-icon {
-        height: 40px; /* Keep height consistent with others */
-        width: 60px; /* Adjust this value (e.g., 50px, 70px) until it looks good */
+        height: 30px; /* Keep height consistent with others */
+        width: 40px; /* Adjust this value (e.g., 50px, 70px) until it looks good */
         object-fit: contain; /* Ensures the logo fits without distortion */
     }
 
