@@ -236,8 +236,8 @@ body {
     min-width: 400px; /* Adjusted minimum width for text */
     margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
     text-align: left; /* Keep text left-aligned */
-    line-height: 1.9; /* Slightly reduced line height for compactness */
-    font-size: 1.9em; /* Slightly smaller font size for more text in less space */
+    line-height: 1.5; /* Slightly reduced line height for compactness */
+    font-size: 1.5em; /* Slightly smaller font size for more text in less space */
 }
 
 
