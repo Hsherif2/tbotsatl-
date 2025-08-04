@@ -113,7 +113,7 @@ body {
 }
 
 .hero-overlay h1 {
-    color: var(--secondary-yellow);
+    color: var(--primary-red);
     font-size: 3.5em;
     margin-bottom: 15px;
     /* Added text shadow for better readability without the overlay */
