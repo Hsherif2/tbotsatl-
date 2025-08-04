@@ -1,3 +1,9 @@
+/* --- Colors & Variables (The missing code) --- */
+:root {
+    --primary-red: #E70000;
+    --secondary-yellow: #FFD700;
+    --dark-bg: #000;
+}
 /* General Resets & Base Styles */
 * {
     margin: 0;
