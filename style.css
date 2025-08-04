@@ -214,16 +214,16 @@ body {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     justify-content: center; /* Center content when wrapped */
     align-items: flex-start; /* Align items to the top */
-    gap: 30px; /* Space between image and text */
+    gap: 20px; /* Reduced gap for more compact feel */
     max-width: 1000px; /* Limit overall content width */
     margin: 0 auto; /* Center the content container */
     text-align: left; /* Reset text alignment for inner content */
 }
 
 .about-section-with-image .about-image {
-    width: 25%; /* Takes up 1/4 of the available space */
-    min-width: 200px; /* Minimum size for the image to prevent it from becoming too small */
-    max-width: 300px; /* Maximum size for the image */
+    width: 40%; /* Increased width for a bigger picture */
+    min-width: 250px; /* Adjusted minimum size */
+    max-width: 400px; /* Increased maximum size */
     height: auto; /* Maintain aspect ratio */
     border: 3px solid var(--primary-red); /* Optional: add a border */
     border-radius: 8px; /* Optional: rounded corners */
@@ -233,9 +233,11 @@ body {
 
 .about-section-with-image .about-content p {
     flex: 1; /* Allows the text to take up remaining space */
-    min-width: 300px; /* Minimum width for text before wrapping */
-    margin: 0; /* Override section p margin for flex item */
+    min-width: 250px; /* Adjusted minimum width for text */
+    margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
     text-align: left; /* Keep text left-aligned */
+    line-height: 1.4; /* Slightly reduced line height for compactness */
+    font-size: 0.95em; /* Slightly smaller font size for more text in less space */
 }
 
 
@@ -481,14 +483,16 @@ body {
     }
 
     .about-section-with-image .about-image {
-        width: 70%; /* Image takes up more width on smaller screens */
+        width: 60%; /* Slightly reduced width when stacked */
         max-width: 300px; /* Still limit max size */
-        margin-bottom: 20px; /* Add space below image when stacked */
+        margin-bottom: 15px; /* Reduced space below image when stacked */
     }
 
     .about-section-with-image .about-content p {
         text-align: center; /* Center text when stacked */
         min-width: unset; /* Remove min-width constraint */
+        font-size: 0.9em; /* Slightly smaller font on mobile as well */
+        line-height: 1.4; /* Maintain compact line height */
     }
 
     .menu-section .menu-image {
