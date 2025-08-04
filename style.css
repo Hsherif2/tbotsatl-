@@ -1,79 +1,414 @@
-/* Reset */
+/* General Resets & Base Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  font-family: Arial, sans-serif;
-  color: yellow;
-  background-color: black;
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Or a Google Font like 'Montserrat', 'Open Sans' */
+    line-height: 1.6;
+    color: #FFF; /* Default text color for overlay/sections */
+    background-color: #000; /* Fallback if video doesn't load */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Colors & Variables (for consistency) */
+:root {
+    --primary-red: #E70000; /* A vibrant red */
+    --secondary-yellow: #FFD700; /* A golden yellow */
+    --dark-bg: #000;
+    --overlay-bg: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
 }
 
 /* Background Video */
 #bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2; /* Below overlay and content */
+    object-fit: cover; /* Ensures video covers the entire area */
+    filter: brightness(0.7); /* Slightly darken video to improve text readability */
 }
 
-/* Overlay Content */
-.overlay {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.6);
+/* Header & Hero Section (where logo, tagline, main call to action reside) */
+.hero-overlay {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--overlay-bg); /* Dark overlay for text readability */
+    color: #FFF;
+    z-index: -1; /* Above video, below fixed navbar */
+}
+
+.header-content {
+    max-width: 800px;
+    margin-top: -50px; /* Pull content up slightly if desired */
 }
 
 .logo {
-  width: 150px;
-  margin-bottom: 20px;
+    width: 200px; /* Larger logo for hero */
+    max-width: 80%;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); /* Subtle glow */
 }
 
-h1 {
-  color: red;
-  font-size: 3em;
+.hero-overlay h1 {
+    color: var(--primary-red);
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
-p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+.hero-overlay p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: var(--secondary-yellow);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Navigation */
-.nav {
-  margin: 20px 0;
+/* Navigation Bar */
+.navbar {
+    position: sticky; /* Makes the navbar stick to the top when scrolling */
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+    padding: 15px 0;
+    text-align: center;
+    z-index: 100; /* Ensure navbar is always on top */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.nav a {
-  margin: 0 10px;
-  color: yellow;
-  text-decoration: none;
-  font-weight: bold;
+.nav-links a {
+    color: var(--secondary-yellow);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.nav a:hover {
-  color: red;
+.nav-links a:hover {
+    color: var(--primary-red);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
-/* Sections */
+/* Global Section Styles */
 .section {
-  padding: 50px 20px;
-  background-color: black;
-  color: yellow;
-  border-top: 2px solid red;
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: #FFF; /* Default for section content */
+    text-align: center;
+    border-top: 5px solid var(--primary-red); /* Strong red separator */
+    position: relative; /* For potential future positioning */
 }
 
-.menu-image {
-  width: 90%;
-  max-width: 500px;
-  margin-top: 20px;
-  border: 3px solid red;
+.section h2 {
+    color: var(--secondary-yellow);
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #CCC; /* Lighter grey for section body text */
+}
+
+.section a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Section Styles */
+.menu-section .menu-image {
+    width: 90%;
+    max-width: 600px;
+    border: 5px solid var(--primary-red);
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.locations-section .location-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.locations-section .location-grid p {
+    flex-basis: calc(33% - 20px); /* Approx 3 items per row on large screens */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: rgba(255, 255, 255, 0.05); /* Slight background for each location */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-red);
+    text-align: left;
+    font-size: 1em;
+    color: #FFF;
+    margin: 0; /* Override section p margin */
+}
+
+.locations-section .location-note {
+    font-style: italic;
+    font-size: 0.95em;
+    color: var(--secondary-yellow);
+    margin-top: 30px;
+}
+
+.catering-section p {
+    margin-bottom: 25px;
+}
+
+.contact-section .order-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: #FFF;
+    border: 2px solid var(--primary-red);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-red), 10%); /* Example: darkens the red */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-yellow);
+    color: var(--dark-bg);
+    border: 2px solid var(--secondary-yellow);
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--secondary-yellow), 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--dark-bg);
+    color: #FFF;
+    padding: 50px 20px 20px;
+    border-top: 5px solid var(--primary-red);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    gap: 30px; /* Space between footer sections */
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow */
+    min-width: 250px; /* Minimum width before wrapping */
+    margin-bottom: 20px; /* Space for wrapped items */
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: var(--primary-red);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.footer-section p {
+    font-size: 0.95em;
+    color: #CCC;
+    margin-bottom: 8px;
+    text-align: left; /* Keep text left-aligned within section */
+}
+
+.footer-section p a {
+    color: var(--secondary-yellow);
+}
+
+.footer-section p a:hover {
+    text-decoration: underline;
+}
+
+.footer-section .footer-note {
+    font-style: italic;
+    font-size: 0.85em;
+    color: #AAA;
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start; /* Align social icons to the left */
+    gap: 15px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: grayscale(100%) brightness(1.5); /* Make icons yellow/white initially */
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1); /* Full color on hover */
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #AAA;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-overlay p {
+        font-size: 1.1em;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        padding: 8px 15px;
+        margin: 5px; /* Adjust margin for wrapped links */
+        font-size: 1em;
+    }
+
+    .section {
+        padding: 60px 15px;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+
+    .menu-section .menu-image {
+        max-width: 100%; /* Allow image to fill more width */
+    }
+
+    .locations-section .location-grid p {
+        flex-basis: 100%; /* Stack locations vertically */
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer sections */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        min-width: auto;
+        width: 100%;
+        text-align: center; /* Center text within stacked sections */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center social icons on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay h1 {
+        font-size: 2em;
+    }
+
+    .hero-overlay p {
+        font-size: 0.9em;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .nav-links a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Make buttons full width */
+        margin: 10px 0; /* Add vertical space */
+    }
+    .order-buttons {
+        flex-direction: column; /* Stack order buttons */
+    }
 }
 
 
