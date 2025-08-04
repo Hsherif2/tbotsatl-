@@ -43,13 +43,12 @@ body {
     object-fit: cover;
 }
 
-/* --- Ticker Belt Styles --- */
 .ticker-belt {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-: rgba(0, 0, 0, 0.8);
-    : var(--secondary-yellow);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--primary-red); /* This ensures the ticker text is red */
     padding: 8px 0;
     font-size: 1.4em;
     font-weight: bold;
