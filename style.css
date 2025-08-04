@@ -636,3 +636,43 @@ body {
     color: #888;
     margin-top: 20px;
 }
+/* Hide mobile social icons by default (for desktop) */
+.mobile-social-icons {
+    display: none;
+    margin-top: 20px; /* Space between last nav link and icons */
+    gap: 20px; /* Space between icons */
+}
+
+.mobile-social-icons img {
+    height: 40px; /* Adjust size of logos as needed */
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
+    transition: transform 0.2s ease;
+}
+
+.mobile-social-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* ... (your existing mobile navigation styles) ... */
+
+    /* Display and style social icons within the mobile menu */
+    .mobile-social-icons {
+        display: flex; /* Show icons on mobile */
+        justify-content: center; /* Center the icons horizontally */
+        align-items: center; /* Vertically align if needed */
+        flex-wrap: wrap; /* Allow wrapping if many icons are added */
+    }
+
+    /* Ensure the individual links containing the images are also flexible */
+    .mobile-social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0; /* Remove padding inherited from .nav-links a */
+        margin: 0 10px; /* Add some horizontal margin between icons */
+        width: auto; /* Allow links to size to content */
+    }
+}
