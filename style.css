@@ -50,7 +50,7 @@ body {
     position: fixed; /* Explicitly set to fixed */
     bottom: 0; /* Sticks to the bottom */
     width: 100%; /* Full width */
-    background-color: var(--primary-red); /* Red background */
+    background-color: var(--dark-bg); /* Changed to black */
     color: var(--secondary-yellow); /* Yellow font */
     padding: 8px 0; /* Smaller padding */
     font-size: 1.4em; /* Smaller font size */
@@ -502,4 +502,3 @@ body {
         flex-direction: column; /* Stack order buttons */
     }
 }
-
