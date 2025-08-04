@@ -395,8 +395,8 @@ body {
     }
 
     .contact-image-wrapper {
-        width: 70%; /* Image takes more width when stacked */
-        max-width: 550px; /* Limit max size when stacked */
+        width: 100%; /* Image takes more width when stacked */
+        max-width: 570px; /* Limit max size when stacked */
         min-width: unset; /* Remove min-width constraint */
     }
 
