@@ -15,25 +15,18 @@ body {
     color: #FFF;
     background-color: #000;
     overflow-x: hidden;
-    padding-top: 80px; /* Space for the fixed navbar */
 }
 
-/* Colors & Variables */
-:root {
-    --primary-red: #E70000;
-    --secondary-yellow: #FFD700;
-    --dark-bg: #000;
-}
-
-/* --- Background Video Container & Individual Videos --- */
+/* --- Corrected Background Video Container & Individual Videos --- */
+/* This is the key section to make the video a fixed background */
 .video-background-container {
-    position: fixed;
+    position: fixed; /* This property is crucial. It locks the container to the viewport. */
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
-    z-index: -2;
+    z-index: -2; /* Ensure the video is behind all other content. */
     overflow: hidden;
 }
 
@@ -45,21 +38,32 @@ body {
     object-fit: cover;
 }
 
-/* --- Ticker Belt Styles --- */
-.ticker-belt {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--dark-bg);
-    color: var(--secondary-yellow);
-    padding: 8px 0;
-    font-size: 1.4em;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    z-index: 50;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+/* --- Header & Hero Section --- */
+/* We need to remove the top padding from the body and instead use it here */
+.hero-overlay {
+    position: relative;
+    min-height: 100vh; /* Set to full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Adjust padding to make space for your fixed navbar */
+    color: #FFF;
+    z-index: -1; /* This z-index is relative to its own stacking context, which is the body */
 }
+
+/* Your other sections (about, menu, etc.) will naturally scroll over the fixed video background */
+.section {
+    padding: 80px 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Use a semi-transparent background to let the video show through */
+    color: #FFF;
+    text-align: center;
+    border-top: 5px solid var(--primary-red);
+    position: relative; /* All content sections should be positioned normally */
+}
+
+/* The rest of your CSS file remains the same. The above changes are sufficient to achieve the effect. */
 
 .ticker-content {
     display: inline-block;
