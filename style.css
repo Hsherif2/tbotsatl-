@@ -518,31 +518,160 @@ body {
     color: #888;
     margin-top: 20px;
 }
-/* --- MOBILE MENU STYLES --- */
-.nav-links-container { /* This needs to match your HTML class name */
-    display: none; /* Hidden by default */
-    /* ... other styles for positioning and appearance ... */
-    transform: translateY(-100%); /* Start off-screen */
+/* Navigation Bar - MODIFIED (Existing, correct for desktop) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 70px;
+    padding: 5px 20px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nav-links-container.active { /* This makes it visible and slides it in */
-    display: flex; /* Or block, depending on desired layout */
-    transform: translateY(0);
+/* Default (Desktop) Navbar Links Display */
+/* These styles ensure your links are always visible and aligned on PC */
+.nav-links-container {
+    display: flex; /* Make it a flex container to keep links inline by default */
+    flex-direction: row; /* Arrange links horizontally by default */
+    align-items: center; /* Vertically align links */
+
+    /* Reset mobile-specific positioning/styles that shouldn't apply on desktop */
+    position: static; /* Override absolute position for desktop */
+    transform: none; /* Remove any transform for desktop */
+    background-color: transparent; /* Remove background color for desktop */
+    box-shadow: none; /* Remove shadow if it was applied incorrectly */
+    height: auto;
+    max-height: none;
+    padding: 0; /* Remove padding if not needed for desktop layout */
 }
 
-/* Hamburger Icon Styles */
-.menu-toggle { /* This needs to match your HTML class name */
-    display: none; /* Hidden on desktop */
-    /* ... other styles for hamburger appearance ... */
+/* Ensure the inner .nav-links also displays flex for its anchors on desktop */
+.nav-links {
+    display: flex; /* Keep your individual links side-by-side on PC */
+    flex-direction: row;
+    align-items: center;
 }
 
-/* Media query to hide default nav links and show hamburger */
-@media (max-width: 768px) {
-    .navbar .nav-links { /* This hides your *original* list of links */
-        display: none;
+.nav-links a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Hamburger Icon Styles - Hidden by default on desktop */
+.menu-toggle {
+    display: none; /* Initially hidden on large screens (desktop) */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 101; /* Ensure it's above everything when it appears */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger animation to 'X' */
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* --- MEDIA QUERIES FOR MOBILE (Apply ONLY on Mobile) --- */
+@media (max-width: 768px) { /* This breakpoint determines when the menu collapses */
+
+    /* On mobile, hide the default inline nav links and show the hamburger */
+    .nav-links-container { /* Target the container to hide it by default on mobile */
+        display: none; /* Hide the entire navigation container on mobile initially */
+
+        /* Re-apply mobile-specific positioning/styles when hidden */
+        position: absolute; /* Needed for the dropdown effect */
+        top: 70px; /* Position below the fixed navbar */
+        left: 0;
+        transform: translateY(-100%); /* Start off-screen above */
+        background-color: rgba(0, 0, 0, 0.95); /* Dark background for dropdown */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        max-height: calc(100vh - 70px); /* Limit height to viewport minus navbar */
+        z-index: 99; /* Below navbar, above other content */
+        flex-direction: column; /* Stack links vertically within dropdown */
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 0; /* Padding inside the dropdown */
     }
+
+    /* When the JavaScript adds the 'active' class on mobile, show the menu */
+    .nav-links-container.active {
+        display: flex; /* Make it visible (flex column) when active */
+        transform: translateY(0); /* Slide into view */
+    }
+
+    /* Ensure the inner .nav-links always takes full width in mobile menu */
+    .nav-links {
+        flex-direction: column; /* Stack its links vertically in mobile dropdown */
+        width: 100%;
+    }
+
+    /* Style individual links within the mobile menu for better touch targets */
+    .nav-links a {
+        padding: 15px 20px;
+        font-size: 1.3em;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
     .menu-toggle {
-        display: flex; /* Show the hamburger */
+        display: flex; /* Show the hamburger icon on mobile */
     }
-    /* ... rest of your media query styles ... */
+
+    /* Adjust navbar padding for mobile, if needed */
+    .navbar {
+        padding: 5px 15px;
+    }
+
+    /* Ensure logo doesn't take too much space on mobile */
+    .navbar-logo {
+        height: 50px;
+        width: auto;
+    }
+}
+
+/* Ensure these are present and correct, they define default states */
+.navbar-logo {
+    height: 60px; /* Default size for larger screens */
+    width: 100px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.navbar-logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
