@@ -5,91 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tbots ATL</title>
   <link rel="icon" href="logo.png" type="image/png" />
-  <style>
-    /* Reset and base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
-
-    /* Background video setup */
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    /* Semi-transparent black overlay */
-    .overlay::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-    }
-
-    /* Overlay content styling */
-    .overlay {
-      position: relative;
-      z-index: 1;
-      color: #fff;
-      height: 100vh;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .logo {
-      max-width: 150px;
-      margin: 0 auto 1rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #FF0000; /* Red headline */
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #FFD700; /* Yellow text */
-      margin-bottom: 2rem;
-    }
-
-    .menu-img {
-      max-width: 250px;
-      border: 2px solid #FF0000;
-      border-radius: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline id="bg-video">
+  <!-- Background video -->
+  <video autoplay muted loop id="bg-video">
     <source src="background.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   <!-- Overlay content -->
   <div class="overlay">
-    <img src="logo.png" alt="Tbots Logo" class="logo" />
-    <h1>Welcome
+    <img src="logo.png" alt="Tbots ATL Logo" class="logo" />
+    <h1>Welcome to Tbots ATL</h1>
+    <p>Latin flavors on wheels – tacos, wings, burgers & more!</p>
+    <img src="menu.png" alt="Menu" class="menu-img" />
+  </div>
+</body>
+</html>
+
 
 
 
