@@ -537,10 +537,19 @@ body {
 /* Default (Desktop) Navbar Links Display */
 /* These styles ensure your links are always visible and aligned on PC */
 .nav-links-container {
-    display: flex; /* Make it a flex container to keep links inline by default */
-    flex-direction: row; /* Arrange links horizontally by default */
-    align-items: center; /* Vertically align links */
-
+    position: fixed;
+    top: 0;
+    right: -100%; /* changed from left: -100% */
+    width: 250px;
+    height: 100vh;
+    background-color: #111;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 60px 20px;
+    transition: right 0.3s ease-in-out; /* changed from left to right */
+}
     /* Reset mobile-specific positioning/styles that shouldn't apply on desktop */
     position: static; /* Override absolute position for desktop */
     transform: none; /* Remove any transform for desktop */
@@ -627,8 +636,7 @@ body {
 
     /* When the JavaScript adds the 'active' class on mobile, show the menu */
 .nav-links-container.active {
-    display: flex; /* Make it visible (flex column) when active */
-    transform: translateY(0); /* Slide into view */
+     right: 0; /* changed from left: 0 */
 }
 
 /* Ensure the inner .nav-links always takes full width in mobile menu */
