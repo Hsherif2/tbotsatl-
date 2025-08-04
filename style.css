@@ -164,7 +164,10 @@ body {
     /* Added text shadow for better readability without the overlay */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
-
+.locations-section .location-grid p a {
+    color: #FFF;
+    text-decoration: none;
+}
 .nav-links a:hover {
     color: var(--primary-red); /* CHANGED: Hover color changed to primary red for contrast */
     background-color: rgba(255, 255, 255, 0.1);
