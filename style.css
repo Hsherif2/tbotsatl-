@@ -107,7 +107,7 @@ body {
 /* NEW: Style for the logo inside the navbar */
 .navbar-logo {
     height: 60px; /* Adjusted slightly less than 70px to account for vertical padding */
-    width: 200px; /* IMPORTANT: Maintain aspect ratio */
+    width: 100px; /* IMPORTANT: Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
     /* REMOVED: animation: float-animation 3s infinite ease-in-out; */ /* Logo animation removed */
@@ -221,7 +221,7 @@ body {
 }
 
 .about-section-with-image .about-image {
-    width: 40%; /* Increased width for a bigger picture */
+    width: 60%; /* Increased width for a bigger picture */
     min-width: 250px; /* Adjusted minimum size */
     max-width: 400px; /* Increased maximum size */
     height: auto; /* Maintain aspect ratio */
@@ -237,7 +237,7 @@ body {
     margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
     text-align: left; /* Keep text left-aligned */
     line-height: 1.4; /* Slightly reduced line height for compactness */
-    font-size: 0.95em; /* Slightly smaller font size for more text in less space */
+    font-size: 1.2em; /* Slightly smaller font size for more text in less space */
 }
 
 
