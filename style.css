@@ -249,7 +249,7 @@ body {
 
 .about-section-with-image .about-image {
     width: 100%;
-    max-width: 450px; /* Reduced to give the text box more room */
+    max-width: 500px; /* Reduced to give the text box more room */
     height: auto;
     border: 3px solid var(--primary-red);
     border-radius: 8px;
