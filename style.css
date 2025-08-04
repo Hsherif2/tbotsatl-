@@ -266,6 +266,22 @@ body {
     line-height: 1.5;
     font-size: 1.3em;
 }
+.about-text-box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-left: 5px solid var(--primary-red);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 20px auto;
+    color: #FFF;
+}
+
+/* We also need to adjust the paragraph inside to remove conflicting styles */
+.about-text-box p {
+    color: #FFF;
+    text-align: left;
+    margin-bottom: 0; /* Prevents extra spacing at the bottom of the box */
+}
 
 /* --- Menu Section Styles --- */
 .menu-section .menu-image {
