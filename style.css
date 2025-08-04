@@ -119,7 +119,7 @@ body {
 /* NEW: Style for the logo inside the navbar */
 .navbar-logo {
     height: 70px; /* Try a larger value, e.g., 70px or 80px */
-    width: auto; /* Maintain aspect ratio */
+    width: 100px; /* Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
     animation: float-animation 3s infinite ease-in-out; /* Apply gentle float animation */
