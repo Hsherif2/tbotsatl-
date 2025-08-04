@@ -168,10 +168,16 @@ body {
     text-decoration: none;
 }
 
-.nav-links a:hover {
-    color: var(--primary-red); /* CHANGED: Hover color changed to primary red for contrast */
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+/* Find Us Section Links - Hover Effect */
+.locations-content p a { /* Targets all links within paragraphs in locations-content */
+    color: #FFF; /* Set default link color to white */
+    text-decoration: none; /* Remove underline by default */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.locations-content p a:hover {
+    color: var(--primary-red); /* This will change the color to red on hover */
+    text-decoration: underline; /* Add underline on hover */
 }
 
 /* Global Section Styles */
