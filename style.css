@@ -24,17 +24,27 @@ body {
     --dark-bg: #000;
 }
 
-/* Background Video */
-#bg-video {
+/* Background Video Container & Individual Videos */
+.video-background-container {
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox to arrange videos side-by-side */
     z-index: -2; /* Below overlay and content */
-    object-fit: cover; /* This makes the video cover the entire area, potentially cropping sides or top/bottom */
-    /* Removed the brightness filter for no darkening shade */
+    overflow: hidden; /* Hide any overflow from videos */
 }
+
+#bg-video-left,
+#bg-video-right {
+    flex: 1; /* Each video takes up equal space (50% of the container) */
+    min-width: 0; /* Allows shrinking below content size */
+    height: 100%; /* Each video fills the height of the container */
+    object-fit: cover; /* Ensures video covers its allocated half, potentially cropping */
+    /* No brightness filter for no darkening shade */
+}
+
 
 /* Header & Hero Section (where logo, tagline, main call to action reside) */
 .hero-overlay {
@@ -312,8 +322,19 @@ body {
 }
 
 
-/* Responsive Design */
+/* Responsive Design for Two Videos */
 @media (max-width: 768px) {
+    /* Stack videos vertically on smaller screens */
+    .video-background-container {
+        flex-direction: column;
+    }
+    #bg-video-left,
+    #bg-video-right {
+        width: 100%; /* Each video takes full width */
+        height: 50%; /* Each video takes half height */
+    }
+
+    /* General responsive adjustments */
     .hero-overlay h1 {
         font-size: 2.5em;
     }
@@ -418,6 +439,5 @@ body {
         flex-direction: column; /* Stack order buttons */
     }
 }
-
 
 
