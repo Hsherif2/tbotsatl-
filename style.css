@@ -1,9 +1,10 @@
-/* --- Colors & Variables (The missing code) --- */
+/* --- Colors & Variables --- */
 :root {
     --primary-red: #E70000;
     --secondary-yellow: #FFD700;
     --dark-bg: #000;
 }
+
 /* General Resets & Base Styles */
 * {
     margin: 0;
@@ -43,12 +44,13 @@ body {
     object-fit: cover;
 }
 
+/* --- Ticker Belt --- */
 .ticker-belt {
     position: fixed;
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    color: var(--secondary-yellow); /* This ensures the ticker text is red */
+    color: var(--secondary-yellow);
     padding: 8px 0;
     font-size: 1.4em;
     font-weight: bold;
@@ -86,20 +88,19 @@ body {
     align-items: center;
     text-align: center;
     padding-top: 80px;
-    : #FFF;
+    color: #FFF;
     z-index: -1;
+}
+
+.hero-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 .header-content {
     max-width: 800px;
-    margin-top: -50px;
-}
-
-.hero-logo {
-    width: 150px; /* Adjust size as needed */
-    height: auto;
-    margin-bottom: 30px; /* Adds space between the logo and the title */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 .hero-overlay h1 {
@@ -112,7 +113,7 @@ body {
 .hero-overlay p {
     font-size: 1.4em;
     margin-bottom: 30px;
-    color: #FFF; /* This ensures it is red */
+    color: #FFF;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
@@ -213,7 +214,7 @@ body {
 }
 
 .section h2 {
-    color: var(--secondary-yellow); /* Ensures your headings are yellow */
+    color: var(--secondary-yellow);
     font-size: 2.8em;
     margin-bottom: 40px;
 }
@@ -222,7 +223,7 @@ body {
     font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto 20px auto;
-    color: #FFF; /* This keeps your paragraph text white */
+    color: #FFF;
 }
 
 .section a {
@@ -249,7 +250,7 @@ body {
 
 .about-section-with-image .about-image {
     width: 100%;
-    max-width: 550px; /* Reduced to give the text box more room */
+    max-width: 450px;
     height: auto;
     border: 3px solid var(--primary-red);
     border-radius: 8px;
@@ -260,7 +261,7 @@ body {
 .about-text-box {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 25px;
-    border: 3px solid var(--primary-red); /* Added border all around */
+    border: 3px solid var(--primary-red);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     max-width: 500px;
@@ -268,20 +269,12 @@ body {
     color: #FFF;
     text-align: left;
     flex: 1;
-}}
+}
 
-/* New rule to ensure the paragraph inside the box has no extra margin */
 .about-text-box p {
     margin: 0;
     font-size: 1.3em;
     line-height: 1.5;
-}
-
-/* We also need to adjust the paragraph inside to remove conflicting styles */
-.about-text-box p {
-    color: #FFF;
-    text-align: left;
-    margin-bottom: 0; /* Prevents extra spacing at the bottom of the box */
 }
 
 /* --- Menu Section Styles --- */
@@ -309,7 +302,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
-    border: 3px solid var(--primary-red); /* Added border all around */
+    border: 3px solid var(--primary-red);
     text-align: left;
     font-size: 1.1em;
     color: #FFF;
@@ -338,7 +331,6 @@ body {
 /* --- Contact Us Section Styles --- */
 .contact-section-with-image {
     padding: 80px 20px;
-    /* Removed background-color to make it transparent */
     color: #FFF;
     text-align: center;
     border-top: none;
@@ -363,7 +355,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center; /* This centers the items vertically */
+    align-items: center;
     gap: 40px;
     max-width: 1100px;
     margin: 0 auto;
@@ -390,22 +382,23 @@ body {
 .contact-text-content {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 25px;
-    border: 3px solid var(--primary-red); /* Added border all around */
+    border: 3px solid var(--primary-red);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     flex: 1;
     min-width: 350px;
     max-width: 600px;
-    text-align: center;
+    text-align: left;
     color: #FFF;
 }
 
 .contact-text-content p {
-    /* Remove any conflicting styles from the inner p tags */
     margin-bottom: 15px;
-    line-height: 1.3;
+    line-height: 1.6;
 }
 
+/* This rule has been removed to fix the "box within a box" issue. */
+/* .contact-text-content .contact-info { ... } */
 
 .contact-text-content .contact-info p {
     font-size: 1.2em;
@@ -435,19 +428,16 @@ body {
         align-items: center;
         gap: 30px;
     }
-
     .contact-image-wrapper {
         width: 100%;
         max-width: 570px;
         min-width: unset;
     }
-
     .contact-text-content {
         min-width: unset;
         text-align: center;
         padding: 0 15px;
     }
-
     .contact-text-content p {
         text-align: center;
     }
@@ -464,10 +454,7 @@ body {
         width: 85%;
     }
     .contact-text-content p {
-        font-size: 1.3em;
-    }
-    .contact-text-content .contact-info p {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
 }
 
@@ -567,16 +554,13 @@ body {
     .menu-toggle {
         display: flex;
     }
-
     .navbar {
         padding: 5px 15px;
     }
-
     .navbar-logo {
         height: 50px;
         width: auto;
     }
-
     .nav-links-container {
         display: none;
         position: fixed;
@@ -594,12 +578,10 @@ body {
         z-index: 999;
         overflow-y: auto;
     }
-
     .nav-links-container.active {
         display: flex;
         right: 0;
     }
-
     .nav-links a {
         padding: 15px 0;
         font-size: 1.3em;
@@ -608,7 +590,6 @@ body {
         text-align: center;
         margin: 5px 0;
     }
-
     .mobile-social-icons {
         display: flex;
         justify-content: center;
@@ -617,7 +598,6 @@ body {
         margin-top: 20px;
         gap: 20px;
     }
-
     .mobile-social-icons a {
         display: flex;
         justify-content: center;
@@ -626,17 +606,14 @@ body {
         margin: 0 10px;
         width: auto;
     }
-
     .doordash-icon {
         height: 30px;
         width: 40px;
         object-fit: contain;
     }
-
     .hero-overlay h1 {
         font-size: 2.5em;
     }
-    
     .hero-overlay p {
         font-size: 1.2em;
     }
