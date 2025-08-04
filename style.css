@@ -124,7 +124,7 @@ body {
 .hero-overlay p {
     font-size: 1.4em;
     margin-bottom: 30px;
-    color: var(--secondary-yellow);
+    color: var(#FFF);
     /* Added text shadow for better readability without the overlay */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
