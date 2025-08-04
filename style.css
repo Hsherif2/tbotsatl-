@@ -15,7 +15,7 @@ body {
     color: #FFF; /* Default text color for overlay/sections */
     background-color: #000; /* Fallback if video doesn't load */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    padding-top: 80px; /* Added: Space for the fixed navbar to prevent content overlap */
+    padding-top: 80px; /* Space for the fixed navbar to prevent content overlap */
 }
 
 /* Colors & Variables (for consistency) */
@@ -43,20 +43,21 @@ body {
     min-width: 0; /* Allows shrinking below content size */
     height: 100%; /* Each video fills the height of the container */
     object-fit: cover; /* Ensures video covers its allocated half, potentially cropping */
-    /* No brightness filter for no darkening shade */
 }
 
 /* Ticker Belt Styles */
 .ticker-belt {
-    /* Removed position: fixed, bottom: 0, z-index: 50 for in-flow placement */
+    position: fixed; /* Added: Fixed position relative to the viewport */
+    bottom: 0; /* Added: Sticks to the bottom */
     width: 100%; /* Full width */
     background-color: var(--primary-red); /* Red background */
     color: var(--secondary-yellow); /* Yellow font */
-    padding: 8px 0; /* Adjusted: Smaller padding */
-    font-size: 1.4em; /* Adjusted: Smaller font size */
+    padding: 8px 0; /* Smaller padding */
+    font-size: 1.4em; /* Smaller font size */
     font-weight: bold;
     white-space: nowrap; /* Keep content on a single line */
     overflow: hidden; /* Hide content that flows outside the belt */
+    z-index: 50; /* Added: Higher than video, lower than navbar */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* For better readability */
 }
 
