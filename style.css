@@ -48,17 +48,15 @@ body {
 
 /* Ticker Belt Styles */
 .ticker-belt {
-    position: fixed; /* Fixed position relative to the viewport */
-    bottom: 0; /* Sticks to the bottom */
+    /* Removed position: fixed, bottom: 0, z-index: 50 for in-flow placement */
     width: 100%; /* Full width */
     background-color: var(--primary-red); /* Red background */
     color: var(--secondary-yellow); /* Yellow font */
-    padding: 10px 0;
-    font-size: 1.8em; /* Adjust font size as needed */
+    padding: 8px 0; /* Adjusted: Smaller padding */
+    font-size: 1.4em; /* Adjusted: Smaller font size */
     font-weight: bold;
     white-space: nowrap; /* Keep content on a single line */
     overflow: hidden; /* Hide content that flows outside the belt */
-    z-index: 50; /* Higher than video, lower than navbar */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* For better readability */
 }
 
@@ -415,6 +413,11 @@ body {
         font-size: 1em;
     }
 
+    .ticker-belt {
+        font-size: 1.2em; /* Smaller on mobile */
+        padding: 6px 0;
+    }
+
     .section {
         padding: 60px 15px;
     }
@@ -479,6 +482,11 @@ body {
     .nav-links a {
         font-size: 0.9em;
         padding: 6px 10px;
+    }
+
+    .ticker-belt {
+        font-size: 1em; /* Even smaller on very small screens */
+        padding: 5px 0;
     }
 
     .section h2 {
