@@ -270,14 +270,14 @@ body {
     border-radius: 8px;
     border-left: 5px solid var(--primary-red);
     text-align: left;
-    font-size: 1em;
+    font-size: 1.1em;
     color: #FFF; /* Already white, but confirmed here for clarity */
     margin: 0; /* Override section p margin */
 }
 
 .locations-section .location-note {
     font-style: italic;
-    font-size: 0.95em;
+    font-size: 1.1em;
     color: var(--secondary-yellow);
     margin-top: 30px;
 }
@@ -422,7 +422,7 @@ body {
         width: 85%; /* Make image a bit larger on very small screens */
     }
     .contact-text-content p {
-        font-size: 1em;
+        font-size: 1.1em;
     }
     .contact-text-content .contact-info p {
         font-size: 1.1em;
