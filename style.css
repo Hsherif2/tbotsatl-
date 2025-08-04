@@ -88,6 +88,7 @@ body {
     padding-top: 80px;
     : #FFF;
     z-index: -1;
+    margin-top: -10px; /* New line to move the section higher */
 }
 
 .header-content {
