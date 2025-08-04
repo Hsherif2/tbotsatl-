@@ -385,14 +385,48 @@ body {
 }
 
 .social-icons a {
-  color: white; /* Set icon color to white */
-  font-size: 30px; /* Adjust icon size */
-  transition: transform 0.2s ease, color 0.2s ease;
+    color: white; /* Set icon color to white */
+    font-size: 30px; /* Adjust icon size */
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .social-icons a:hover {
-  transform: scale(1.1);
-  color: #ffcc00; /* Yellow on hover (or choose any color you want) */
+    transform: scale(1.1);
+    color: #ffcc00; /* Yellow on hover (or choose any color you want) */
+}
+
+/* NEW: Footer Delivery Info */
+.footer-section .delivery-info {
+    margin-top: 20px; /* Space above delivery info */
+    text-align: center; /* Center content within this section */
+}
+
+.footer-section .delivery-info h4 {
+    color: #FFF; /* White color for the heading */
+    font-size: 1em; /* Smaller font size */
+    margin-bottom: 10px;
+}
+
+.footer-section .delivery-logos {
+    display: flex; /* Use flexbox to arrange logos side-by-side */
+    justify-content: center; /* Center the logos horizontally */
+    align-items: center; /* Vertically align logos */
+    gap: 15px; /* Space between the logos */
+    flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+}
+
+.footer-section .delivery-logos img {
+    height: 30px; /* Adjust height to make logos visible but not too large */
+    width: auto; /* Maintain aspect ratio */
+    filter: brightness(0) invert(1); /* Makes colored logos white for dark background */
+    transition: transform 0.2s ease;
+}
+
+.footer-section .delivery-logos a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    filter: brightness(1) invert(0); /* Revert to original color on hover if desired, or pick a specific color */
+    /* Alternative hover for a subtle glow: */
+    /* filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); */
 }
 
 .copyright {
@@ -403,6 +437,15 @@ body {
     color: #AAA;
 }
 
+/* Remember to check your responsive media queries as well */
+/* For example, if you have a @media (max-width: 480px) block,
+   you might want to add:
+   @media (max-width: 480px) {
+       .footer-section .delivery-logos img {
+           height: 25px; // Slightly smaller on very small screens
+       }
+   }
+*/
 
 /* Responsive Design for Two Videos */
 @media (max-width: 768px) {
