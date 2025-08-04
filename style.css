@@ -1,4 +1,4 @@
-/* General Resets & Base Styles (No changes needed) */
+/* General Resets & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,11 +13,11 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #FFF;
-    background-color: #000; /* Fallback if video doesn't load */
+    background-color: #000;
     overflow-x: hidden;
 }
 
-/* --- Fixed Background Video Container & Individual Videos (No changes needed) --- */
+/* --- Background Video Container --- */
 .video-background-container {
     position: fixed;
     top: 0;
@@ -37,7 +37,41 @@ body {
     object-fit: cover;
 }
 
-/* --- Header & Hero Section (Adjusted padding-top if needed) --- */
+/* --- Ticker Belt Styles --- */
+.ticker-belt {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--secondary-yellow);
+    padding: 8px 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: scroll-text 30s linear infinite;
+}
+
+.ticker-content span {
+    display: inline-block;
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Header & Hero Section --- */
 .hero-overlay {
     position: relative;
     min-height: 100vh;
@@ -46,42 +80,38 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 80px; /* Adjust as needed for navbar spacing */
+    padding-top: 80px;
     color: #FFF;
     z-index: -1;
 }
 
-/* --- Global Section Styles (Background color REMOVED) --- */
-.section {
-    padding: 80px 20px;
-    /* background-color: rgba(0, 0, 0, 0.8); */ /* REMOVED the semi-transparent background */
-    color: #FFF; /* Ensure default text color is white */
-    text-align: center;
-    border-top: 5px solid var(--primary-red);
-    position: relative;
-}
-
-.section h2 {
-    color: var(--secondary-yellow); /* Keep your heading colors */
-    font-size: 2.8em;
-    margin-bottom: 40px;
-    /* Consider adding a subtle text-shadow if readability against the video is an issue */
-    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); */
-}
-
-.section p {
-    font-size: 1.1em;
+.header-content {
     max-width: 800px;
-    margin: 0 auto 20px auto;
-    color: #FFF; /* Ensure default paragraph text color is white */
-    /* Consider adding a subtle text-shadow if readability against the video is an issue */
-    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); */
+    margin-top: -50px;
 }
 
-/* The rest of your CSS for specific sections, navigation, footer, etc., should remain the same. */
-/* --- NAVIGATION BAR & MENU STYLES (Desktop First) --- */
+.navbar-logo {
+    height: 60px;
+    width: 100px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
 
-/* Navbar Base (shared properties for Desktop and Mobile) */
+.hero-overlay h1 {
+    color: var(--primary-red);
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero-overlay p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #FFF;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* --- NAVIGATION BAR & MENU STYLES --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -97,23 +127,21 @@ body {
     align-items: center;
 }
 
-/* Navigation Links Container (Default: Desktop View) */
 .nav-links-container {
-    display: flex; /* Always display as flex on desktop */
-    flex-direction: row; /* Horizontal layout on desktop */
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    position: static; /* Reset mobile-specific positioning */
-    transform: none; /* Reset mobile-specific transforms */
-    background-color: transparent; /* Reset mobile-specific background */
-    box-shadow: none; /* Reset mobile-specific shadow */
+    position: static;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
     height: auto;
     max-height: none;
     padding: 0;
     width: auto;
-    transition: none; /* No transition on desktop */
+    transition: none;
 }
 
-/* Individual Navigation Links */
 .nav-links a {
     color: #FFF;
     text-decoration: none;
@@ -129,9 +157,8 @@ body {
     color: var(--primary-red);
 }
 
-/* Hamburger Icon Base Styles (Hidden on Desktop) */
 .menu-toggle {
-    display: none; /* Hide on desktop */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -150,10 +177,9 @@ body {
     transform-origin: center;
 }
 
-/* Hamburger to 'X' Animation Styles (Ensures specificity) */
 .navbar .menu-toggle.is-active .bar:nth-child(2) {
     opacity: 0;
-    transform: translateX(-50px); /* Slides middle bar out */
+    transform: translateX(-50px);
 }
 
 .navbar .menu-toggle.is-active .bar:nth-child(1) {
@@ -164,125 +190,28 @@ body {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Hide mobile social icons by default on desktop */
 .mobile-social-icons {
     display: none;
 }
 
-/* --- Mobile Overlay (if needed, add this HTML element: <div class="menu-overlay"></div>) --- */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-    display: none; /* Hidden by default */
-    z-index: 90; /* Below navbar, above video */
-}
-
-.menu-overlay.active {
-    display: block; /* Show overlay when menu is active */
-}
-
-/* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
-@media (max-width: 768px) {
-    /* Show Hamburger on Mobile */
-    .menu-toggle {
-        display: flex; /* Overrides display: none; from desktop rules */
-    }
-
-    /* Adjust navbar padding for mobile */
-    .navbar {
-        padding: 5px 15px;
-    }
-
-    /* Adjust logo size for mobile */
-    .navbar-logo {
-        height: 50px;
-        width: auto;
-    }
-
-    /* Mobile Menu Container Styles (Hidden by default, slides in from right) */
-    .nav-links-container {
-        display: none; /* Hidden by default on mobile */
-        position: fixed;
-        top: 0;
-        right: -250px; /* Starts off-screen to the right */
-        width: 250px; /* Width of the slide-in menu */
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 80px 0 20px 0; /* Top padding to clear navbar */
-        transition: right 0.3s ease-in-out; /* Smooth slide-in animation */
-        z-index: 999;
-        overflow-y: auto;
-    }
-
-    /* When mobile menu is active */
-    .nav-links-container.active {
-        display: flex; /* Show the menu */
-        right: 0; /* Slide into view from the right */
-    }
-
-    /* Style individual links within the mobile menu for better touch targets */
-    .nav-links a {
-        padding: 15px 0;
-        font-size: 1.3em;
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    /* Display and style social icons within the mobile menu */
-    .mobile-social-icons {
-        display: flex; /* Show icons on mobile */
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 20px;
-        gap: 20px;
-    }
-
-    /* Ensure the individual links containing the images are also flexible */
-    .mobile-social-icons a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        margin: 0 10px;
-        width: auto;
-    }
-
-    /* Specific styling for the DoorDash icon within mobile social icons */
-    .doordash-icon {
-        height: 30px;
-        width: 40px;
-        object-fit: contain;
-    }
-}
-
----
-
 /* --- Global Section Styles --- */
 .section {
     padding: 80px 20px;
-    background-color: var(--dark-bg);
     color: #FFF;
     text-align: center;
     border-top: 5px solid var(--primary-red);
     position: relative;
 }
 
+/* Key Fix: Applying a subtle text outline for readability */
+.section h2, .section p, .section a {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 .section h2 {
     color: var(--secondary-yellow);
     font-size: 2.8em;
     margin-bottom: 40px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .section p {
@@ -354,8 +283,8 @@ body {
 }
 
 .locations-section .location-grid p {
-    flex-basis: calc(33% - 20px); /* Approx 3 items per row on large screens */
-    min-width: 280px; /* Minimum width before wrapping */
+    flex-basis: calc(33% - 20px);
+    min-width: 280px;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 8px;
@@ -363,18 +292,18 @@ body {
     text-align: left;
     font-size: 1.1em;
     color: #FFF;
-    margin: 0; /* Override section p margin */
+    margin: 0;
 }
 
-.locations-section .location-grid p a { /* Ensures this applies to links in grid items */
-    color: #FFF; /* Set default link color to white */
-    text-decoration: none; /* Remove underline by default */
-    transition: color 0.3s ease; /* Smooth transition for color change */
+.locations-section .location-grid p a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.locations-section .location-grid p a:hover { /* Added .location-grid for increased specificity */
-    color: var(--primary-red); /* This will change the color to red on hover */
-    text-decoration: underline; /* Add underline on hover */
+.locations-section .location-grid p a:hover {
+    color: var(--primary-red);
+    text-decoration: underline;
 }
 
 .locations-section .location-note {
@@ -401,7 +330,7 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.contact-section-with-image > p { /* Targets the direct child <p> tags */
+.contact-section-with-image > p {
     font-size: 1.5em;
     max-width: 800px;
     margin: 0 auto 30px auto;
@@ -482,28 +411,27 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive adjustments for Contact Section */
-@media (max-width: 900px) { /* Adjust breakpoint for stacking */
+@media (max-width: 900px) {
     .contact-flex-container {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center; /* Center items when stacked */
-        gap: 30px; /* Reduce gap when stacked */
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
     }
 
     .contact-image-wrapper {
-        width: 100%; /* Image takes more width when stacked */
-        max-width: 570px; /* Limit max size when stacked */
-        min-width: unset; /* Remove min-width constraint */
+        width: 100%;
+        max-width: 570px;
+        min-width: unset;
     }
 
     .contact-text-content {
-        min-width: unset; /* Remove min-width constraint */
-        text-align: center; /* Center text when stacked */
-        padding: 0 15px; /* Add horizontal padding for readability on small screens */
+        min-width: unset;
+        text-align: center;
+        padding: 0 15px;
     }
 
     .contact-text-content p {
-        text-align: center; /* Center text when stacked */
+        text-align: center;
     }
 }
 
@@ -614,5 +542,85 @@ body {
     font-size: 13px;
     color: #888;
     margin-top: 20px;
+}
+
+/* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar {
+        padding: 5px 15px;
+    }
+
+    .navbar-logo {
+        height: 50px;
+        width: auto;
+    }
+
+    .nav-links-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 80px 0 20px 0;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-links-container.active {
+        display: flex;
+        right: 0;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        font-size: 1.3em;
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .mobile-social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0 10px;
+        width: auto;
+    }
+
+    .doordash-icon {
+        height: 30px;
+        width: 40px;
+        object-fit: contain;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2.5em;
+    }
+    
+    .hero-overlay p {
+        font-size: 1.2em;
+    }
 }
 
