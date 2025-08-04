@@ -221,7 +221,7 @@ body {
 }
 
 .about-section-with-image .about-image {
-    width: 60%; /* Increased width for a bigger picture */
+    width: 80%; /* Increased width for a bigger picture */
     min-width: 250px; /* Adjusted minimum size */
     max-width: 400px; /* Increased maximum size */
     height: auto; /* Maintain aspect ratio */
