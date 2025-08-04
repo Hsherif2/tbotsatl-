@@ -104,10 +104,10 @@ body {
     display: none; /* Hides the original logo as it's being moved to the navbar */
 }
 
-/* NEW: Style for the logo inside the navbar - MODIFIED */
+/* NEW: Style for the logo inside the navbar */
 .navbar-logo {
     height: 60px; /* Adjusted slightly less than 70px to account for vertical padding */
-    width: 200px; /* IMPORTANT: Maintain aspect ratio */
+    width: auto; /* IMPORTANT: Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
     /* REMOVED: animation: float-animation 3s infinite ease-in-out; */ /* Logo animation removed */
@@ -207,6 +207,38 @@ body {
 }
 
 /* Specific Section Styles */
+
+/* --- NEW STYLES FOR ABOUT US IMAGE --- */
+.about-section-with-image .about-content {
+    display: flex; /* Use flexbox to arrange image and text */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center content when wrapped */
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between image and text */
+    max-width: 1000px; /* Limit overall content width */
+    margin: 0 auto; /* Center the content container */
+    text-align: left; /* Reset text alignment for inner content */
+}
+
+.about-section-with-image .about-image {
+    width: 25%; /* Takes up 1/4 of the available space */
+    min-width: 200px; /* Minimum size for the image to prevent it from becoming too small */
+    max-width: 300px; /* Maximum size for the image */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid var(--primary-red); /* Optional: add a border */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.about-section-with-image .about-content p {
+    flex: 1; /* Allows the text to take up remaining space */
+    min-width: 300px; /* Minimum width for text before wrapping */
+    margin: 0; /* Override section p margin for flex item */
+    text-align: left; /* Keep text left-aligned */
+}
+
+
 .menu-section .menu-image {
     width: 90%;
     max-width: 600px;
@@ -400,7 +432,7 @@ body {
         display: none; /* Hides the original logo for all screen sizes */
     }
 
-    /* NEW: Responsive styles for the navbar logo - MODIFIED */
+    /* NEW: Responsive styles for the navbar logo */
     .navbar-logo {
         height: 50px; /* Adjusted height for mobile to fit new navbar height */
         margin-right: 10px;
@@ -439,6 +471,24 @@ body {
 
     .section p {
         font-size: 1em;
+    }
+
+    /* ABOUT US IMAGE RESPONSIVE ADJUSTMENTS */
+    .about-section-with-image .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items when stacked */
+        text-align: center; /* Center text when stacked */
+    }
+
+    .about-section-with-image .about-image {
+        width: 70%; /* Image takes up more width on smaller screens */
+        max-width: 300px; /* Still limit max size */
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+
+    .about-section-with-image .about-content p {
+        text-align: center; /* Center text when stacked */
+        min-width: unset; /* Remove min-width constraint */
     }
 
     .menu-section .menu-image {
@@ -484,7 +534,7 @@ body {
         font-size: 0.9em;
     }
 
-    /* NEW: Responsive styles for smaller navbar logo - MODIFIED */
+    /* NEW: Responsive styles for smaller navbar logo */
     .navbar-logo {
         height: 40px; /* Adjusted for very small screens */
     }
