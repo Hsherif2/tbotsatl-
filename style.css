@@ -279,6 +279,10 @@ body {
     color: var(--secondary-yellow);
     margin-top: 30px;
 }
+.locations-content p a:hover {
+    color: var(--primary-red); /* Change color to red on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
 
 /* --- NEW STYLES FOR CONTACT US WITH IMAGE --- */
 .contact-section-with-image {
