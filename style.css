@@ -625,16 +625,16 @@ body {
     }
 
     /* When the JavaScript adds the 'active' class on mobile, show the menu */
-    .nav-links-container.active {
-        display: flex; /* Make it visible (flex column) when active */
-        transform: translateY(0); /* Slide into view */
-    }
+.nav-links-container.active {
+    display: flex; /* Make it visible (flex column) when active */
+    transform: translateY(0); /* Slide into view */
+}
 
-    /* Ensure the inner .nav-links always takes full width in mobile menu */
-    .nav-links {
-        flex-direction: column; /* Stack its links vertically in mobile dropdown */
-        width: 100%;
-    }
+/* Ensure the inner .nav-links always takes full width in mobile menu */
+.nav-links {
+    flex-direction: column; /* Stack its links vertically in mobile dropdown */
+    width: 100%;
+}
 
     /* Style individual links within the mobile menu for better touch targets */
     .nav-links a {
@@ -674,4 +674,36 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
+}
+/* --- MEDIA QUERIES FOR MOBILE (Apply ONLY on Mobile) --- */
+@media (max-width: 768px) {
+    /* ... (your existing .nav-links-container (default hidden state) rules) ... */
+
+    /* When the JavaScript adds the 'active' class on mobile, show the menu */
+    .nav-links-container.active {
+        display: flex;
+        transform: translateY(0);
+        /* Add this line to center the items horizontally within the container */
+        **align-items: center;** /* IMPORTANT: Centers the content within this flex container */
+    }
+
+    /* Ensure the inner .nav-links always takes full width in mobile menu */
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        /* Add this line to center the actual links within the .nav-links div */
+        **align-items: center;** /* IMPORTANT: Centers the <a href> elements */
+    }
+
+    /* Style individual links within the mobile menu for better touch targets */
+    .nav-links a {
+        padding: 15px 20px;
+        font-size: 1.3em;
+        display: block;
+        width: 100%;
+        text-align: center; /* This should already be there and helps */
+        margin: 5px 0;
+    }
+
+    /* ... (rest of your mobile media query rules) ... */
 }
