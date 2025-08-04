@@ -317,7 +317,7 @@ body {
 
 .contact-image-wrapper {
     flex: 0 0 auto; /* Don't grow or shrink, base on content */
-    width: 45%; /* Image takes 45% width on large screens */
+    width: 100%; /* Image takes 45% width on large screens */
     min-width: 300px; /* Minimum width before forcing a stack */
     max-width: 500px; /* Max width for the image */
     text-align: center; /* Center image inside its wrapper if it's smaller */
@@ -368,14 +368,14 @@ body {
 }
 
 .contact-text-content .contact-info a {
-    color: var(--primary-red);
+    color: #FFF;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .contact-text-content .contact-info a:hover {
-    color: var(--secondary-yellow);
+    color: var(--primary-red);
     text-decoration: underline;
 }
 
