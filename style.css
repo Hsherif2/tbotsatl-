@@ -145,6 +145,8 @@ body {
     padding: 0;
     width: auto;
     transition: none;
+    flex: 1; /* New: Allows the container to grow */
+    justify-content: center; /* New: Centers the links inside */
 }
 
 .nav-links a {
