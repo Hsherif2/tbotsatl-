@@ -360,7 +360,7 @@ body {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px 25px;
     border-radius: 8px;
-    border-left: 5px solid var(--primary-red));
+    border-left: 5px solid var(--primary-red); /* Changed to red */
     text-align: center; /* Center text within the info box */
 }
 
