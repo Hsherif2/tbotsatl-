@@ -107,7 +107,7 @@ body {
 /* NEW: Style for the logo inside the navbar */
 .navbar-logo {
     height: 60px; /* Adjusted slightly less than 70px to account for vertical padding */
-    width: auto; /* IMPORTANT: Maintain aspect ratio */
+    width: 200px; /* IMPORTANT: Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
     /* REMOVED: animation: float-animation 3s infinite ease-in-out; */ /* Logo animation removed */
