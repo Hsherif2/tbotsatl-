@@ -213,11 +213,11 @@ body {
     display: flex; /* Use flexbox to arrange image and text */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     justify-content: center; /* Center content when wrapped */
-    align-items: flex-start; /* Align items to the top */
+    flex: 1; /* Allows the text to take up remaining space */
     gap: 20px; /* Reduced gap for more compact feel */
     max-width: 1000px; /* Limit overall content width */
     margin: 0 auto; /* Center the content container */
-    text-align: left; /* Reset text alignment for inner content */
+    text-align: center; /* Reset text alignment for inner content */
 }
 
 .about-section-with-image .about-image {
