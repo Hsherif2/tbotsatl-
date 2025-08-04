@@ -326,7 +326,7 @@ body {
     flex: 0 0 auto; /* Don't grow or shrink, base on content */
     width: 100%; /* Image takes 45% width on large screens */
     min-width: 300px; /* Minimum width before forcing a stack */
-    max-width: 500px; /* Max width for the image */
+    max-width: 600px; /* Max width for the image */
     text-align: center; /* Center image inside its wrapper if it's smaller */
 }
 
