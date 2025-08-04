@@ -1,127 +1,502 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TBots ATL</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* General Resets & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <div class="video-background-container">
-        <video autoplay muted loop id="bg-video-left">
-            <source src="backgroundleft.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-        <video autoplay muted loop id="bg-video-right">
-            <source src="backgroundright.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-    </div>
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
 
-    <div class="ticker-belt">
-        <div class="ticker-content">
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            <span>T-bots Street Food &nbsp; &nbsp;</span>
-            </div>
-    </div>
+body {
+    font-family: 'Montserrat', sans-serif; /* Using Montserrat as per your HTML link */
+    line-height: 1.6;
+    color: #FFF; /* Default text color for overlay/sections */
+    background-color: #000; /* Fallback if video doesn't load */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding-top: 80px; /* Space for the fixed navbar to prevent content overlap */
+}
+
+/* Colors & Variables (for consistency) */
+:root {
+    --primary-red: #E70000; /* A vibrant red */
+    --secondary-yellow: #FFD700; /* A golden yellow */
+    --dark-bg: #000;
+}
+
+/* Background Video Container & Individual Videos */
+.video-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox to arrange videos side-by-side */
+    z-index: -2; /* Below overlay and content */
+    overflow: hidden; /* Hide any overflow from videos */
+}
+
+#bg-video-left,
+#bg-video-right {
+    flex: 1; /* Each video takes up equal space (50% of the container) */
+    min-width: 0; /* Allows shrinking below content size */
+    height: 100%; /* Each video fills the height of the container */
+    object-fit: cover; /* Ensures video covers its allocated half, potentially cropping */
+}
+
+/* Ticker Belt Styles */
+.ticker-belt {
+    position: fixed; /* Fixed position relative to the viewport */
+    bottom: 0; /* Sticks to the bottom */
+    width: 100%; /* Full width */
+    background-color: var(--dark-bg); /* Changed to black */
+    color: var(--secondary-yellow); /* Yellow font */
+    padding: 8px 0; /* Smaller padding */
+    font-size: 1.4em; /* Smaller font size */
+    font-weight: bold;
+    white-space: nowrap; /* Keep content on a single line */
+    overflow: hidden; /* Hide content that flows outside the belt */
+    z-index: 50; /* Higher than video, lower than navbar */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* For better readability */
+}
+
+.ticker-content {
+    display: inline-block; /* Allows content to be a single line and animated */
+    animation: scroll-text 30s linear infinite; /* Apply the scrolling animation */
+}
+
+.ticker-content span {
+    display: inline-block; /* Ensure spans are inline and contribute to the overall width */
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(0); /* Start from current position */
+    }
+    to {
+        transform: translateX(-50%); /* Scroll left by 50% of its own width for a loop */
+    }
+}
+
+/* Header & Hero Section (where tagline, main call to action reside) */
+.hero-overlay {
+    position: relative;
+    min-height: calc(100vh - 80px); /* Adjusted height to account for fixed navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #FFF;
+    z-index: -1; /* Above video, below fixed navbar */
+}
+
+.header-content {
+    max-width: 800px;
+    margin-top: -50px; /* Pull content up slightly if desired */
+}
+
+/* >>>>>> START OF NEW/MODIFIED CODE FOR NAVBAR LOGO <<<<<< */
+
+/* Logo Gentle Float Animation - NEW KEYFRAMES */
+@keyframes float-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); } /* Moves up 8px */
+    100% { transform: translateY(0); }
+}
+
+/* Navigation Bar - MODIFIED */
+.navbar {
+    position: fixed; /* Ensures it sticks to the very top */
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+    padding: 15px 20px; /* <<< CHANGED: Added horizontal padding to '20px' */
+    /* text-align: center; */ /* <<< REMOVED/COMMENTED: Flexbox handles this now */
+    z-index: 100; /* Ensure navbar is always on top */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+    /* --- CRITICAL ADDITIONS FOR FLEXBOX LAYOUT --- */
+    display: flex; /* Makes it a flex container */
+    justify-content: space-between; /* Pushes logo to left, links to right */
+    align-items: center; /* Vertically centers items */
+}
+
+/* NEW: Style for the logo inside the navbar */
+.navbar-logo {
+    height: 50px; /* Adjust height as needed to fit your design */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between logo and first link */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
+    animation: float-animation 3s infinite ease-in-out; /* Apply gentle float animation */
+}
+
+/* Original .logo rule - MODIFIED TO HIDE IT if it remains in HTML after moving */
+/* If you completely removed <img class="logo"> from HTML, you can delete this entire rule */
+.logo {
+    display: none; /* Hides the original logo if it's still present in HTML but not desired */
+    /* You can also remove its animation property here if it was set */
+    /* animation: none; */
+}
 
 
-    <header class="hero-overlay">
-        <div class="header-content">
-            <img src="logo.png" alt="TBots ATL Logo" class="logo">
-            <h1>Ignite Your Taste Buds</h1>
-            <p>Savor the best of Atlanta with our mouth-watering tacos and sizzling chicken wings. Unforgettable flavors, unforgettable moments!</p>
-            </div>
-    </header>
+/* Adjust .nav-links for Flexbox - MODIFIED (Ensure display:flex is here) */
+.nav-links {
+    display: flex; /* Make nav links a flex container too */
+    align-items: center; /* Vertically center links */
+}
 
-    <nav class="navbar">
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#menu">Menu</a>
-            <a href="#locations">Locations</a>
-            <a href="#catering">Catering</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+/* >>>>>> END OF NEW/MODIFIED CODE FOR NAVBAR LOGO <<<<<< */
 
-    <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>At TBots ATL, we're passionate about bringing you authentic, mouth-watering BBQ and hot chicken. Our recipes are crafted with precision, using the freshest ingredients and a whole lot of love. We're more than just food; we're a community built around flavor.</p>
-    </section>
 
-    <section id="menu" class="section menu-section">
-        <h2>Our Delicious Menu</h2>
-        <p>From tender smoked ribs to crispy, spicy hot chicken, our menu is designed to satisfy every craving. Don't forget our incredible sides and homemade sauces!</p>
-        <img src="menu.png" alt="TBots ATL Menu Items" class="menu-image">
-        <p class="menu-note">Check out our full menu when you visit us!</p>
-    </section>
+.nav-links a {
+    color: var(--secondary-yellow);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* Added text shadow for better readability without the overlay */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
 
-    <section id="locations" class="section locations-section">
-        <h2>Find Us</h2>
-        <p>Visit one of our convenient locations across Atlanta to experience the TBots ATL difference.</p>
-        <div class="location-grid">
-            <p><strong>Downtown Atlanta</strong><br>123 Main St, Atlanta, GA 30303<br>(404) 555-1234</p>
-            <p><strong>Midtown Atlanta</strong><br>456 Oak Ave, Atlanta, GA 30308<br>(404) 555-5678</p>
-            <p><strong>Buckhead</strong><br>789 Pine Ln, Atlanta, GA 30305<br>(404) 555-9012</p>
-        </div>
-        <p class="location-note">Opening soon in more neighborhoods!</p>
-    </section>
+.nav-links a:hover {
+    color: var(--primary-red);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
 
-    <section id="catering" class="section catering-section">
-        <h2>Catering & Events</h2>
-        <p>Make your next event unforgettable with TBots ATL catering! We bring the flavor directly to you, perfect for parties, corporate events, and family gatherings. Contact us to customize your perfect menu.</p>
-        <a href="#contact" class="btn-primary">Request a Catering Quote</a>
-    </section>
+/* Global Section Styles */
+.section {
+    padding: 80px 20px;
+    background-color: var(--dark-bg);
+    color: #FFF; /* Default for section content */
+    text-align: center;
+    border-top: 5px solid var(--primary-red); /* Strong red separator */
+    position: relative; /* For potential future positioning */
+}
 
-    <section id="contact" class="section contact-section">
-        <h2>Contact Us</h2>
-        <p>Have questions or ready to order? Reach out to us!</p>
-        <p>Email: info@tbotsatl.com<br>Phone: (404) 555-TAST (8278)</p>
-        <div class="order-buttons">
-            <a href="#" class="btn-primary">Order Online (Coming Soon!)</a>
-            <a href="tel:+14045558278" class="btn-secondary">Call Now to Order</a>
-        </div>
-    </section>
+.section h2 {
+    color: var(--secondary-yellow);
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    /* Added text shadow for better readability */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>TBots ATL</h3>
-                <p>Igniting taste buds across Atlanta with authentic BBQ and hot chicken.</p>
-                <p class="footer-note">&copy; 2025 TBots ATL. All rights reserved.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <p><a href="#about">About Us</a></p>
-                <p><a href="#menu">Menu</a></p>
-                <p><a href="#locations">Locations</a></p>
-                <p><a href="#catering">Catering</a></p>
-                <p><a href="#contact">Contact</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <img src="https://via.placeholder.com/35x35?text=FB" alt="Facebook" class="social-icon">
-                    <img src="https://via.placeholder.com/35x35?text=IG" alt="Instagram" class="social-icon">
-                    <img src="https://via.placeholder.com/35x35?text=TW" alt="Twitter" class="social-icon">
-                </div>
-                <p class="footer-note">Connect with us on social media for updates and specials!</p>
-            </div>
-        </div>
-        <p class="copyright">Designed with passion by TBots ATL.</p>
-    </footer>
+.section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #CCC; /* Lighter grey for section body text */
+}
 
-</body>
-</html>
+.section a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Section Styles */
+.menu-section .menu-image {
+    width: 90%;
+    max-width: 600px;
+    border: 5px solid var(--primary-red);
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.locations-section .location-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.locations-section .location-grid p {
+    flex-basis: calc(33% - 20px); /* Approx 3 items per row on large screens */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: rgba(255, 255, 255, 0.05); /* Slight background for each location */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-red);
+    text-align: left;
+    font-size: 1em;
+    color: #FFF;
+    margin: 0; /* Override section p margin */
+}
+
+.locations-section .location-note {
+    font-style: italic;
+    font-size: 0.95em;
+    color: var(--secondary-yellow);
+    margin-top: 30px;
+}
+
+.catering-section p {
+    margin-bottom: 25px;
+}
+
+.contact-section .order-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: #FFF;
+    border: 2px solid var(--primary-red);
+}
+
+.btn-primary:hover {
+    background-color: rgba(var(--primary-red), 0.8); /* Example: darkens the red */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-yellow);
+    color: var(--dark-bg);
+    border: 2px solid var(--secondary-yellow);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(var(--secondary-yellow), 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-bg);
+    color: #FFF;
+    padding: 50px 20px 20px;
+    border-top: 5px solid var(--primary-red);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    gap: 30px; /* Space between footer sections */
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow */
+    min-width: 250px; /* Minimum width before wrapping */
+    margin-bottom: 20px; /* Space for wrapped items */
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: var(--primary-red);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.footer-section p {
+    font-size: 0.95em;
+    color: #CCC;
+    margin-bottom: 8px;
+    text-align: left; /* Keep text left-aligned within section */
+}
+
+.footer-section p a {
+    color: var(--secondary-yellow);
+}
+
+.footer-section p a:hover {
+    text-decoration: underline;
+}
+
+.footer-section .footer-note {
+    font-style: italic;
+    font-size: 0.85em;
+    color: #AAA;
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start; /* Align social icons to the left */
+    gap: 15px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: grayscale(100%) brightness(1.5); /* Make icons yellow/white initially */
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1); /* Full color on hover */
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #AAA;
+}
+
+
+/* Responsive Design for Two Videos */
+@media (max-width: 768px) {
+    /* Stack videos vertically on smaller screens */
+    .video-background-container {
+        flex-direction: column;
+    }
+    #bg-video-left,
+    #bg-video-right {
+        width: 100%; /* Each video takes full width */
+        height: 50%; /* Each video takes half height */
+    }
+
+    /* General responsive adjustments */
+    .hero-overlay h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-overlay p {
+        font-size: 1.1em;
+    }
+
+    .navbar-logo {
+        height: 40px; /* Smaller logo in navbar for mobile */
+        margin-right: 10px;
+    }
+
+    .navbar {
+        padding: 10px 15px; /* Adjust padding for mobile navbar */
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex: 1; /* Allow nav links to take remaining space */
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+        margin: 5px; /* Adjust margin for wrapped links */
+        font-size: 0.9em; /* Smaller font for links */
+    }
+
+    .ticker-belt {
+        font-size: 1.2em; /* Smaller on mobile */
+        padding: 6px 0;
+    }
+
+    .section {
+        padding: 60px 15px;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+
+    .menu-section .menu-image {
+        max-width: 100%; /* Allow image to fill more width */
+    }
+
+    .locations-section .location-grid p {
+        flex-basis: 100%; /* Stack locations vertically */
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .order-buttons {
+        flex-direction: column; /* Stack order buttons */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer sections */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-section {
+        min-width: auto;
+        width: 100%;
+        text-align: center; /* Center text within stacked sections */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center social icons on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay h1 {
+        font-size: 2em;
+    }
+
+    .hero-overlay p {
+        font-size: 0.9em;
+    }
+
+    .navbar-logo {
+        height: 35px; /* Even smaller logo on very small screens */
+    }
+
+    .nav-links a {
+        font-size: 0.85em; /* Even smaller font for links */
+        padding: 5px 8px;
+    }
+
+    .ticker-belt {
+        font-size: 1em; /* Even smaller on very small screens */
+        padding: 5px 0;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Make buttons full width */
+        margin: 10px 0; /* Add vertical space */
+    }
+    .order-buttons {
+        flex-direction: column; /* Stack order buttons */
+    }
+}
 
