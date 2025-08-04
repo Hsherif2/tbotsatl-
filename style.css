@@ -13,7 +13,7 @@ body {
     font-family: 'Montserrat', sans-serif; /* Using Montserrat as per your HTML link */
     line-height: 1.6;
     color: #FFF; /* Default text color for overlay/sections */
-    background-color: #fff; /* Fallback if video doesn't load */
+    background-color: #000; /* Fallback if video doesn't load */
     overflow-x: hidden; /* Prevent horizontal scroll */
     padding-top: 80px; /* Space for the fixed navbar to prevent content overlap */
 }
