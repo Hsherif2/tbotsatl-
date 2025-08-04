@@ -32,10 +32,8 @@ body {
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -2; /* Below overlay and content */
-    object-fit: cover; /* Ensures video covers the entire area */
-    /* Removed the brightness filter for no darkening shade */
-    /* filter: brightness(0.7); */
+    z-index: -2;
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
 }
 
 /* Header & Hero Section (where logo, tagline, main call to action reside) */
