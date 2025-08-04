@@ -22,7 +22,7 @@ body {
     --primary-red: #E70000; /* A vibrant red */
     --secondary-yellow: #FFD700; /* A golden yellow */
     --dark-bg: #000;
-    --overlay-bg: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+    /* --overlay-bg: rgba(0, 0, 0, 0.7); Removed as we're removing the shade */
 }
 
 /* Background Video */
@@ -34,7 +34,8 @@ body {
     min-height: 100%;
     z-index: -2; /* Below overlay and content */
     object-fit: cover; /* Ensures video covers the entire area */
-    filter: brightness(0.7); /* Slightly darken video to improve text readability */
+    /* Removed the brightness filter for no darkening shade */
+    /* filter: brightness(0.7); */
 }
 
 /* Header & Hero Section (where logo, tagline, main call to action reside) */
@@ -47,7 +48,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-color: var(--overlay-bg); /* Dark overlay for text readability */
+    /* Removed the black overlay background for no darkening shade */
+    /* background-color: var(--overlay-bg); */
     color: #FFF;
     z-index: -1; /* Above video, below fixed navbar */
 }
@@ -68,6 +70,7 @@ body {
     color: var(--primary-red);
     font-size: 3.5em;
     margin-bottom: 15px;
+    /* Added text shadow for better readability without the overlay */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
@@ -75,6 +78,7 @@ body {
     font-size: 1.4em;
     margin-bottom: 30px;
     color: var(--secondary-yellow);
+    /* Added text shadow for better readability without the overlay */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
@@ -98,6 +102,8 @@ body {
     padding: 10px 20px;
     margin: 0 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    /* Added text shadow for better readability without the overlay */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .nav-links a:hover {
@@ -120,6 +126,7 @@ body {
     color: var(--secondary-yellow);
     font-size: 2.8em;
     margin-bottom: 40px;
+    /* Added text shadow for better readability */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -210,7 +217,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: darken(var(--primary-red), 10%); /* Example: darkens the red */
+    background-color: rgba(var(--primary-red), 0.8); /* Example: darkens the red */
     transform: translateY(-2px); /* Slight lift effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -222,7 +229,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: darken(var(--secondary-yellow), 10%);
+    background-color: rgba(var(--secondary-yellow), 0.8);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
