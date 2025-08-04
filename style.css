@@ -118,7 +118,7 @@ body {
 
 /* NEW: Style for the logo inside the navbar */
 .navbar-logo {
-    height: 50px; /* Adjust height as needed to fit your design */
+    height: 70px; /* Try a larger value, e.g., 70px or 80px */
     width: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
