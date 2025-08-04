@@ -8,7 +8,9 @@
 body, html {
   height: 100%;
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  background-color: #000;
+  position: relative;
 }
 
 /* Background video */
@@ -22,10 +24,22 @@ body, html {
   z-index: -2;
 }
 
-/* Semi-transparent black overlay */
+/* Overlay content wrapper */
+.overlay {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Dark overlay effect */
 .overlay::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,19 +48,7 @@ body, html {
   z-index: -1;
 }
 
-/* Overlay content */
-.overlay {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-}
-
+/* Logo and text styling */
 .logo {
   max-width: 150px;
   margin: 0 auto 1rem;
@@ -54,19 +56,19 @@ body, html {
 
 h1 {
   font-size: 3rem;
-  color: #FF0000; /* Red headline */
-  margin-bottom: 0.5rem;
+  color: #FF0000; /* Red */
+  margin-bottom: 1rem;
 }
 
 p {
   font-size: 1.2rem;
-  color: #FFD700; /* Yellow text */
+  color: #FFD700; /* Yellow */
   margin-bottom: 2rem;
 }
 
 .menu-img {
   max-width: 250px;
-  border: 2px solid #FF0000;
+  border: 3px solid #FF0000;
   border-radius: 10px;
 }
 
