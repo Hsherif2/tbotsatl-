@@ -51,7 +51,7 @@ body {
     bottom: 0; /* Sticks to the bottom */
     width: 100%; /* Full width */
     background-color: var(--dark-bg); /* Changed to black */
-    color: var(--secondary-yellow); /* Yellow font */
+    color: var(--primary-red); /* Yellow font */
     padding: 8px 0; /* Smaller padding */
     font-size: 1.4em; /* Smaller font size */
     font-weight: bold;
@@ -233,11 +233,11 @@ body {
 
 .about-section-with-image .about-content p {
     flex: 1; /* Allows the text to take up remaining space */
-    min-width: 250px; /* Adjusted minimum width for text */
+    min-width: 400px; /* Adjusted minimum width for text */
     margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
     text-align: left; /* Keep text left-aligned */
-    line-height: 1.4; /* Slightly reduced line height for compactness */
-    font-size: 1.2em; /* Slightly smaller font size for more text in less space */
+    line-height: 1.9; /* Slightly reduced line height for compactness */
+    font-size: 1.9em; /* Slightly smaller font size for more text in less space */
 }
 
 
