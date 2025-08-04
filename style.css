@@ -178,15 +178,16 @@ body {
     color: var(--primary-red);
 }
 
-/* Hamburger Icon (Default: Hidden on Desktop) */
+/* --- Base Styles for Hamburger Icon (already there, but good to check) --- */
 .menu-toggle {
-    display: none; /* Hidden by default on desktop */
+    display: none; /* Hidden by default, shown on mobile */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
+    height: 20px;
     cursor: pointer;
-    z-index: 101; /* Above navbar content */
+    z-index: 1001;
+    position: relative;
 }
 
 .menu-toggle .bar {
@@ -195,22 +196,32 @@ body {
     background-color: #FFD700;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    transform-origin: center;
 }
 
-/* Hamburger to 'X' animation */
-.menu-toggle.is-active .bar:nth-child(2) {
-opacity: 0; /* Hide the middle bar */
-    transform: translateX(-50px); /* Optional: move it out for a cleaner look */
+/* --- Mobile Menu Toggle Display (already there) --- */
+@media (max-width: 768px) { /* Ensure this breakpoint matches your design */
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon on mobile */
+    }
+
+    /* ... other mobile menu styles like .nav-links-container, etc. ... */
 }
 
-.menu-toggle.is-active .bar:nth-child(1) {
+/* --- The CRITICAL Fix: More Specific Hamburger to 'X' Animation Styles --- */
+/* By adding '.navbar' or even '#mobile-menu' we make these rules more specific */
+.navbar .menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-50px); /* This makes the middle bar slide out cleanly */
+}
+
+.navbar .menu-toggle.is-active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
 
-.menu-toggle.is-active .bar:nth-child(3) {
+.navbar .menu-toggle.is-active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
-
 /* Mobile Overlay for when menu is active */
 .menu-overlay {
     position: fixed;
