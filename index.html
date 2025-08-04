@@ -1,80 +1,96 @@
-<source src="assets/background.mp4" type="video/mp4" />
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tbots ATL</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background video setup */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Semi-transparent black overlay */
+    .overlay::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Overlay content styling */
+    .overlay {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .logo {
+      max-width: 150px;
+      margin: 0 auto 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #FF0000; /* Red headline */
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #FFD700; /* Yellow text */
+      margin-bottom: 2rem;
+    }
+
+    .menu-img {
+      max-width: 250px;
+      border: 2px solid #FF0000;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Background video -->
-  <video autoplay muted loop id="bg-video">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
     <source src="background.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
+    Your browser does not support the video tag.
   </video>
 
+  <!-- Overlay content -->
   <div class="overlay">
-    <header>
-      <img src="logo.png" alt="Tbots ATL Logo" class="logo"/>
-      <h1>Welcome to Tbots ATL</h1>
-      <nav>
-        <ul>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#locations">Locations</a></li>
-          <li><a href="#catering">Catering</a></li>
-          <li><a href="#jobs">Jobs</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <img src="logo.png" alt="Tbots Logo" class="logo" />
+    <h1>Welcome
 
-    <main>
-      <section id="menu">
-        <h2>Menu</h2>
-        <img src="menu.png" alt="Tbots Menu" class="menu-img"/>
-      </section>
-
-      <section id="locations">
-        <h2>Our Locations</h2>
-        <ul>
-          <li>Downtown Atlanta</li>
-          <li>Midtown ATL</li>
-          <li>Decatur</li>
-        </ul>
-      </section>
-
-      <section id="catering">
-        <h2>Catering</h2>
-        <p>We cater for events big and small. Send your request to: <a href="mailto:tbotllc@gmail.com">tbotllc@gmail.com</a></p>
-      </section>
-
-      <section id="jobs">
-        <h2>Join Our Team</h2>
-        <p>We’re always hiring motivated team members. Email your resume to: <a href="mailto:tbotllc@gmail.com">tbotllc@gmail.com</a></p>
-      </section>
-
-      <section id="about">
-        <h2>About Tbots ATL</h2>
-        <p>Tbots ATL brings bold Latin American flavors to the streets of Atlanta with 3 food trucks and a vibrant restaurant. We serve tacos, wings, burgers, and soft-serve ice cream—with passion and pride!</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:tbotllc@gmail.com">tbotllc@gmail.com</a></p>
-        <p>Follow us on Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a></p>
-        <p>We’re also on DoorDash & Uber Eats!</p>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 Tbots ATL. All rights reserved.</p>
-    </footer>
-  </div>
-</body>
-</html>
 
 
 </body>
