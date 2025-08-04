@@ -226,25 +226,6 @@ body {
     display: block; /* Show overlay when menu is active */
 }
 
-/* --- MOBILE SOCIAL ICONS (Hidden on desktop by default) --- */
-.mobile-social-icons {
-    display: none; /* Hidden by default on desktop */
-    margin-top: 20px; /* Space between last nav link and icons */
-    gap: 20px; /* Space between icons */
-}
-
-.mobile-social-icons img {
-    height: 40px; /* Adjust size of logos as needed */
-    width: auto;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
-    transition: transform 0.2s ease;
-}
-
-.mobile-social-icons img:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-
 /* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
 @media (max-width: 768px) {
     /* Hide desktop nav links, show hamburger */
@@ -264,8 +245,6 @@ body {
         transition: right 0.3s ease-in-out; /* Smooth slide-in transition */
         z-index: 999; /* Higher than overlay, below navbar */
         overflow-y: auto; /* Enable scrolling if menu content is long */
-        /* --- IMPORTANT: Ensure this container accepts clicks --- */
-        pointer-events: auto;
     }
 
     /* When mobile menu is active */
@@ -298,28 +277,6 @@ body {
         width: 100%; /* Links should take full width to allow text-align */
         text-align: center; /* This centers the text inside the link */
         margin: 5px 0;
-        /* --- IMPORTANT: Ensure individual links accept clicks --- */
-        pointer-events: auto;
-    }
-
-    /* --- IMPORTANT: Display and style social icons within the mobile menu --- */
-    .mobile-social-icons {
-        display: flex; /* Show icons on mobile */
-        justify-content: center; /* Center the icons horizontally */
-        align-items: center; /* Vertically align if needed */
-        flex-wrap: wrap; /* Allow wrapping if many icons are added */
-        pointer-events: auto; /* Ensure this container accepts clicks */
-    }
-
-    /* Ensure the individual links containing the images are also flexible */
-    .mobile-social-icons a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0; /* Remove padding inherited from .nav-links a */
-        margin: 0 10px; /* Add some horizontal margin between icons */
-        width: auto; /* Allow links to size to content */
-        pointer-events: auto; /* Ensure these specific links accept clicks */
     }
 }
 
@@ -382,4 +339,340 @@ body {
     flex: 1; /* Allows the text to take up remaining space */
     gap: 20px; /* Reduced gap for more compact feel */
     max-width: 1000px; /* Limit overall content width */
-    margin: 0 auto; /* Center the content
+    margin: 0 auto; /* Center the content container */
+    text-align: center; /* Reset text alignment for inner content */
+}
+
+.about-section-with-image .about-image {
+    width: 100%; /* Increased width for a bigger picture */
+    min-width: 250px; /* Adjusted minimum size */
+    max-width: 570px; /* Increased maximum size */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid var(--primary-red); /* Optional: add a border */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.about-section-with-image .about-content p {
+    flex: 1; /* Allows the text to take up remaining space */
+    min-width: 400px; /* Adjusted minimum width for text */
+    margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
+    text-align: left; /* Keep text left-aligned */
+    line-height: 1.5; /* Slightly reduced line height for compactness */
+    font-size: 1.3em; /* Slightly smaller font size for more text in less space */
+}
+
+.menu-section .menu-image {
+    width: 100%;
+    max-width: 1000px;
+    border: 5px solid var(--primary-red);
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.locations-section .location-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.locations-section .location-grid p {
+    flex-basis: calc(33% - 20px); /* Approx 3 items per row on large screens */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: rgba(255, 255, 255, 0.05); /* Slight background for each location */
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-red);
+    text-align: left;
+    font-size: 1.1em;
+    color: #FFF; /* Already white, but confirmed here for clarity */
+    margin: 0; /* Override section p margin */
+}
+
+.locations-section .location-note {
+    font-style: italic;
+    font-size: 1.1em;
+    color: var(--secondary-yellow);
+    margin-top: 30px;
+}
+.locations-content p a:hover {
+    color: var(--primary-red); /* Change color to red on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+/* --- NEW STYLES FOR CONTACT US WITH IMAGE --- */
+.contact-section-with-image {
+    padding: 80px 20px; /* Standard section padding */
+    background-color: var(--dark-bg);
+    color: #FFF;
+    text-align: center;
+    border-top: 5px solid var(--primary-red);
+    border-bottom: 5px solid var(--primary-red);
+}
+
+.contact-section-with-image h2 {
+    color: var(--secondary-yellow);
+    font-size: 2.8em;
+    margin-bottom: 20px; /* Reduced margin to bring text closer */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.contact-section-with-image > p { /* Targets the direct child <p> tags */
+    font-size: 1.5em; /* Larger font for main taglines */
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: var(--secondary-yellow); /* Yellow for the "Get your answers" line */
+}
+
+
+.contact-flex-container {
+    display: flex; /* Makes it a flex container */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centers items when wrapped */
+    align-items: flex-start; /* Aligns content to the top */
+    gap: 40px; /* Space between image and text */
+    max-width: 1100px; /* Max width for the entire flex container */
+    margin: 0 auto; /* Center the flex container */
+    padding-top: 20px; /* Space from the "Get your answers" text */
+}
+
+.contact-image-wrapper {
+    flex: 0 0 auto; /* Don't grow or shrink, base on content */
+    width: 100%; /* Image takes 45% width on large screens */
+    min-width: 300px; /* Minimum width before forcing a stack */
+    max-width: 600px; /* Max width for the image */
+    text-align: center; /* Center image inside its wrapper if it's smaller */
+}
+
+.contact-image {
+    width: 100%; /* Image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid var(--primary-red); /* Red border around the image */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    object-fit: cover; /* Ensures image covers area without distortion */
+}
+
+.contact-text-content {
+    flex: 1; /* Text content takes up remaining space */
+    min-width: 350px; /* Minimum width for text before wrapping */
+    max-width: 600px; /* Max width for the text content */
+    text-align: left; /* Text content is left-aligned */
+}
+
+.contact-text-content p {
+    font-size: 1.3em;
+    color: #FFF; /* Lighter grey for body text */
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Ensure the contact-info box styling is consistent */
+.contact-text-content .contact-info {
+    margin: 25px 0; /* Adjust margin for contact info within the text block */
+    max-width: none; /* Remove max-width constraint if it was too restrictive */
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-red); /* Changed to red */
+    text-align: center; /* Center text within the info box */
+}
+
+.contact-text-content .contact-info p {
+    font-size: 1.2em; /* Keep these specific lines larger */
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+.contact-text-content .contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-text-content .contact-info a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-text-content .contact-info a:hover {
+    color: var(--primary-red);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) { /* Adjust breakpoint for stacking */
+    .contact-flex-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 30px; /* Reduce gap when stacked */
+    }
+
+    .contact-image-wrapper {
+        width: 100%; /* Image takes more width when stacked */
+        max-width: 570px; /* Limit max size when stacked */
+        min-width: unset; /* Remove min-width constraint */
+    }
+
+    .contact-text-content {
+        min-width: unset; /* Remove min-width constraint */
+        text-align: center; /* Center text when stacked */
+        padding: 0 15px; /* Add horizontal padding for readability on small screens */
+    }
+
+    .contact-text-content p {
+        text-align: center; /* Center text when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section-with-image h2 {
+        font-size: 2em;
+    }
+    .contact-section-with-image > p {
+        font-size: 1.2em;
+    }
+    .contact-image-wrapper {
+        width: 85%; /* Make image a bit larger on very small screens */
+    }
+    .contact-text-content p {
+        font-size: 1.1em;
+    }
+    .contact-text-content .contact-info p {
+        font-size: 1.1em;
+    }
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: #FFF;
+    border: 2px solid var(--primary-red);
+}
+
+.btn-primary:hover {
+    background-color: rgba(var(--primary-red), 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-yellow);
+    color: var(--dark-bg);
+    border: 2px solid var(--secondary-yellow);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(var(--secondary-yellow), 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    background-color: #000; /* black */
+    color: #fff;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    color: #FFD700; /* yellow */
+    margin-bottom: 10px;
+}
+
+.footer-note,
+.footer-section p {
+    font-size: 14px;
+    color: #FFF;
+}
+
+.social-icons a,
+.delivery-logos a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img,
+.delivery-logos img {
+    height: 30px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.footer a:hover img {
+    opacity: 0.8;
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-top: 20px;
+}
+/* Hide mobile social icons by default (for desktop) */
+.mobile-social-icons {
+    display: none;
+    margin-top: 20px; /* Space between last nav link and icons */
+    gap: 20px; /* Space between icons */
+}
+
+.mobile-social-icons img {
+    height: 40px; /* Adjust size of logos as needed */
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
+    transition: transform 0.2s ease;
+}
+
+.mobile-social-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* ... (your existing mobile navigation styles) ... */
+
+    /* Display and style social icons within the mobile menu */
+    .mobile-social-icons {
+        display: flex; /* Show icons on mobile */
+        justify-content: center; /* Center the icons horizontally */
+        align-items: center; /* Vertically align if needed */
+        flex-wrap: wrap; /* Allow wrapping if many icons are added */
+    }
+
+    /* Ensure the individual links containing the images are also flexible */
+    .mobile-social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0; /* Remove padding inherited from .nav-links a */
+        margin: 0 10px; /* Add some horizontal margin between icons */
+        width: auto; /* Allow links to size to content */
+    }
+}
