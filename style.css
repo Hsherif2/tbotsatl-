@@ -51,7 +51,7 @@ body {
     bottom: 0; /* Sticks to the bottom */
     width: 100%; /* Full width */
     background-color: var(--dark-bg); /* Changed to black */
-    color: var(--primary-red); /* Yellow font */
+    color: var(--primary-red); /* Yellow font - Changed to primary-red as per your last input */
     padding: 8px 0; /* Smaller padding */
     font-size: 1.4em; /* Smaller font size */
     font-weight: bold;
@@ -124,7 +124,7 @@ body {
 .hero-overlay p {
     font-size: 1.4em;
     margin-bottom: 30px;
-    color: var(#FFF);
+    color: #FFF; /* Changed to #FFF for white text */
     /* Added text shadow for better readability without the overlay */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
@@ -166,7 +166,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(#FFF);
+    color: var(--primary-red); /* CHANGED: Hover color changed to primary red for contrast */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
@@ -267,7 +267,7 @@ body {
     border-left: 5px solid var(--primary-red);
     text-align: left;
     font-size: 1em;
-    color: #FFF;
+    color: #FFF; /* Already white, but confirmed here for clarity */
     margin: 0; /* Override section p margin */
 }
 
@@ -367,10 +367,11 @@ body {
 }
 
 .footer-section p a {
-    color: var(--secondary-yellow);
+    color: #FFF; /* CHANGED: Footer links are now white */
 }
 
 .footer-section p a:hover {
+    color: var(--primary-red); /* CHANGED: Hover color changed to primary red */
     text-decoration: underline;
 }
 
