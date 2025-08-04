@@ -1,3 +1,10 @@
+tbots-website/
+├── index.html
+├── style.css
+├── images/
+│   ├── menu.png
+│   └── logo.png
+
 /* Reset some basic styles */
 body, h1, h2, p, ul, li, a {
   margin: 0;
@@ -11,6 +18,7 @@ body {
   background-color: #000;
   color: #fbbf24; /* yellow text */
 }
+
 
 header {
   background-color: #000;
