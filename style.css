@@ -163,19 +163,15 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-.locations-section .location-grid p a {
-    color: #FFF;
-    text-decoration: none;
-}
-
-/* Find Us Section Links - Hover Effect */
-.locations-content p a { /* Targets all links within paragraphs in locations-content */
+/* Find Us Section Links - Default State */
+.locations-section .location-grid p a { /* Ensures this applies to links in grid items */
     color: #FFF; /* Set default link color to white */
     text-decoration: none; /* Remove underline by default */
     transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
-.locations-content p a:hover {
+/* Find Us Section Links - Hover Effect (UPDATED FOR SPECIFICITY) */
+.locations-section .location-grid p a:hover { /* Added .location-grid for increased specificity */
     color: var(--primary-red); /* This will change the color to red on hover */
     text-decoration: underline; /* Add underline on hover */
 }
