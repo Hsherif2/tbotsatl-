@@ -518,3 +518,116 @@ body {
     color: #888;
     margin-top: 20px;
 }
+/* --- MOBILE MENU STYLES --- */
+
+/* Initially hide the nav links container on mobile */
+.nav-links-container { /* !!! UPDATED SELECTOR !!! */
+    display: none; /* Hidden by default */
+    width: 100%; /* Take full width when active */
+    background-color: rgba(0, 0, 0, 0.95); /* Dark, slightly transparent background for dropdown */
+    position: absolute; /* Position relative to navbar */
+    top: 70px; /* Positions it below the navbar's fixed height */
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out; /* For smooth slide-in/out effect */
+    transform: translateY(-100%); /* Starts off-screen above */
+    overflow-y: auto; /* Allows scrolling if menu is longer than screen */
+    max-height: calc(100vh - 70px); /* Limits height to viewport minus navbar height */
+    z-index: 99; /* Ensures it's above content, below navbar itself */
+    flex-direction: column; /* Ensure vertical stacking for links when active */
+    justify-content: flex-start; /* Align items to the top of the menu */
+    align-items: center; /* Center links horizontally */
+    padding: 20px 0; /* Add some padding inside the dropdown */
+}
+
+/* When the JavaScript adds the 'active' class, show the menu and slide it into view */
+.nav-links-container.active { /* !!! UPDATED SELECTOR !!! */
+    display: flex; /* Makes the container a flex container */
+    transform: translateY(0); /* Slides into view */
+}
+
+/* Style individual links within the nav-links div when it's in the mobile menu */
+.nav-links { /* This targets your existing .nav-links div */
+    display: flex; /* Make the inner nav-links a flex container for its anchors */
+    flex-direction: column; /* Stack its links vertically */
+    width: 100%; /* Take full width of its parent (.nav-links-container) */
+    align-items: center; /* Center links horizontally */
+}
+
+.nav-links a {
+    padding: 15px 20px; /* Larger clickable area for mobile */
+    font-size: 1.3em; /* Larger font size for readability */
+    display: block; /* Make the whole area clickable */
+    width: 100%; /* Links take full width of their parent */
+    text-align: center; /* Center the text of the links */
+    margin: 5px 0; /* Add vertical spacing between links */
+}
+
+/* Hamburger Icon Styles */
+.menu-toggle {
+    display: none; /* Hidden by default on large screens */
+    flex-direction: column; /* Stack the bars vertically */
+    justify-content: space-between; /* Space out the bars */
+    width: 30px;
+    height: 21px; /* Calculated for 3 bars of 3px + 2 spaces of 6px */
+    cursor: pointer;
+    z-index: 101; /* Ensure it's above the navbar and menu */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFF; /* White bars for contrast */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Smooth animation for the bars */
+}
+
+/* Hamburger animation to 'X' */
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg); /* Rotate top bar and move it down */
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg); /* Rotate bottom bar and move it up */
+}
+
+/* --- MEDIA QUERIES FOR MOBILE --- */
+@media (max-width: 768px) { /* Adjust this breakpoint as needed for when your menu should collapse */
+    /* On mobile, hide the regular inline nav-links and show the hamburger */
+    .navbar .nav-links { /* This targets your EXISTING .nav-links div to hide it */
+        display: none; /* Hide the default horizontal layout */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the hamburger icon */
+    }
+
+    /* Adjust navbar padding for mobile, if needed, to accommodate logo and hamburger */
+    .navbar {
+        padding: 5px 15px; /* Slightly more compact */
+    }
+
+    /* Ensure logo doesn't take too much space on mobile */
+    .navbar-logo {
+        height: 50px; /* Slightly smaller logo */
+        width: auto;
+    }
+}
+
+/* Ensure these are present and correct, they define default states */
+.navbar-logo {
+    height: 60px; /* Default size for larger screens */
+    width: 100px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.navbar-logo-link { /* Ensure the logo link itself behaves correctly */
+    display: flex;
+    align-items: center;
+    height: 100%; /* Takes full height of navbar */
+}
