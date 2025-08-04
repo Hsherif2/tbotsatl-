@@ -95,10 +95,10 @@ body {
     margin-top: -50px;
 }
 
-.navbar-logo {
-    height: 60px;
-    width: 100px;
-    margin-right: 20px;
+.hero-logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 30px; /* Adds space between the logo and the title */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
