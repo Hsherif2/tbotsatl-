@@ -221,9 +221,9 @@ body {
 }
 
 .about-section-with-image .about-image {
-    width: 80%; /* Increased width for a bigger picture */
+    width: 100%; /* Increased width for a bigger picture */
     min-width: 250px; /* Adjusted minimum size */
-    max-width: 600px; /* Increased maximum size */
+    max-width: 500px; /* Increased maximum size */
     height: auto; /* Maintain aspect ratio */
     border: 3px solid var(--primary-red); /* Optional: add a border */
     border-radius: 8px; /* Optional: rounded corners */
