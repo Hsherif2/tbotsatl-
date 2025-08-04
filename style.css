@@ -51,7 +51,7 @@ body {
     bottom: 0; /* Sticks to the bottom */
     width: 100%; /* Full width */
     background-color: var(--dark-bg); /* Changed to black */
-    color: var(--secondary-yellow); /* Yellow font - Changed to primary-red as per your last input */
+    color: var(--secondary-yellow); /* Yellow font */
     padding: 8px 0; /* Smaller padding */
     font-size: 1.4em; /* Smaller font size */
     font-weight: bold;
@@ -109,7 +109,6 @@ body {
     width: 100px; /* IMPORTANT: Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
-    /* REMOVED: animation: float-animation 3s infinite ease-in-out; */ /* Logo animation removed */
 }
 
 .hero-overlay h1 {
@@ -128,40 +127,159 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Navigation Bar - MODIFIED */
+/* --- NAVIGATION BAR & MENU STYLES --- */
+
+/* Navbar Base (Desktop and Mobile shared properties) */
 .navbar {
     position: fixed; /* Ensures it sticks to the very top */
     top: 0;
+    left: 0; /* Ensure it starts from the left */
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
-    height: 70px; /* NEW: Fixed height for the navbar */
-    padding: 5px 20px; /* ADJUSTED: Reduced vertical padding to fit content within 70px */
+    height: 70px; /* Fixed height for the navbar */
+    padding: 5px 20px;
     z-index: 100; /* Ensure navbar is always on top */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-
-    /* --- CRITICAL ADDITIONS FOR FLEXBOX LAYOUT --- */
     display: flex; /* Makes it a flex container */
     justify-content: space-between; /* Pushes logo to left, links to right */
     align-items: center; /* Vertically centers items */
 }
 
-/* .nav-links - MODIFIED (Ensure display:flex is here) */
-.nav-links {
-    display: flex; /* Make nav links a flex container too */
+/* Navigation Links Container (Default: Desktop View) */
+.nav-links-container {
+    display: flex; /* Always display as flex on desktop */
+    flex-direction: row; /* Horizontal layout on desktop */
     align-items: center; /* Vertically center links */
+
+    /* Reset mobile-specific positioning/styles for desktop */
+    position: static; /* No absolute positioning on desktop */
+    transform: none; /* No transforms on desktop */
+    background-color: transparent; /* No background color on desktop */
+    box-shadow: none; /* No shadow on desktop */
+    height: auto;
+    max-height: none;
+    padding: 0; /* No extra padding on desktop */
+    width: auto; /* Width auto to fit content */
 }
 
+/* Individual Navigation Links */
 .nav-links a {
-    color: #FFF; /* CHANGED: Navigation links are now white */
+    color: #FFF;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
     padding: 10px 20px;
     margin: 0 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
-    /* Added text shadow for better readability without the overlay */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
+
+.nav-links a:hover {
+    color: var(--primary-red);
+}
+
+/* Hamburger Icon (Default: Hidden on Desktop) */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 101; /* Above navbar content */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger to 'X' animation */
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Overlay for when menu is active */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    display: none; /* Hidden by default */
+    z-index: 90; /* Below navbar, above video */
+}
+
+.menu-overlay.active {
+    display: block; /* Show overlay when menu is active */
+}
+
+/* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Hide desktop nav links, show hamburger */
+    .nav-links-container {
+        display: none; /* Hide for mobile by default */
+        position: fixed; /* Change to fixed for fullscreen overlay */
+        top: 0; /* Start from top */
+        right: -300px; /* Start off-screen to the right (adjust width as needed) */
+        width: 250px; /* Width of the slide-in menu */
+        height: 100vh; /* Full viewport height */
+        background-color: rgba(0, 0, 0, 0.95); /* Darker background for menu */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Shadow for slide-in effect */
+        flex-direction: column; /* Stack links vertically */
+        justify-content: flex-start; /* Align content to the top */
+        align-items: center; /* Center items horizontally within the menu */
+        padding: 80px 0 20px 0; /* Top padding to clear navbar */
+        transition: right 0.3s ease-in-out; /* Smooth slide-in transition */
+        z-index: 999; /* Higher than overlay, below navbar */
+        overflow-y: auto; /* Enable scrolling if menu content is long */
+    }
+
+    /* When mobile menu is active */
+    .nav-links-container.active {
+        display: flex; /* Show the menu */
+        right: 0; /* Slide into view from the right */
+    }
+
+    /* Always show hamburger icon on mobile */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Adjust navbar padding for mobile, if needed */
+    .navbar {
+        padding: 5px 15px;
+    }
+
+    /* Ensure logo doesn't take too much space on mobile */
+    .navbar-logo {
+        height: 50px;
+        width: auto;
+    }
+
+    /* Style individual links within the mobile menu for better touch targets */
+    .nav-links a {
+        padding: 15px 20px;
+        font-size: 1.3em;
+        display: block; /* Make the whole area clickable */
+        width: 100%; /* Links should take full width to allow text-align */
+        text-align: center; /* This centers the text inside the link */
+        margin: 5px 0;
+    }
+}
+
 
 /* Find Us Section Links - Default State */
 .locations-section .location-grid p a { /* Ensures this applies to links in grid items */
@@ -517,218 +635,4 @@ body {
     font-size: 13px;
     color: #888;
     margin-top: 20px;
-}
-/* Navigation Bar - MODIFIED (Existing, correct for desktop) */
-.navbar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    height: 70px;
-    padding: 5px 20px;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-}
-
-/* Default (Desktop) Navbar Links Display */
-/* These styles ensure your links are always visible and aligned on PC */
-.nav-links-container {
-    position: fixed;
-    top: 0;
-    right: -100%; /* changed from left: -100% */
-    width: 250px;
-    height: 100vh;
-    background-color: #111;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding: 60px 20px;
-    transition: right 0.3s ease-in-out; /* changed from left to right */
-}
-    /* Reset mobile-specific positioning/styles that shouldn't apply on desktop */
-    position: static; /* Override absolute position for desktop */
-    transform: none; /* Remove any transform for desktop */
-    background-color: transparent; /* Remove background color for desktop */
-    box-shadow: none; /* Remove shadow if it was applied incorrectly */
-    height: auto;
-    max-height: none;
-    padding: 0; /* Remove padding if not needed for desktop layout */
-}
-
-/* Ensure the inner .nav-links also displays flex for its anchors on desktop */
-.nav-links {
-    display: flex; /* Keep your individual links side-by-side on PC */
-    flex-direction: row;
-    align-items: center;
-}
-
-.nav-links a {
-    color: #FFF;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 10px 20px;
-    margin: 0 5px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-/* Hamburger Icon Styles - Hidden by default on desktop */
-.menu-toggle {
-    display: none; /* Initially hidden on large screens (desktop) */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 101; /* Ensure it's above everything when it appears */
-}
-
-.menu-toggle .bar {
-    width: 100%;
-    height: 3px;
-    background-color: #FFF;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hamburger animation to 'X' */
-.menu-toggle.is-active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.is-active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.menu-toggle.is-active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-
-/* --- MEDIA QUERIES FOR MOBILE (Apply ONLY on Mobile) --- */
-@media (max-width: 768px) { /* This breakpoint determines when the menu collapses */
-
-    /* On mobile, hide the default inline nav links and show the hamburger */
-    .nav-links-container { /* Target the container to hide it by default on mobile */
-        display: none; /* Hide the entire navigation container on mobile initially */
-
-        /* Re-apply mobile-specific positioning/styles when hidden */
-        position: absolute; /* Needed for the dropdown effect */
-        top: 70px; /* Position below the fixed navbar */
-        left: 0;
-        transform: translateY(-100%); /* Start off-screen above */
-        background-color: rgba(0, 0, 0, 0.95); /* Dark background for dropdown */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        overflow-y: auto;
-        max-height: calc(100vh - 70px); /* Limit height to viewport minus navbar */
-        z-index: 99; /* Below navbar, above other content */
-        flex-direction: column; /* Stack links vertically within dropdown */
-        justify-content: flex-start;
-        align-items: center;
-        padding: 20px 0; /* Padding inside the dropdown */
-    }
-
-    /* When the JavaScript adds the 'active' class on mobile, show the menu */
-.nav-links-container.active {
-     right: 0; /* changed from left: 0 */
-}
-
-/* Ensure the inner .nav-links always takes full width in mobile menu */
-.nav-links {
-    flex-direction: column; /* Stack its links vertically in mobile dropdown */
-    width: 100%;
-}
-
-    /* Style individual links within the mobile menu for better touch targets */
-    .nav-links a {
-        padding: 15px 20px;
-        font-size: 1.3em;
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    .menu-toggle {
-        display: flex; /* Show the hamburger icon on mobile */
-    }
-
-    /* Adjust navbar padding for mobile, if needed */
-    .navbar {
-        padding: 5px 15px;
-    }
-
-    /* Ensure logo doesn't take too much space on mobile */
-    .navbar-logo {
-        height: 50px;
-        width: auto;
-    }
-    .menu-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-  z-index: 999;
-}
-
-.menu-overlay.active {
-  display: block;
-}
-}
-    
-
-
-/* Ensure these are present and correct, they define default states */
-.navbar-logo {
-    height: 60px; /* Default size for larger screens */
-    width: 100px;
-    margin-right: 20px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
-}
-
-.navbar-logo-link {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-@media (max-width: 768px) {
-    /* ... existing rules ... */
-
-    /* When the JavaScript adds the 'active' class on mobile, show the menu */
-    .nav-links-container.active {
-        display: flex;
-        transform: translateY(0);
-        **align-items: center;** /* Add or confirm this line */
-    }
-
-    /* Ensure the inner .nav-links always takes full width in mobile menu */
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        **align-items: center;** /* Add or confirm this line */
-    }
-
-    /* ... rest of your mobile media query rules ... */
-}
-
-    /* Style individual links within the mobile menu for better touch targets */
-    .nav-links a {
-        padding: 15px 20px;
-        font-size: 1.3em;
-        display: block;
-        width: 100%;
-        text-align: center; /* This should already be there and helps */
-        margin: 5px 0;
-    }
-
-    /* ... (rest of your mobile media query rules) ... */
 }
