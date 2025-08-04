@@ -22,7 +22,6 @@ body {
     --primary-red: #E70000; /* A vibrant red */
     --secondary-yellow: #FFD700; /* A golden yellow */
     --dark-bg: #000;
-    /* --overlay-bg: rgba(0, 0, 0, 0.7); Removed as we're removing the shade */
 }
 
 /* Background Video */
@@ -32,8 +31,9 @@ body {
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -2;
-    object-fit: contain; /* Changed from 'cover' to 'contain' */
+    z-index: -2; /* Below overlay and content */
+    object-fit: cover; /* This makes the video cover the entire area, potentially cropping sides or top/bottom */
+    /* Removed the brightness filter for no darkening shade */
 }
 
 /* Header & Hero Section (where logo, tagline, main call to action reside) */
@@ -47,7 +47,6 @@ body {
     text-align: center;
     padding: 20px;
     /* Removed the black overlay background for no darkening shade */
-    /* background-color: var(--overlay-bg); */
     color: #FFF;
     z-index: -1; /* Above video, below fixed navbar */
 }
@@ -368,6 +367,10 @@ body {
         font-size: 1em;
     }
 
+    .order-buttons {
+        flex-direction: column; /* Stack order buttons */
+    }
+
     .footer-content {
         flex-direction: column; /* Stack footer sections */
         text-align: center;
@@ -415,7 +418,6 @@ body {
         flex-direction: column; /* Stack order buttons */
     }
 }
-
 
 
 
