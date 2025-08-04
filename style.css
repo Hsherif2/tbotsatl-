@@ -334,6 +334,7 @@ body {
     margin-top: 30px;
 }
 
+/* --- Contact Us Section Styles --- */
 .contact-section-with-image {
     padding: 80px 20px;
     /* Removed background-color to make it transparent */
@@ -400,8 +401,7 @@ body {
 }
 
 .contact-text-content p {
-    font-size: 1.3em;
-    color: #FFF;
+    /* Remove any conflicting styles from the inner p tags */
     margin-bottom: 15px;
     line-height: 1.6;
 }
