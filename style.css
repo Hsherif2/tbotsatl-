@@ -129,11 +129,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #000
     height: 70px;
     padding: 5px 20px;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
