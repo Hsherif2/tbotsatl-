@@ -260,14 +260,15 @@ body {
 .about-text-box {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 25px;
-    border-left: 5px solid var(--primary-red);
+    border: 3px solid var(--primary-red); /* Added border all around */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 500px; /* Adjusted to fit nicely next to the image */
-    margin: 0; /* Removing the auto margin */
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0;
     color: #FFF;
     text-align: left;
-    flex: 1; /* This makes the box grow to fill available space */
-}
+    flex: 1;
+}}
 
 /* New rule to ensure the paragraph inside the box has no extra margin */
 .about-text-box p {
@@ -308,12 +309,12 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid var(--primary-red);
+    border: 3px solid var(--primary-red); /* Added border all around */
     text-align: left;
     font-size: 1.1em;
     color: #FFF;
     margin: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds the shadow effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .locations-section .location-grid p a {
@@ -389,14 +390,13 @@ body {
 .contact-text-content {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 25px;
-    border-left: 5px solid var(--primary-red);
+    border: 3px solid var(--primary-red); /* Added border all around */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    
     flex: 1;
-    min-width: 400px;
-    max-width: 800px;
-    text-align: center;
+    min-width: 350px;
+    max-width: 600px;
+    text-align: left;
     color: #FFF;
 }
 
