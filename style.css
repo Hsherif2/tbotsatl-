@@ -46,11 +46,44 @@ body {
     /* No brightness filter for no darkening shade */
 }
 
+/* Ticker Belt Styles */
+.ticker-belt {
+    position: fixed; /* Fixed position relative to the viewport */
+    bottom: 0; /* Sticks to the bottom */
+    width: 100%; /* Full width */
+    background-color: var(--primary-red); /* Red background */
+    color: var(--secondary-yellow); /* Yellow font */
+    padding: 10px 0;
+    font-size: 1.8em; /* Adjust font size as needed */
+    font-weight: bold;
+    white-space: nowrap; /* Keep content on a single line */
+    overflow: hidden; /* Hide content that flows outside the belt */
+    z-index: 50; /* Higher than video, lower than navbar */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* For better readability */
+}
+
+.ticker-content {
+    display: inline-block; /* Allows content to be a single line and animated */
+    animation: scroll-text 30s linear infinite; /* Apply the scrolling animation */
+}
+
+.ticker-content span {
+    display: inline-block; /* Ensure spans are inline and contribute to the overall width */
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(0); /* Start from current position */
+    }
+    to {
+        transform: translateX(-50%); /* Scroll left by 50% of its own width for a loop */
+    }
+}
+
 
 /* Header & Hero Section (where logo, tagline, main call to action reside) */
 .hero-overlay {
     position: relative;
-    /* Removed height: 100vh; here as body padding handles initial scroll */
     min-height: calc(100vh - 80px); /* Adjusted height to account for fixed navbar */
     display: flex;
     flex-direction: column;
@@ -67,11 +100,27 @@ body {
     margin-top: -50px; /* Pull content up slightly if desired */
 }
 
+/* Logo Shake Animation */
+@keyframes shake-animation {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-5px); }
+    20% { transform: translateX(5px); }
+    30% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    60% { transform: translateX(5px); }
+    70% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    90% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
 .logo {
     width: 200px; /* Larger logo for hero */
     max-width: 80%;
     margin-bottom: 25px;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); /* Subtle glow */
+    animation: shake-animation 0.5s infinite; /* Apply the shake animation */
 }
 
 .hero-overlay h1 {
@@ -346,6 +395,8 @@ body {
 
     .logo {
         width: 150px;
+        /* Adjust animation speed/intensity for smaller screens if needed */
+        animation: shake-animation 0.7s infinite; /* Slightly slower shake */
     }
 
     .navbar {
@@ -421,6 +472,8 @@ body {
 
     .logo {
         width: 120px;
+        /* Adjust animation speed/intensity for smaller screens if needed */
+        animation: shake-animation 0.8s infinite; /* Even slower shake */
     }
 
     .nav-links a {
