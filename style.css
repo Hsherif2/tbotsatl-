@@ -99,22 +99,18 @@ body {
     margin-top: -50px; /* Pull content up slightly if desired */
 }
 
-/*
-  
-
 /* Original .logo rule - MODIFIED to hide it */
 .logo {
     display: none; /* Hides the original logo as it's being moved to the navbar */
-    /* The shake-animation is removed from here as it's no longer needed for this element */
 }
 
-/* NEW: Style for the logo inside the navbar */
+/* NEW: Style for the logo inside the navbar - MODIFIED */
 .navbar-logo {
-    height: 70px; /* Try a larger value, e.g., 70px or 80px */
-    width: 150px; /* Maintain aspect ratio */
+    height: 70px; /* NEW: Set a height to match navbar's visual height */
+    width: auto; /* IMPORTANT: Maintain aspect ratio */
     margin-right: 20px; /* Space between logo and first link */
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
-    animation: float-animation 3s infinite ease-in-out; /* Apply gentle float animation */
+    /* REMOVED: animation: float-animation 3s infinite ease-in-out; */ /* Logo animation removed */
 }
 
 .hero-overlay h1 {
@@ -140,7 +136,6 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
     padding: 15px 20px; /* <<< MODIFIED: Added horizontal padding to '20px' */
-    /* text-align: center; */ /* <<< MODIFIED: Commented out/removed as Flexbox will handle alignment */
     z-index: 100; /* Ensure navbar is always on top */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
@@ -156,9 +151,6 @@ body {
     align-items: center; /* Vertically center links */
 }
 
-/*
-    >>>>>> END OF MODIFIED/NEW CODE FOR NAVBAR LOGO <<<<<<
-*/
 
 .nav-links a {
     color: var(--secondary-yellow);
@@ -407,9 +399,9 @@ body {
         display: none; /* Hides the original logo for all screen sizes */
     }
 
-    /* NEW: Responsive styles for the navbar logo */
+    /* NEW: Responsive styles for the navbar logo - MODIFIED */
     .navbar-logo {
-        height: 40px; /* Smaller logo in navbar for mobile */
+        height: 60px; /* Adjust height to match adjusted navbar on mobile */
         margin-right: 10px;
     }
 
@@ -490,9 +482,9 @@ body {
         font-size: 0.9em;
     }
 
-    /* NEW: Responsive styles for smaller navbar logo */
+    /* NEW: Responsive styles for smaller navbar logo - MODIFIED */
     .navbar-logo {
-        height: 35px; /* Even smaller logo on very small screens */
+        height: 45px; /* Even smaller logo on very small screens, adjusted */
     }
 
     .nav-links a {
