@@ -180,7 +180,29 @@
     </div>
     <p class="copyright">Designed with passion by TBots ATL.</p>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenu = document.getElementById('mobile-menu'); // Targets the hamburger icon
+        const navLinksContainer = document.querySelector('.nav-links-container'); // Targets the menu links container
 
+        if (mobileMenu && navLinksContainer) { // Check if both elements are found
+            mobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.toggle('is-active'); // For the hamburger icon animation
+                navLinksContainer.classList.toggle('active'); // Toggles menu visibility
+            });
+
+            // Optional: Close menu when a link inside is clicked
+            navLinksContainer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('is-active');
+                    navLinksContainer.classList.remove('active');
+                });
+            });
+        } else {
+            console.error("Mobile menu elements not found in HTML. Check IDs and classes.");
+        }
+    });
+</script>
 </body>
 </html>
 
