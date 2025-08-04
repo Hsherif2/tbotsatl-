@@ -244,7 +244,13 @@ body {
         padding: 80px 0 20px 0; /* Top padding to clear navbar */
         transition: right 0.3s ease-in-out; /* Smooth slide-in transition */
         z-index: 999; /* Higher than overlay, below navbar */
-        overflow-y: auto; /* Enable scrolling if menu content is long */
+        overflow-y: auto; /* Enable scrolling if menu content is long */     
+    }
+     /* Specific styling for the DoorDash icon */
+    .doordash-icon {
+        height: 40px; /* Keep height consistent with others */
+        width: 60px; /* Adjust this value (e.g., 50px, 70px) until it looks good */
+        object-fit: contain; /* Ensures the logo fits without distortion */
     }
 
     /* When mobile menu is active */
