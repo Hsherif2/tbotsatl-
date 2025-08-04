@@ -154,7 +154,7 @@ body {
 
 
 .nav-links a {
-    color: var(--secondary-yellow);
+    color: #FFF; /* CHANGED: Navigation links are now white */
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
