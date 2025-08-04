@@ -682,3 +682,15 @@ body {
         width: auto; /* Allow links to size to content */
     }
 }
+/* Hamburger to 'X' animation */
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0 !important; /* Add !important */
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg) !important; /* Add !important */
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg) !important; /* Add !important */
+}
