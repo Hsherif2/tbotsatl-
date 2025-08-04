@@ -240,17 +240,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex: 1;
-    gap: 20px;
+    gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+    align-items: center;
 }
 
 .about-section-with-image .about-image {
     width: 100%;
-    min-width: 250px;
-    max-width: 570px;
+    max-width: 450px; /* Reduced to give the text box more room */
     height: auto;
     border: 3px solid var(--primary-red);
     border-radius: 8px;
@@ -258,22 +257,23 @@ body {
     object-fit: cover;
 }
 
-.about-section-with-image .about-content p {
-    flex: 1;
-    min-width: 400px;
-    margin-bottom: 10px;
-    text-align: left;
-    line-height: 1.5;
-    font-size: 1.3em;
-}
 .about-text-box {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 25px;
     border-left: 5px solid var(--primary-red);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 500px; /* Adjusted to fit nicely next to the image */
+    margin: 0; /* Removing the auto margin */
     color: #FFF;
+    text-align: left;
+    flex: 1; /* This makes the box grow to fill available space */
+}
+
+/* New rule to ensure the paragraph inside the box has no extra margin */
+.about-text-box p {
+    margin: 0;
+    font-size: 1.3em;
+    line-height: 1.5;
 }
 
 /* We also need to adjust the paragraph inside to remove conflicting styles */
