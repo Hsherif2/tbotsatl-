@@ -384,18 +384,15 @@ body {
     color: #AAA;
 }
 
-.social-icons {
-    margin-top: 15px;
-    display: flex;
-    justify-content: flex-start; /* Align social icons to the left */
-    gap: 15px;
+.social-icons a {
+  color: white; /* Set icon color to white */
+  font-size: 30px; /* Adjust icon size */
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.social-icon {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.2s ease, filter 0.2s ease;
-    filter: grayscale(100%) brightness(1.5); /* Make icons yellow/white initially */
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: #ffcc00; /* Yellow on hover (or choose any color you want) */
 }
 
 .social-icon:hover {
