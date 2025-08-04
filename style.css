@@ -280,16 +280,146 @@ body {
     margin-top: 30px;
 }
 
-.catering-section p {
-    margin-bottom: 25px;
+/* --- NEW STYLES FOR CONTACT US WITH IMAGE --- */
+.contact-section-with-image {
+    padding: 80px 20px; /* Standard section padding */
+    background-color: var(--dark-bg);
+    color: #FFF;
+    text-align: center;
+    border-top: 5px solid var(--primary-red);
 }
 
-.contact-section .order-buttons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.contact-section-with-image h2 {
+    color: var(--secondary-yellow);
+    font-size: 2.8em;
+    margin-bottom: 20px; /* Reduced margin to bring text closer */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.contact-section-with-image > p { /* Targets the direct child <p> tags */
+    font-size: 1.5em; /* Larger font for main taglines */
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: var(--secondary-yellow); /* Yellow for the "Get your answers" line */
+}
+
+
+.contact-flex-container {
+    display: flex; /* Makes it a flex container */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centers items when wrapped */
+    align-items: flex-start; /* Aligns content to the top */
+    gap: 40px; /* Space between image and text */
+    max-width: 1100px; /* Max width for the entire flex container */
+    margin: 0 auto; /* Center the flex container */
+    padding-top: 20px; /* Space from the "Get your answers" text */
+}
+
+.contact-image-wrapper {
+    flex: 0 0 auto; /* Don't grow or shrink, base on content */
+    width: 45%; /* Image takes 45% width on large screens */
+    min-width: 300px; /* Minimum width before forcing a stack */
+    max-width: 500px; /* Max width for the image */
+    text-align: center; /* Center image inside its wrapper if it's smaller */
+}
+
+.contact-image {
+    width: 100%; /* Image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid var(--primary-red); /* Red border around the image */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    object-fit: cover; /* Ensures image covers area without distortion */
+}
+
+.contact-text-content {
+    flex: 1; /* Text content takes up remaining space */
+    min-width: 350px; /* Minimum width for text before wrapping */
+    max-width: 600px; /* Max width for the text content */
+    text-align: left; /* Text content is left-aligned */
+}
+
+.contact-text-content p {
+    font-size: 1.1em;
+    color: #CCC; /* Lighter grey for body text */
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Ensure the contact-info box styling is consistent */
+.contact-text-content .contact-info {
+    margin: 25px 0; /* Adjust margin for contact info within the text block */
+    max-width: none; /* Remove max-width constraint if it was too restrictive */
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-yellow);
+    text-align: center; /* Center text within the info box */
+}
+
+.contact-text-content .contact-info p {
+    font-size: 1.2em; /* Keep these specific lines larger */
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+.contact-text-content .contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-text-content .contact-info a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-text-content .contact-info a:hover {
+    color: var(--secondary-yellow);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) { /* Adjust breakpoint for stacking */
+    .contact-flex-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 30px; /* Reduce gap when stacked */
+    }
+
+    .contact-image-wrapper {
+        width: 70%; /* Image takes more width when stacked */
+        max-width: 450px; /* Limit max size when stacked */
+        min-width: unset; /* Remove min-width constraint */
+    }
+
+    .contact-text-content {
+        min-width: unset; /* Remove min-width constraint */
+        text-align: center; /* Center text when stacked */
+        padding: 0 15px; /* Add horizontal padding for readability on small screens */
+    }
+
+    .contact-text-content p {
+        text-align: center; /* Center text when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section-with-image h2 {
+        font-size: 2em;
+    }
+    .contact-section-with-image > p {
+        font-size: 1.2em;
+    }
+    .contact-image-wrapper {
+        width: 85%; /* Make image a bit larger on very small screens */
+    }
+    .contact-text-content p {
+        font-size: 1em;
+    }
+    .contact-text-content .contact-info p {
+        font-size: 1.1em;
+    }
 }
 
 /* Buttons */
