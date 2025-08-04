@@ -406,15 +406,6 @@ body {
     line-height: 1.6;
 }
 
-.contact-text-content .contact-info {
-    margin: 25px 0;
-    max-width: none;
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 20px 25px;
-    border-radius: 8px;
-    border-left: 5px solid var(--primary-red);
-    text-align: center;
-}
 
 .contact-text-content .contact-info p {
     font-size: 1.2em;
