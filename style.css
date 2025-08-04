@@ -362,7 +362,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* This centers the items vertically */
     gap: 40px;
     max-width: 1100px;
     margin: 0 auto;
