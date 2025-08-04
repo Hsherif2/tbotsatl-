@@ -675,6 +675,8 @@ body {
 .menu-overlay.active {
   display: block;
 }
+}
+    
 
 
 /* Ensure these are present and correct, they define default states */
