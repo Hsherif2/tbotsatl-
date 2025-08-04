@@ -79,7 +79,6 @@ body {
     }
 }
 
-
 /* Header & Hero Section (where tagline, main call to action reside) */
 .hero-overlay {
     position: relative;
@@ -152,7 +151,6 @@ body {
     align-items: center; /* Vertically center links */
 }
 
-
 .nav-links a {
     color: #FFF; /* CHANGED: Navigation links are now white */
     text-decoration: none;
@@ -164,10 +162,12 @@ body {
     /* Added text shadow for better readability without the overlay */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
+
 .locations-section .location-grid p a {
     color: #FFF;
     text-decoration: none;
 }
+
 .nav-links a:hover {
     color: var(--primary-red); /* CHANGED: Hover color changed to primary red for contrast */
     background-color: rgba(255, 255, 255, 0.1);
@@ -243,7 +243,6 @@ body {
     font-size: 1.5em; /* Slightly smaller font size for more text in less space */
 }
 
-
 .menu-section .menu-image {
     width: 100%;
     max-width: 1000px;
@@ -293,7 +292,6 @@ body {
     flex-wrap: wrap;
 }
 
-
 /* Buttons */
 .btn-primary, .btn-secondary {
     display: inline-block;
@@ -313,8 +311,8 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: rgba(var(--primary-red), 0.8); /* Example: darkens the red */
-    transform: translateY(-2px); /* Slight lift effect */
+    background-color: rgba(var(--primary-red), 0.8);
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -330,7 +328,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-
 /* Footer */
 .footer {
     background-color: var(--dark-bg);
@@ -344,274 +341,5 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto 30px auto;
-    gap: 30px; /* Space between footer sections */
-}
+   
 
-.footer-section {
-    flex: 1; /* Allows sections to grow */
-    min-width: 250px; /* Minimum width before wrapping */
-    margin-bottom: 20px; /* Space for wrapped items */
-    text-align: left;
-}
-
-.footer-section h3 {
-    color: var(--primary-red);
-    margin-bottom: 15px;
-    font-size: 1.3em;
-}
-
-.footer-section p {
-    font-size: 0.95em;
-    color: #CCC;
-    margin-bottom: 8px;
-    text-align: left; /* Keep text left-aligned within section */
-}
-
-.footer-section p a {
-    color: #FFF; /* CHANGED: Footer links are now white */
-}
-
-.footer-section p a:hover {
-    color: var(--primary-red); /* CHANGED: Hover color changed to primary red */
-    text-decoration: underline;
-}
-
-.footer-section .footer-note {
-    font-style: italic;
-    font-size: 0.85em;
-    color: #AAA;
-}
-
-.social-icons a {
-    color: white; /* Set icon color to white */
-    font-size: 30px; /* Adjust icon size */
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.1);
-    color: #ffcc00; /* Yellow on hover (or choose any color you want) */
-}
-
-/* NEW: Footer Delivery Info */
-.footer-section .delivery-info {
-    margin-top: 20px; /* Space above delivery info */
-    text-align: center; /* Center content within this section */
-}
-
-.footer-section .delivery-info h4 {
-    color: #FFF; /* White color for the heading */
-    font-size: 1em; /* Smaller font size */
-    margin-bottom: 10px;
-}
-
-.footer-section .delivery-logos {
-    display: flex; /* Use flexbox to arrange logos side-by-side */
-    justify-content: center; /* Center the logos horizontally */
-    align-items: center; /* Vertically align logos */
-    gap: 15px; /* Space between the logos */
-    flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
-}
-
-.footer-section .delivery-logos img {
-    height: 30px; /* Adjust height to make logos visible but not too large */
-    width: auto; /* Maintain aspect ratio */
-    filter: brightness(0) invert(1); /* Makes colored logos white for dark background */
-    transition: transform 0.2s ease;
-}
-
-.footer-section .delivery-logos a:hover img {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-    filter: brightness(1) invert(0); /* Revert to original color on hover if desired, or pick a specific color */
-    /* Alternative hover for a subtle glow: */
-    /* filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); */
-}
-
-.copyright {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    margin-top: 20px;
-    font-size: 0.85em;
-    color: #AAA;
-}
-
-/* Remember to check your responsive media queries as well */
-/* For example, if you have a @media (max-width: 480px) block,
-   you might want to add:
-   @media (max-width: 480px) {
-       .footer-section .delivery-logos img {
-           height: 25px; // Slightly smaller on very small screens
-       }
-   }
-*/
-
-/* Responsive Design for Two Videos */
-@media (max-width: 768px) {
-    /* Stack videos vertically on smaller screens */
-    .video-background-container {
-        flex-direction: column;
-    }
-    #bg-video-left,
-    #bg-video-right {
-        width: 100%; /* Each video takes full width */
-        height: 50%; /* Each video takes half height */
-    }
-
-    /* General responsive adjustments */
-    .hero-overlay h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-overlay p {
-        font-size: 1.1em;
-    }
-
-    /* .logo rule in media query - MODIFIED to hide */
-    .logo {
-        display: none; /* Hides the original logo for all screen sizes */
-    }
-
-    /* NEW: Responsive styles for the navbar logo */
-    .navbar-logo {
-        height: 50px; /* Adjusted height for mobile to fit new navbar height */
-        margin-right: 10px;
-    }
-
-    .navbar {
-        height: 60px; /* Fixed height for mobile navbar */
-        padding: 5px 15px; /* Adjust padding for mobile navbar */
-    }
-
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex: 1; /* Allow nav links to take remaining space */
-    }
-
-    .nav-links a {
-        padding: 8px 10px;
-        margin: 5px; /* Adjust margin for wrapped links */
-        font-size: 0.9em; /* Smaller font for links */
-    }
-
-    .ticker-belt {
-        font-size: 1.2em; /* Smaller on mobile */
-        padding: 6px 0;
-    }
-
-    .section {
-        padding: 60px 15px;
-    }
-
-    .section h2 {
-        font-size: 2em;
-    }
-
-    .section p {
-        font-size: 1em;
-    }
-
-    /* ABOUT US IMAGE RESPONSIVE ADJUSTMENTS */
-    .about-section-with-image .about-content {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center; /* Center items when stacked */
-        text-align: center; /* Center text when stacked */
-    }
-
-    .about-section-with-image .about-image {
-        width: 60%; /* Slightly reduced width when stacked */
-        max-width: 300px; /* Still limit max size */
-        margin-bottom: 15px; /* Reduced space below image when stacked */
-    }
-
-    .about-section-with-image .about-content p {
-        text-align: center; /* Center text when stacked */
-        min-width: unset; /* Remove min-width constraint */
-        font-size: 0.9em; /* Slightly smaller font on mobile as well */
-        line-height: 1.4; /* Maintain compact line height */
-    }
-
-    .menu-section .menu-image {
-        max-width: 100%; /* Allow image to fill more width */
-    }
-
-    .locations-section .location-grid p {
-        flex-basis: 100%; /* Stack locations vertically */
-    }
-
-    .btn-primary, .btn-secondary {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    .order-buttons {
-        flex-direction: column; /* Stack order buttons */
-    }
-
-    .footer-content {
-        flex-direction: column; /* Stack footer sections */
-        text-align: center;
-        gap: 20px;
-    }
-
-    .footer-section {
-        min-width: auto;
-        width: 100%;
-        text-align: center; /* Center text within stacked sections */
-    }
-
-    .social-icons {
-        justify-content: center; /* Center social icons on mobile */
-    }
-
-    .social-icons .social-icon i {
-  font-size: 24px;
-  color: white;
-  transition: color 0.3s;
-}
-
-.social-icons .social-icon:hover i {
-  color: var(--primary-red); /* or any hover color */
-}
-
-}
-
-@media (max-width: 480px) {
-    .hero-overlay h1 {
-        font-size: 2em;
-    }
-
-    .hero-overlay p {
-        font-size: 0.9em;
-    }
-
-    /* NEW: Responsive styles for smaller navbar logo */
-    .navbar-logo {
-        height: 40px; /* Adjusted for very small screens */
-    }
-
-    .nav-links a {
-        font-size: 0.85em;
-        padding: 5px 8px;
-    }
-
-    .ticker-belt {
-        font-size: 1em; /* Even smaller on very small screens */
-        padding: 5px 0;
-    }
-
-    .section h2 {
-        font-size: 1.8em;
-    }
-
-    .btn-primary, .btn-secondary {
-        width: 100%; /* Make buttons full width */
-        margin: 10px 0; /* Add vertical space */
-    }
-    .order-buttons {
-        flex-direction: column; /* Stack order buttons */
-    }
-}
