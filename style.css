@@ -675,25 +675,25 @@ body {
     align-items: center;
     height: 100%;
 }
-/* --- MEDIA QUERIES FOR MOBILE (Apply ONLY on Mobile) --- */
 @media (max-width: 768px) {
-    /* ... (your existing .nav-links-container (default hidden state) rules) ... */
+    /* ... existing rules ... */
 
     /* When the JavaScript adds the 'active' class on mobile, show the menu */
     .nav-links-container.active {
         display: flex;
         transform: translateY(0);
-        /* Add this line to center the items horizontally within the container */
-        **align-items: center;** /* IMPORTANT: Centers the content within this flex container */
+        **align-items: center;** /* Add or confirm this line */
     }
 
     /* Ensure the inner .nav-links always takes full width in mobile menu */
     .nav-links {
         flex-direction: column;
         width: 100%;
-        /* Add this line to center the actual links within the .nav-links div */
-        **align-items: center;** /* IMPORTANT: Centers the <a href> elements */
+        **align-items: center;** /* Add or confirm this line */
     }
+
+    /* ... rest of your mobile media query rules ... */
+}
 
     /* Style individual links within the mobile menu for better touch targets */
     .nav-links a {
