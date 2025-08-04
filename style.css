@@ -15,6 +15,7 @@ body {
     color: #FFF; /* Default text color for overlay/sections */
     background-color: #000; /* Fallback if video doesn't load */
     overflow-x: hidden; /* Prevent horizontal scroll */
+    padding-top: 80px; /* Added: Space for the fixed navbar to prevent content overlap */
 }
 
 /* Colors & Variables (for consistency) */
@@ -49,14 +50,14 @@ body {
 /* Header & Hero Section (where logo, tagline, main call to action reside) */
 .hero-overlay {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    /* Removed height: 100vh; here as body padding handles initial scroll */
+    min-height: calc(100vh - 80px); /* Adjusted height to account for fixed navbar */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
-    /* Removed the black overlay background for no darkening shade */
     color: #FFF;
     z-index: -1; /* Above video, below fixed navbar */
 }
@@ -91,8 +92,8 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    position: sticky; /* Makes the navbar stick to the top when scrolling */
-    top: 0;
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0; /* Ensures it sticks to the very top */
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
     padding: 15px 0;
@@ -439,5 +440,4 @@ body {
         flex-direction: column; /* Stack order buttons */
     }
 }
-
 
