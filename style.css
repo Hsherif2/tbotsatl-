@@ -6,80 +6,80 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Using Montserrat as per your HTML link */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: #FFF; /* Default text color for overlay/sections */
-    background-color: #000; /* Fallback if video doesn't load */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    padding-top: 80px; /* Space for the fixed navbar to prevent content overlap */
+    color: #FFF;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 80px; /* Space for the fixed navbar */
 }
 
-/* Colors & Variables (for consistency) */
+/* Colors & Variables */
 :root {
-    --primary-red: #E70000; /* A vibrant red */
-    --secondary-yellow: #FFD700; /* A golden yellow */
+    --primary-red: #E70000;
+    --secondary-yellow: #FFD700;
     --dark-bg: #000;
 }
 
-/* Background Video Container & Individual Videos */
+/* --- Background Video Container & Individual Videos --- */
 .video-background-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Use flexbox to arrange videos side-by-side */
-    z-index: -2; /* Below overlay and content */
-    overflow: hidden; /* Hide any overflow from videos */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: -2;
+    overflow: hidden;
 }
 
 #bg-video-left,
 #bg-video-right {
-    flex: 1; /* Each video takes up equal space (50% of the container) */
-    min-width: 0; /* Allows shrinking below content size */
-    height: 100%; /* Each video fills the height of the container */
-    object-fit: cover; /* Ensures video covers its allocated half, potentially cropping */
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Ticker Belt Styles */
+/* --- Ticker Belt Styles --- */
 .ticker-belt {
-    position: fixed; /* Fixed position relative to the viewport */
-    bottom: 0; /* Sticks to the bottom */
-    width: 100%; /* Full width */
-    background-color: var(--dark-bg); /* Changed to black */
-    color: var(--secondary-yellow); /* Yellow font */
-    padding: 8px 0; /* Smaller padding */
-    font-size: 1.4em; /* Smaller font size */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--dark-bg);
+    color: var(--secondary-yellow);
+    padding: 8px 0;
+    font-size: 1.4em;
     font-weight: bold;
-    white-space: nowrap; /* Keep content on a single line */
-    overflow: hidden; /* Hide content that flows outside the belt */
-    z-index: 50; /* Higher than video, lower than navbar */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* For better readability */
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .ticker-content {
-    display: inline-block; /* Allows content to be a single line and animated */
-    animation: scroll-text 30s linear infinite; /* Apply the scrolling animation */
+    display: inline-block;
+    animation: scroll-text 30s linear infinite;
 }
 
 .ticker-content span {
-    display: inline-block; /* Ensure spans are inline and contribute to the overall width */
+    display: inline-block;
 }
 
 @keyframes scroll-text {
     from {
-        transform: translateX(0); /* Start from current position */
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-50%); /* Scroll left by 50% of its own width for a loop */
+        transform: translateX(-50%);
     }
 }
 
-/* Header & Hero Section (where tagline, main call to action reside) */
+/* --- Header & Hero Section --- */
 .hero-overlay {
     position: relative;
     min-height: calc(100vh - 80px); /* Adjusted height to account for fixed navbar */
@@ -90,76 +90,72 @@ body {
     text-align: center;
     padding: 20px;
     color: #FFF;
-    z-index: -1; /* Above video, below fixed navbar */
+    z-index: -1;
 }
 
 .header-content {
     max-width: 800px;
-    margin-top: -50px; /* Pull content up slightly if desired */
+    margin-top: -50px;
 }
 
-/* Original .logo rule - MODIFIED to hide it */
+/* This rule hides an older logo if it existed; only .navbar-logo should be used */
 .logo {
-    display: none; /* Hides the original logo as it's being moved to the navbar */
+    display: none;
 }
 
-/* NEW: Style for the logo inside the navbar */
 .navbar-logo {
-    height: 60px; /* Adjusted slightly less than 70px to account for vertical padding */
-    width: 100px; /* IMPORTANT: Maintain aspect ratio */
-    margin-right: 20px; /* Space between logo and first link */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
+    height: 60px;
+    width: 100px;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 .hero-overlay h1 {
     color: var(--primary-red);
     font-size: 3.5em;
     margin-bottom: 15px;
-    /* Added text shadow for better readability without the overlay */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .hero-overlay p {
     font-size: 1.4em;
     margin-bottom: 30px;
-    color: #FFF; /* Changed to #FFF for white text */
-    /* Added text shadow for better readability without the overlay */
+    color: #FFF;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* --- NAVIGATION BAR & MENU STYLES --- */
+/* --- NAVIGATION BAR & MENU STYLES (Desktop First) --- */
 
-/* Navbar Base (Desktop and Mobile shared properties) */
+/* Navbar Base (shared properties for Desktop and Mobile) */
 .navbar {
-    position: fixed; /* Ensures it sticks to the very top */
+    position: fixed;
     top: 0;
-    left: 0; /* Ensure it starts from the left */
+    left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
-    height: 70px; /* Fixed height for the navbar */
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 70px;
     padding: 5px 20px;
-    z-index: 100; /* Ensure navbar is always on top */
+    z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    display: flex; /* Makes it a flex container */
-    justify-content: space-between; /* Pushes logo to left, links to right */
-    align-items: center; /* Vertically centers items */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Navigation Links Container (Default: Desktop View) */
 .nav-links-container {
     display: flex; /* Always display as flex on desktop */
     flex-direction: row; /* Horizontal layout on desktop */
-    align-items: center; /* Vertically center links */
-
-    /* Reset mobile-specific positioning/styles for desktop */
-    position: static; /* No absolute positioning on desktop */
-    transform: none; /* No transforms on desktop */
-    background-color: transparent; /* No background color on desktop */
-    box-shadow: none; /* No shadow on desktop */
+    align-items: center;
+    position: static; /* Reset mobile-specific positioning */
+    transform: none; /* Reset mobile-specific transforms */
+    background-color: transparent; /* Reset mobile-specific background */
+    box-shadow: none; /* Reset mobile-specific shadow */
     height: auto;
     max-height: none;
-    padding: 0; /* No extra padding on desktop */
-    width: auto; /* Width auto to fit content */
+    padding: 0;
+    width: auto;
+    transition: none; /* No transition on desktop */
 }
 
 /* Individual Navigation Links */
@@ -178,9 +174,9 @@ body {
     color: var(--primary-red);
 }
 
-/* --- Base Styles for Hamburger Icon (already there, but good to check) --- */
+/* Hamburger Icon Base Styles (Hidden on Desktop) */
 .menu-toggle {
-    display: none; /* Hidden by default, shown on mobile */
+    display: none; /* Hide on desktop */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -193,26 +189,16 @@ body {
 .menu-toggle .bar {
     width: 100%;
     height: 3px;
-    background-color: #FFD700;
+    background-color: var(--secondary-yellow);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     transform-origin: center;
 }
 
-/* --- Mobile Menu Toggle Display (already there) --- */
-@media (max-width: 768px) { /* Ensure this breakpoint matches your design */
-    .menu-toggle {
-        display: flex; /* Show the hamburger icon on mobile */
-    }
-
-    /* ... other mobile menu styles like .nav-links-container, etc. ... */
-}
-
-/* --- The CRITICAL Fix: More Specific Hamburger to 'X' Animation Styles --- */
-/* By adding '.navbar' or even '#mobile-menu' we make these rules more specific */
+/* Hamburger to 'X' Animation Styles (Ensures specificity) */
 .navbar .menu-toggle.is-active .bar:nth-child(2) {
     opacity: 0;
-    transform: translateX(-50px); /* This makes the middle bar slide out cleanly */
+    transform: translateX(-50px); /* Slides middle bar out */
 }
 
 .navbar .menu-toggle.is-active .bar:nth-child(1) {
@@ -222,7 +208,13 @@ body {
 .navbar .menu-toggle.is-active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
-/* Mobile Overlay for when menu is active */
+
+/* Hide mobile social icons by default on desktop */
+.mobile-social-icons {
+    display: none;
+}
+
+/* --- Mobile Overlay (if needed, add this HTML element: <div class="menu-overlay"></div>) --- */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -240,29 +232,39 @@ body {
 
 /* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
 @media (max-width: 768px) {
-    /* Hide desktop nav links, show hamburger */
-    .nav-links-container {
-        display: none; /* Hide for mobile by default */
-        position: fixed; /* Change to fixed for fullscreen overlay */
-        top: 0; /* Start from top */
-        right: -300px; /* Start off-screen to the right (adjust width as needed) */
-        width: 250px; /* Width of the slide-in menu */
-        height: 100vh; /* Full viewport height */
-        background-color: rgba(0, 0, 0, 0.95); /* Darker background for menu */
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Shadow for slide-in effect */
-        flex-direction: column; /* Stack links vertically */
-        justify-content: flex-start; /* Align content to the top */
-        align-items: center; /* Center items horizontally within the menu */
-        padding: 80px 0 20px 0; /* Top padding to clear navbar */
-        transition: right 0.3s ease-in-out; /* Smooth slide-in transition */
-        z-index: 999; /* Higher than overlay, below navbar */
-        overflow-y: auto; /* Enable scrolling if menu content is long */     
+    /* Show Hamburger on Mobile */
+    .menu-toggle {
+        display: flex; /* Overrides display: none; from desktop rules */
     }
-     /* Specific styling for the DoorDash icon */
-    .doordash-icon {
-        height: 30px; /* Keep height consistent with others */
-        width: 40px; /* Adjust this value (e.g., 50px, 70px) until it looks good */
-        object-fit: contain; /* Ensures the logo fits without distortion */
+
+    /* Adjust navbar padding for mobile */
+    .navbar {
+        padding: 5px 15px;
+    }
+
+    /* Adjust logo size for mobile */
+    .navbar-logo {
+        height: 50px;
+        width: auto;
+    }
+
+    /* Mobile Menu Container Styles (Hidden by default, slides in from right) */
+    .nav-links-container {
+        display: none; /* Hidden by default on mobile */
+        position: fixed;
+        top: 0;
+        right: -250px; /* Starts off-screen to the right */
+        width: 250px; /* Width of the slide-in menu */
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 80px 0 20px 0; /* Top padding to clear navbar */
+        transition: right 0.3s ease-in-out; /* Smooth slide-in animation */
+        z-index: 999;
+        overflow-y: auto;
     }
 
     /* When mobile menu is active */
@@ -271,64 +273,60 @@ body {
         right: 0; /* Slide into view from the right */
     }
 
-/* --- Mobile Menu Toggle Display --- */
-/* This media query ensures the hamburger icon only appears on smaller screens */
-@media (max-width: 768px) { /* Adjust breakpoint as per your design */
-    .menu-toggle {
-        display: flex; /* Show the hamburger icon */
-    }
-
-    /* Adjust navbar padding for mobile, if needed */
-    .navbar {
-        padding: 5px 15px;
-    }
-
-    /* Ensure logo doesn't take too much space on mobile */
-    .navbar-logo {
-        height: 50px;
-        width: auto;
-    }
-
     /* Style individual links within the mobile menu for better touch targets */
     .nav-links a {
         padding: 15px 0;
         font-size: 1.3em;
-        display: block; /* Make the whole area clickable */
-        width: 100%; /* Links should take full width to allow text-align */
-        text-align: center; /* This centers the text inside the link */
+        display: block;
+        width: 100%;
+        text-align: center;
         margin: 5px 0;
+    }
+
+    /* Display and style social icons within the mobile menu */
+    .mobile-social-icons {
+        display: flex; /* Show icons on mobile */
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    /* Ensure the individual links containing the images are also flexible */
+    .mobile-social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0 10px;
+        width: auto;
+    }
+
+    /* Specific styling for the DoorDash icon within mobile social icons */
+    .doordash-icon {
+        height: 30px;
+        width: 40px;
+        object-fit: contain;
     }
 }
 
+---
 
-/* Find Us Section Links - Default State */
-.locations-section .location-grid p a { /* Ensures this applies to links in grid items */
-    color: #FFF; /* Set default link color to white */
-    text-decoration: none; /* Remove underline by default */
-    transition: color 0.3s ease; /* Smooth transition for color change */
-}
-
-/* Find Us Section Links - Hover Effect (UPDATED FOR SPECIFICITY) */
-.locations-section .location-grid p a:hover { /* Added .location-grid for increased specificity */
-    color: var(--primary-red); /* This will change the color to red on hover */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Global Section Styles */
+/* --- Global Section Styles --- */
 .section {
     padding: 80px 20px;
     background-color: var(--dark-bg);
-    color: #FFF; /* Default for section content */
+    color: #FFF;
     text-align: center;
-    border-top: 5px solid var(--primary-red); /* Strong red separator */
-    position: relative; /* For potential future positioning */
+    border-top: 5px solid var(--primary-red);
+    position: relative;
 }
 
 .section h2 {
     color: var(--secondary-yellow);
     font-size: 2.8em;
     margin-bottom: 40px;
-    /* Added text shadow for better readability */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -336,7 +334,7 @@ body {
     font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto 20px auto;
-    color: #FFF; /* Lighter grey for section body text */
+    color: #FFF;
 }
 
 .section a {
@@ -349,40 +347,39 @@ body {
     text-decoration: underline;
 }
 
-/* Specific Section Styles */
-
-/* --- NEW STYLES FOR ABOUT US IMAGE --- */
+/* --- About Us Section Styles --- */
 .about-section-with-image .about-content {
-    display: flex; /* Use flexbox to arrange image and text */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center; /* Center content when wrapped */
-    flex: 1; /* Allows the text to take up remaining space */
-    gap: 20px; /* Reduced gap for more compact feel */
-    max-width: 1000px; /* Limit overall content width */
-    margin: 0 auto; /* Center the content container */
-    text-align: center; /* Reset text alignment for inner content */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-section-with-image .about-image {
-    width: 100%; /* Increased width for a bigger picture */
-    min-width: 250px; /* Adjusted minimum size */
-    max-width: 570px; /* Increased maximum size */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid var(--primary-red); /* Optional: add a border */
-    border-radius: 8px; /* Optional: rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow */
-    object-fit: cover; /* Ensures image covers the area without distortion */
+    width: 100%;
+    min-width: 250px;
+    max-width: 570px;
+    height: auto;
+    border: 3px solid var(--primary-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
 }
 
 .about-section-with-image .about-content p {
-    flex: 1; /* Allows the text to take up remaining space */
-    min-width: 400px; /* Adjusted minimum width for text */
-    margin-bottom: 10px; /* Reduced bottom margin for more compact paragraphs */
-    text-align: left; /* Keep text left-aligned */
-    line-height: 1.5; /* Slightly reduced line height for compactness */
-    font-size: 1.3em; /* Slightly smaller font size for more text in less space */
+    flex: 1;
+    min-width: 400px;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.3em;
 }
 
+/* --- Menu Section Styles --- */
 .menu-section .menu-image {
     width: 100%;
     max-width: 1000px;
@@ -392,9 +389,10 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* --- Locations Section Styles --- */
 .locations-section .location-grid {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     margin-top: 30px;
@@ -403,14 +401,25 @@ body {
 .locations-section .location-grid p {
     flex-basis: calc(33% - 20px); /* Approx 3 items per row on large screens */
     min-width: 280px; /* Minimum width before wrapping */
-    background-color: rgba(255, 255, 255, 0.05); /* Slight background for each location */
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 8px;
     border-left: 5px solid var(--primary-red);
     text-align: left;
     font-size: 1.1em;
-    color: #FFF; /* Already white, but confirmed here for clarity */
+    color: #FFF;
     margin: 0; /* Override section p margin */
+}
+
+.locations-section .location-grid p a { /* Ensures this applies to links in grid items */
+    color: #FFF; /* Set default link color to white */
+    text-decoration: none; /* Remove underline by default */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.locations-section .location-grid p a:hover { /* Added .location-grid for increased specificity */
+    color: var(--primary-red); /* This will change the color to red on hover */
+    text-decoration: underline; /* Add underline on hover */
 }
 
 .locations-section .location-note {
@@ -419,14 +428,10 @@ body {
     color: var(--secondary-yellow);
     margin-top: 30px;
 }
-.locations-content p a:hover {
-    color: var(--primary-red); /* Change color to red on hover */
-    text-decoration: underline; /* Add underline on hover for clarity */
-}
 
-/* --- NEW STYLES FOR CONTACT US WITH IMAGE --- */
+/* --- Contact Us Section Styles --- */
 .contact-section-with-image {
-    padding: 80px 20px; /* Standard section padding */
+    padding: 80px 20px;
     background-color: var(--dark-bg);
     color: #FFF;
     text-align: center;
@@ -437,73 +442,71 @@ body {
 .contact-section-with-image h2 {
     color: var(--secondary-yellow);
     font-size: 2.8em;
-    margin-bottom: 20px; /* Reduced margin to bring text closer */
+    margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .contact-section-with-image > p { /* Targets the direct child <p> tags */
-    font-size: 1.5em; /* Larger font for main taglines */
+    font-size: 1.5em;
     max-width: 800px;
     margin: 0 auto 30px auto;
-    color: var(--secondary-yellow); /* Yellow for the "Get your answers" line */
+    color: var(--secondary-yellow);
 }
 
-
 .contact-flex-container {
-    display: flex; /* Makes it a flex container */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    justify-content: center; /* Centers items when wrapped */
-    align-items: flex-start; /* Aligns content to the top */
-    gap: 40px; /* Space between image and text */
-    max-width: 1100px; /* Max width for the entire flex container */
-    margin: 0 auto; /* Center the flex container */
-    padding-top: 20px; /* Space from the "Get your answers" text */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .contact-image-wrapper {
-    flex: 0 0 auto; /* Don't grow or shrink, base on content */
-    width: 100%; /* Image takes 45% width on large screens */
-    min-width: 300px; /* Minimum width before forcing a stack */
-    max-width: 600px; /* Max width for the image */
-    text-align: center; /* Center image inside its wrapper if it's smaller */
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: center;
 }
 
 .contact-image {
-    width: 100%; /* Image fills its container */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid var(--primary-red); /* Red border around the image */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow */
-    object-fit: cover; /* Ensures image covers area without distortion */
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--primary-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
 }
 
 .contact-text-content {
-    flex: 1; /* Text content takes up remaining space */
-    min-width: 350px; /* Minimum width for text before wrapping */
-    max-width: 600px; /* Max width for the text content */
-    text-align: left; /* Text content is left-aligned */
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+    text-align: left;
 }
 
 .contact-text-content p {
     font-size: 1.3em;
-    color: #FFF; /* Lighter grey for body text */
+    color: #FFF;
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
-/* Ensure the contact-info box styling is consistent */
 .contact-text-content .contact-info {
-    margin: 25px 0; /* Adjust margin for contact info within the text block */
-    max-width: none; /* Remove max-width constraint if it was too restrictive */
+    margin: 25px 0;
+    max-width: none;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 20px 25px;
     border-radius: 8px;
-    border-left: 5px solid var(--primary-red); /* Changed to red */
-    text-align: center; /* Center text within the info box */
+    border-left: 5px solid var(--primary-red);
+    text-align: center;
 }
 
 .contact-text-content .contact-info p {
-    font-size: 1.2em; /* Keep these specific lines larger */
+    font-size: 1.2em;
     margin-bottom: 10px;
     color: #FFF;
 }
@@ -524,7 +527,7 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for Contact Section */
 @media (max-width: 900px) { /* Adjust breakpoint for stacking */
     .contact-flex-container {
         flex-direction: column; /* Stack image and text vertically */
@@ -557,7 +560,7 @@ body {
         font-size: 1.2em;
     }
     .contact-image-wrapper {
-        width: 85%; /* Make image a bit larger on very small screens */
+        width: 85%;
     }
     .contact-text-content p {
         font-size: 1.1em;
@@ -567,7 +570,7 @@ body {
     }
 }
 
-/* Buttons */
+/* --- Buttons --- */
 .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 15px 30px;
@@ -603,8 +606,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* --- Footer Styles --- */
 .footer {
-    background-color: #000; /* black */
+    background-color: #000;
     color: #fff;
     padding: 30px 20px;
     font-family: Arial, sans-serif;
@@ -623,7 +627,7 @@ body {
 }
 
 .footer-section h3 {
-    color: #FFD700; /* yellow */
+    color: var(--secondary-yellow);
     margin-bottom: 10px;
 }
 
@@ -655,45 +659,5 @@ body {
     font-size: 13px;
     color: #888;
     margin-top: 20px;
-}
-/* Hide mobile social icons by default (for desktop) */
-.mobile-social-icons {
-    display: none;
-    margin-top: 20px; /* Space between last nav link and icons */
-    gap: 20px; /* Space between icons */
-}
-
-.mobile-social-icons img {
-    height: 40px; /* Adjust size of logos as needed */
-    width: auto;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Subtle glow */
-    transition: transform 0.2s ease;
-}
-
-.mobile-social-icons img:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-/* --- MEDIA QUERIES FOR MOBILE (max-width: 768px) --- */
-@media (max-width: 768px) {
-    /* ... (your existing mobile navigation styles) ... */
-
-    /* Display and style social icons within the mobile menu */
-    .mobile-social-icons {
-        display: flex; /* Show icons on mobile */
-        justify-content: center; /* Center the icons horizontally */
-        align-items: center; /* Vertically align if needed */
-        flex-wrap: wrap; /* Allow wrapping if many icons are added */
-    }
-
-    /* Ensure the individual links containing the images are also flexible */
-    .mobile-social-icons a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0; /* Remove padding inherited from .nav-links a */
-        margin: 0 10px; /* Add some horizontal margin between icons */
-        width: auto; /* Allow links to size to content */
-    }
 }
 
