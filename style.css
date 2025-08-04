@@ -407,6 +407,7 @@ body {
     max-width: 600px;
     text-align: center;
     color: #FFF;
+    font-weight: bold; /* New line to make all text bold */
 }
 
 .contact-text-content p {
