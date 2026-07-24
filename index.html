@@ -3,205 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TBots ATL</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>T-Bots Street Food | Atlanta</title>
+
+    <meta
+        name="description"
+        content="Explore the T-Bots menu, order online, find your nearest Atlanta location, get directions, and follow us on Instagram."
+    >
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 </head>
+
 <body>
 
-<div class="video-background-container">
-    <video autoplay loop muted playsinline id="bg-video-left">
-        <source src="backgroundleft.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <video autoplay loop muted playsinline id="bg-video-right">
-        <source src="backgroundright.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+    <main class="page-container">
 
-    <div class="ticker-belt">
-        <div class="ticker-content">
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            <span>T-Bots Street Food &nbsp; &nbsp;</span>
-            </div>
-    </div>
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
 
-  <nav class="navbar">
-    <a href="#home" class="navbar-logo-link">
-        
-    </a>
+            <header class="profile-header">
+                <img
+                    src="images/tbots-logo.png"
+                    alt="T-Bots Street Food logo"
+                    class="logo"
+                >
 
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+                <h1>T-Bots Street Food</h1>
 
-    <div class="nav-links-container">
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#locations">Locations</a>
-            <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-    <header id="home" class="hero-overlay">
-    <img src="logo.png" alt="T-Bots Street Food Logo" class="hero-logo">
-    <div class="header-content">
-        <h1>Ignite Your Taste Buds</h1>
-        <p><strong>Savor the best of Atlanta with our mouth-watering tacos and sizzling chicken wings. Unforgettable flavors, unforgettable moments!</strong></p>
-</header>
-
-    <section id="about" class="section about-section-with-image"> <h2>About Us</h2>
-        <div class="about-content"> <img src="about.jpg" alt="About TBots ATL" class="about-image"> <div class="about-text-box">
-    <p><strong>At TBots ATL, we bring the bold, mouthwatering flavors of Atlanta straight to you. With three food trucks stationed across the city, it’s easy to grab your favorite bites on the go, at work, or whenever hunger strikes. Want a full dining experience? Visit our main restaurant for our signature dishes in a warm, welcoming atmosphere. Hosting a party or event? We offer professional event catering to bring the TBots experience to you!</strong></p>  
-        </div>
-    </section>
-
-    <section id="menu" class="section menu-section">
-        <h2>Our Menu</h2>
-        <img src="menu.png" alt="TBots ATL Menu Items" class="menu-image">
-    </section>
-
-    <section id="locations" class="section locations-section">
-  <h2>Find Us</h2>
-  <div class="location-grid">
-
-    <p>
-      <strong>Riverdale</strong><br>
-      <a href="https://www.google.com/maps/search/?api=1&query=199+Upper+Riverdale+RD,+Jonesboro,+GA+30236" target="_blank">
-        199 Upper Riverdale RD, Jonesboro, GA 30236
-      </a><br>
-      <a href="tel:+16782226299">(678) 222-6299</a>
-    </p>
-
-    <p>
-      <strong>Ellenwood</strong><br>
-      <a href="https://www.google.com/maps/search/?api=1&query=795+Fairview+RD,+Ellenwood,+GA+30294" target="_blank">
-        795 Fairview RD, Ellenwood, GA 30294
-      </a><br>
-      <a href="tel:+16782228305">(678) 222-8305</a>
-    </p>
-
-    <p>
-      <strong>Morrow</strong><br>
-      <a href="https://www.google.com/maps/search/?api=1&query=1186+Morrow+RD,+Morrow,+GA+30260" target="_blank">
-        1186 Morrow RD, Morrow, GA 30260
-      </a><br>
-     <a href="tel:+16782228305">(678) 222-8305</a>
-    </p>
-
-    <p>
-      <strong>College Park</strong><br>
-      <a href="https://www.google.com/maps/search/?api=1&query=2511+Camp+Creek+Pkwy,+College+Park,+GA+30337" target="_blank">
-        2511 Camp Creek Pkwy, College Park, GA 30337
-      </a><br>
-      <a href="tel:+14045559012">(404) 555-9012</a>
-    </p>
-
-  </div>
-   <p class="location-note"><strong>Opening soon in more neighborhoods!</strong></p>
-
-</section>
-
-    
-
-<section id="contact" class="section contact-section-with-image"> <h2>Contact Us</h2>
-
-    <div class="contact-flex-container">
-        <div class="contact-image-wrapper">
-            <img src="contact.jpg" alt="Contact Us Image" class="contact-image">
-        </div>
-
-        <div class="contact-text-content">
-            <p>Interested in catering or joining the TBots ATL team?</p>
-            <p>We’d love to hear from you!</p>
-
-            <div class="contact-info">
-                <p>
-                      <a href="mailto:tbotsllc@gmail.com">tbotsllc@gmail.com</a>
+                <p class="tagline">
+                    Fresh Street Food Made to Order
                 </p>
-                <p>
-                      <a href="tel:+16782228049">(678) 222-8049</a>
+
+                <p class="food-types">
+                    Burgers • Burritos • Wings • Drinks
                 </p>
+            </header>
+
+            <div class="links">
+
+                <a href="menu.html" class="link-button">
+                    <span class="button-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+                    <span>Our Menu</span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/tbotsatl/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-button"
+                >
+                    <span class="button-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
+                    <span>Follow Us on Instagram</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
             </div>
 
-            <p>Whether you're planning a special event or looking for a fun, fast-paced place to work, reach out today and let’s connect!</p>
-        </div>
-    </div>
-</section>
+            <h2 class="section-title">Choose Your Location</h2>
+
+            <div class="links">
+
+                <button
+                    type="button"
+                    class="link-button"
+                    onclick="showPage('location-1')"
+                >
+                    <span class="button-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <span class="location-text">
+                        <strong>Riverdale</strong>
+                        <small>199 Upper Riverdale Road</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="link-button"
+                    onclick="showPage('location-2')"
+                >
+                    <span class="button-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <span class="location-text">
+                        <strong>Ellenwood</strong>
+                        <small>795 Fairview Road</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="link-button"
+                    onclick="showPage('location-3')"
+                >
+                    <span class="button-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <span class="location-text">
+                        <strong>Morrow</strong>
+                        <small>1186 Morrow Road</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="link-button"
+                    onclick="showPage('location-4')"
+                >
+                    <span class="button-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <span class="location-text">
+                        <strong>College Park</strong>
+                        <small>2511 Camp Creek Parkway</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </button>
+
+            </div>
+
+        </section>
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- LOCATION 1 -->
+        <section id="location-1" class="page location-page">
 
-<footer class="footer">
-    <div class="footer-content">
+            <button class="back-button" onclick="showPage('home')">
+                <i class="fa-solid fa-arrow-left"></i>
+                All Locations
+            </button>
 
-        <!-- Follow Us -->
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/tbotsfoodtruck/" target="_blank">
-                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Logo" height="30">
+            <header class="profile-header">
+                <img
+                    src="images/tbots-logo.png"
+                    alt="T-Bots logo"
+                    class="logo"
+                >
 
+                <h1>T-Bots Riverdale</h1>
+
+                <p class="address">
+                    199 Upper Riverdale Road<br>
+                    Jonesboro, GA 30236
+                </p>
+            </header>
+
+            <div class="links">
+
+                <a href="#" class="link-button primary-button">
+                    <span class="button-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </span>
+                    <span>Order Online</span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon">
+                        <i class="fa-solid fa-car-side"></i>
+                    </span>
+                    <span>Order on Uber Eats</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </span>
+                    <span>Order on DoorDash</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </span>
+                    <span>Leave Us a Google Review</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                    </span>
+                    <span>Get Directions</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="tel:+16782226299" class="link-button">
+                    <span class="button-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    <span class="location-text">
+                        <strong>Call Us</strong>
+                        <small>(678) 222-6299</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOCATION 2 -->
+        <section id="location-2" class="page location-page">
+
+            <button class="back-button" onclick="showPage('home')">
+                <i class="fa-solid fa-arrow-left"></i>
+                All Locations
+            </button>
+
+            <header class="profile-header">
+                <img src="images/tbots-logo.png" alt="T-Bots logo" class="logo">
+
+                <h1>T-Bots Ellenwood</h1>
+
+                <p class="address">
+                    795 Fairview Road<br>
+                    Ellenwood, GA
+                </p>
+            </header>
+
+            <div class="links">
+                <a href="#" class="link-button primary-button">
+                    <span class="button-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                    <span>Order Online</span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-car-side"></i></span>
+                    <span>Order on Uber Eats</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-motorcycle"></i></span>
+                    <span>Order on DoorDash</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-brands fa-google"></i></span>
+                    <span>Leave Us a Google Review</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-diamond-turn-right"></i></span>
+                    <span>Get Directions</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="tel:+16782228305" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-phone"></i></span>
+
+                    <span class="location-text">
+                        <strong>Call Us</strong>
+                        <small>(678) 222-8305</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
                 </a>
             </div>
-        </div>
 
-        <!-- Delivery Links -->
-        <div class="footer-section footer-delivery">
-            <h3>Delivery via</h3>
-            <div class="delivery-logos">
-                <a href="https://www.doordash.com/business/t-bots-restaurant-13712919/" target="_blank" aria-label="Order via DoorDash - TBots Restaurant">
-                    <img src="https://cdn.worldvectorlogo.com/logos/doordash-1.svg" alt="DoorDash Logo" height="30">
+        </section>
+
+
+        <!-- LOCATION 3 -->
+        <section id="location-3" class="page location-page">
+
+            <button class="back-button" onclick="showPage('home')">
+                <i class="fa-solid fa-arrow-left"></i>
+                All Locations
+            </button>
+
+            <header class="profile-header">
+                <img src="images/tbots-logo.png" alt="T-Bots logo" class="logo">
+
+                <h1>T-Bots Morrow</h1>
+
+                <p class="address">
+                    1186 Morrow Road<br>
+                    Morrow, GA 30260
+                </p>
+            </header>
+
+            <div class="links">
+                <a href="#" class="link-button primary-button">
+                    <span class="button-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                    <span>Order Online</span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-car-side"></i></span>
+                    <span>Order on Uber Eats</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-motorcycle"></i></span>
+                    <span>Order on DoorDash</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-brands fa-google"></i></span>
+                    <span>Leave Us a Google Review</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-diamond-turn-right"></i></span>
+                    <span>Get Directions</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="tel:+16782228305" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-phone"></i></span>
+
+                    <span class="location-text">
+                        <strong>Call Us</strong>
+                        <small>(678) 222-8305</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
                 </a>
             </div>
-        </div>
 
-        <!-- Copyright -->
-        <div class="footer-section">
-            <h3>TBots ATL</h3>
-            <p class="footer-note">© 2025 TBots ATL. All rights reserved.</p>
-        </div>
+        </section>
 
-    </div>
-    <p class="copyright">Designed with passion by TBots ATL.</p>
-</footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenu = document.getElementById('mobile-menu'); // Targets the hamburger icon
-        const navLinksContainer = document.querySelector('.nav-links-container'); // Targets the menu links container
 
-        if (mobileMenu && navLinksContainer) { // Check if both elements are found
-            mobileMenu.addEventListener('click', function() {
-                mobileMenu.classList.toggle('is-active'); // For the hamburger icon animation
-                navLinksContainer.classList.toggle('active'); // Toggles menu visibility
+        <!-- LOCATION 4 -->
+        <section id="location-4" class="page location-page">
+
+            <button class="back-button" onclick="showPage('home')">
+                <i class="fa-solid fa-arrow-left"></i>
+                All Locations
+            </button>
+
+            <header class="profile-header">
+                <img src="images/tbots-logo.png" alt="T-Bots logo" class="logo">
+
+                <h1>T-Bots College Park</h1>
+
+                <p class="address">
+                    2511 Camp Creek Parkway<br>
+                    College Park, GA 30337
+                </p>
+            </header>
+
+            <div class="links">
+                <a href="#" class="link-button primary-button">
+                    <span class="button-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                    <span>Order Online</span>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-car-side"></i></span>
+                    <span>Order on Uber Eats</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-motorcycle"></i></span>
+                    <span>Order on DoorDash</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-brands fa-google"></i></span>
+                    <span>Leave Us a Google Review</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="#" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-diamond-turn-right"></i></span>
+                    <span>Get Directions</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="tel:+14045559012" class="link-button">
+                    <span class="button-icon"><i class="fa-solid fa-phone"></i></span>
+
+                    <span class="location-text">
+                        <strong>Call Us</strong>
+                        <small>Update Phone Number</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>© 2026 T-Bots Street Food</p>
+
+            <a
+                href="https://www.instagram.com/tbotsatl/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-brands fa-instagram"></i>
+                @tbotsatl
+            </a>
+        </footer>
+
+    </main>
+
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll(".page");
+
+            pages.forEach(function(page) {
+                page.classList.remove("active");
             });
 
-            // Optional: Close menu when a link inside is clicked
-            navLinksContainer.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('is-active');
-                    navLinksContainer.classList.remove('active');
+            const selectedPage = document.getElementById(pageId);
+
+            if (selectedPage) {
+                selectedPage.classList.add("active");
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
                 });
-            });
-        } else {
-            console.error("Mobile menu elements not found in HTML. Check IDs and classes.");
+            }
         }
-    });
-</script>
+    </script>
+
 </body>
 </html>
 
