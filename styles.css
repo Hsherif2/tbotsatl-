@@ -91,3 +91,14 @@ footer{text-align:center;margin-top:42px;padding-top:22px;border-top:1px solid v
     max-height: none !important;
   }
 }
+.coming-soon {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    background: #f59e0b;
+    border-radius: 999px;
+}
