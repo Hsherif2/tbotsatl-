@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>T-Bots Street Food | Atlanta</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>T-Bots Street Food | Atlanta Food Trucks</title>
 
     <meta
         name="description"
-        content="Explore the T-Bots menu, order online, find your nearest Atlanta location, get directions, and follow us on Instagram."
+        content="View the T-Bots menu, choose your Atlanta location, order online, get directions, and follow T-Bots Street Food on Instagram."
     >
 
-    <link rel="stylesheet" href="styles.css">
+    <meta
+        name="keywords"
+        content="T-Bots, Atlanta food truck, burgers Atlanta, burritos Atlanta, wings Atlanta, street food Atlanta, food truck near me"
+    >
 
-    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="style.css">
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -22,13 +30,18 @@
 
 <body>
 
-    <main class="page-container">
+    <main class="site-container">
 
-        <!-- HOME PAGE -->
+        <!-- HOME -->
         <section id="home" class="page active">
 
-            <header class="profile-header">
-                <img src="logo.png" alt="T-Bots Street Food logo">
+            <header class="main-header">
+
+                <img
+                    src="logo.png"
+                    alt="T-Bots Street Food"
+                    class="logo"
+                >
 
                 <h1>T-Bots Street Food</h1>
 
@@ -36,106 +49,135 @@
                     Fresh Street Food Made to Order
                 </p>
 
-                <p class="food-types">
+                <p class="menu-description">
                     Burgers • Burritos • Wings • Drinks
                 </p>
+
             </header>
 
-            <div class="links">
+            <div class="button-list">
 
-                <a href="menu.html" class="link-button">
-                    <span class="button-icon">
+                <a href="#menu-link" class="action-button featured-button">
+
+                    <span class="icon-container">
                         <i class="fa-solid fa-utensils"></i>
                     </span>
-                    <span>Our Menu</span>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                    <span class="button-content">
+                        <strong>View Our Menu</strong>
+                        <small>See what we’re serving</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
+
                 </a>
 
                 <a
                     href="https://www.instagram.com/tbotsatl/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="link-button"
+                    class="action-button"
                 >
-                    <span class="button-icon">
+
+                    <span class="icon-container">
                         <i class="fa-brands fa-instagram"></i>
                     </span>
-                    <span>Follow Us on Instagram</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+                    <span class="button-content">
+                        <strong>Follow Us on Instagram</strong>
+                        <small>@tbotsatl</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
+
                 </a>
 
             </div>
 
-            <h2 class="section-title">Choose Your Location</h2>
+            <div class="location-heading">
 
-            <div class="links">
+                <p>Find T-Bots Near You</p>
+
+                <h2>Choose Your Location</h2>
+
+            </div>
+
+            <div class="button-list">
 
                 <button
                     type="button"
-                    class="link-button"
-                    onclick="showPage('location-1')"
+                    class="action-button"
+                    onclick="showPage('riverdale')"
                 >
-                    <span class="button-icon">
+
+                    <span class="icon-container">
                         <i class="fa-solid fa-location-dot"></i>
                     </span>
 
-                    <span class="location-text">
+                    <span class="button-content">
                         <strong>Riverdale</strong>
                         <small>199 Upper Riverdale Road</small>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
+
                 </button>
 
                 <button
                     type="button"
-                    class="link-button"
-                    onclick="showPage('location-2')"
+                    class="action-button"
+                    onclick="showPage('ellenwood')"
                 >
-                    <span class="button-icon">
+
+                    <span class="icon-container">
                         <i class="fa-solid fa-location-dot"></i>
                     </span>
 
-                    <span class="location-text">
+                    <span class="button-content">
                         <strong>Ellenwood</strong>
                         <small>795 Fairview Road</small>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
+
                 </button>
 
                 <button
                     type="button"
-                    class="link-button"
-                    onclick="showPage('location-3')"
+                    class="action-button"
+                    onclick="showPage('morrow')"
                 >
-                    <span class="button-icon">
+
+                    <span class="icon-container">
                         <i class="fa-solid fa-location-dot"></i>
                     </span>
 
-                    <span class="location-text">
+                    <span class="button-content">
                         <strong>Morrow</strong>
                         <small>1186 Morrow Road</small>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
+
                 </button>
 
                 <button
                     type="button"
-                    class="link-button"
-                    onclick="showPage('location-4')"
+                    class="action-button"
+                    onclick="showPage('college-park')"
                 >
-                    <span class="button-icon">
+
+                    <span class="icon-container">
                         <i class="fa-solid fa-location-dot"></i>
                     </span>
 
-                    <span class="location-text">
+                    <span class="button-content">
                         <strong>College Park</strong>
                         <small>2511 Camp Creek Parkway</small>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
+
                 </button>
 
             </div>
@@ -143,80 +185,123 @@
         </section>
 
 
-        <!-- LOCATION 1 -->
-        <section id="location-1" class="page location-page">
+        <!-- RIVERDALE -->
+        <section id="riverdale" class="page location-page">
 
-            <button class="back-button" onclick="showPage('home')">
+            <button
+                type="button"
+                class="back-button"
+                onclick="showPage('home')"
+            >
                 <i class="fa-solid fa-arrow-left"></i>
-                All Locations
+                Back to All Locations
             </button>
 
-            <header class="profile-header">
+            <div class="location-header">
+
                 <img
-                    src="images/tbots-logo.png"
-                    alt="T-Bots logo"
-                    class="logo"
+                    src="logo.png"
+                    alt="T-Bots Riverdale"
+                    class="location-logo"
                 >
 
-                <h1>T-Bots Riverdale</h1>
+                <p class="location-label">T-Bots Location</p>
 
-                <p class="address">
+                <h2>Riverdale</h2>
+
+                <p class="location-address">
                     199 Upper Riverdale Road<br>
                     Jonesboro, GA 30236
                 </p>
-            </header>
 
-            <div class="links">
+            </div>
 
-                <a href="#" class="link-button primary-button">
-                    <span class="button-icon">
+            <div class="button-list">
+
+                <a href="#" class="action-button featured-button">
+                    <span class="icon-container">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </span>
-                    <span>Order Online</span>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                    <span class="button-content">
+                        <strong>Order Online</strong>
+                        <small>Pickup from this location</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon">
+                <a href="#" class="action-button">
+                    <span class="icon-container">
                         <i class="fa-solid fa-car-side"></i>
                     </span>
-                    <span>Order on Uber Eats</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+                    <span class="button-content">
+                        <strong>Uber Eats</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon">
+                <a href="#" class="action-button">
+                    <span class="icon-container">
                         <i class="fa-solid fa-motorcycle"></i>
                     </span>
-                    <span>Order on DoorDash</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+                    <span class="button-content">
+                        <strong>DoorDash</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon">
+                <a href="#" class="action-button">
+                    <span class="icon-container">
                         <i class="fa-brands fa-google"></i>
                     </span>
-                    <span>Leave Us a Google Review</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+                    <span class="button-content">
+                        <strong>Leave a Google Review</strong>
+                        <small>Tell us about your visit</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon">
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=199+Upper+Riverdale+Road+Jonesboro+GA+30236"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="action-button"
+                >
+                    <span class="icon-container">
                         <i class="fa-solid fa-diamond-turn-right"></i>
                     </span>
-                    <span>Get Directions</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+
+                    <span class="button-content">
+                        <strong>Get Directions</strong>
+                        <small>Open in Google Maps</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="tel:+16782226299" class="link-button">
-                    <span class="button-icon">
+                <a
+                    href="tel:+16782226299"
+                    class="action-button"
+                >
+                    <span class="icon-container">
                         <i class="fa-solid fa-phone"></i>
                     </span>
-                    <span class="location-text">
+
+                    <span class="button-content">
                         <strong>Call Us</strong>
                         <small>(678) 222-6299</small>
                     </span>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
 
             </div>
@@ -224,202 +309,377 @@
         </section>
 
 
-        <!-- LOCATION 2 -->
-        <section id="location-2" class="page location-page">
+        <!-- ELLENWOOD -->
+        <section id="ellenwood" class="page location-page">
 
-            <button class="back-button" onclick="showPage('home')">
+            <button
+                type="button"
+                class="back-button"
+                onclick="showPage('home')"
+            >
                 <i class="fa-solid fa-arrow-left"></i>
-                All Locations
+                Back to All Locations
             </button>
 
-            <header class="profile-header">
-                <img src="images/tbots-logo.png" alt="T-Bots logo" class="logo">
+            <div class="location-header">
 
-                <h1>T-Bots Ellenwood</h1>
+                <img
+                    src="logo.png"
+                    alt="T-Bots Ellenwood"
+                    class="location-logo"
+                >
 
-                <p class="address">
+                <p class="location-label">T-Bots Location</p>
+
+                <h2>Ellenwood</h2>
+
+                <p class="location-address">
                     795 Fairview Road<br>
                     Ellenwood, GA
                 </p>
-            </header>
 
-            <div class="links">
-                <a href="#" class="link-button primary-button">
-                    <span class="button-icon"><i class="fa-solid fa-bag-shopping"></i></span>
-                    <span>Order Online</span>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+
+            <div class="button-list">
+
+                <a href="#" class="action-button featured-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Order Online</strong>
+                        <small>Pickup from this location</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-car-side"></i></span>
-                    <span>Order on Uber Eats</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-car-side"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Uber Eats</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-motorcycle"></i></span>
-                    <span>Order on DoorDash</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>DoorDash</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-brands fa-google"></i></span>
-                    <span>Leave Us a Google Review</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-brands fa-google"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Leave a Google Review</strong>
+                        <small>Tell us about your visit</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-diamond-turn-right"></i></span>
-                    <span>Get Directions</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=795+Fairview+Road+Ellenwood+GA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="action-button"
+                >
+                    <span class="icon-container">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Get Directions</strong>
+                        <small>Open in Google Maps</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="tel:+16782228305" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-phone"></i></span>
+                <a
+                    href="tel:+16782228305"
+                    class="action-button"
+                >
+                    <span class="icon-container">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
 
-                    <span class="location-text">
+                    <span class="button-content">
                         <strong>Call Us</strong>
                         <small>(678) 222-8305</small>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
+
             </div>
 
         </section>
 
 
-        <!-- LOCATION 3 -->
-        <section id="location-3" class="page location-page">
+        <!-- MORROW -->
+        <section id="morrow" class="page location-page">
 
-            <button class="back-button" onclick="showPage('home')">
+            <button
+                type="button"
+                class="back-button"
+                onclick="showPage('home')"
+            >
                 <i class="fa-solid fa-arrow-left"></i>
-                All Locations
+                Back to All Locations
             </button>
 
-            <header class="profile-header">
-                <img src="images/tbots-logo.png" alt="T-Bots logo" class="logo">
+            <div class="location-header">
 
-                <h1>T-Bots Morrow</h1>
+                <img
+                    src="logo.png"
+                    alt="T-Bots Morrow"
+                    class="location-logo"
+                >
 
-                <p class="address">
+                <p class="location-label">T-Bots Location</p>
+
+                <h2>Morrow</h2>
+
+                <p class="location-address">
                     1186 Morrow Road<br>
                     Morrow, GA 30260
                 </p>
-            </header>
 
-            <div class="links">
-                <a href="#" class="link-button primary-button">
-                    <span class="button-icon"><i class="fa-solid fa-bag-shopping"></i></span>
-                    <span>Order Online</span>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+
+            <div class="button-list">
+
+                <a href="#" class="action-button featured-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Order Online</strong>
+                        <small>Pickup from this location</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-car-side"></i></span>
-                    <span>Order on Uber Eats</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-car-side"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Uber Eats</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-motorcycle"></i></span>
-                    <span>Order on DoorDash</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>DoorDash</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-brands fa-google"></i></span>
-                    <span>Leave Us a Google Review</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-brands fa-google"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Leave a Google Review</strong>
+                        <small>Tell us about your visit</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-diamond-turn-right"></i></span>
-                    <span>Get Directions</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=1186+Morrow+Road+Morrow+GA+30260"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="action-button"
+                >
+                    <span class="icon-container">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Get Directions</strong>
+                        <small>Open in Google Maps</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
                 </a>
 
-                <a href="tel:+16782228305" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-phone"></i></span>
+                <a
+                    href="tel:+16782228305"
+                    class="action-button"
+                >
+                    <span class="icon-container">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
 
-                    <span class="location-text">
+                    <span class="button-content">
                         <strong>Call Us</strong>
                         <small>(678) 222-8305</small>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
+
             </div>
 
         </section>
 
 
-        <!-- LOCATION 4 -->
-        <section id="location-4" class="page location-page">
+        <!-- COLLEGE PARK -->
+        <section id="college-park" class="page location-page">
 
-            <button class="back-button" onclick="showPage('home')">
+            <button
+                type="button"
+                class="back-button"
+                onclick="showPage('home')"
+            >
                 <i class="fa-solid fa-arrow-left"></i>
-                All Locations
+                Back to All Locations
             </button>
 
-            <header class="profile-header">
-                <img src="images/tbots-logo.png" alt="T-Bots logo" class="logo">
+            <div class="location-header">
 
-                <h1>T-Bots College Park</h1>
+                <img
+                    src="logo.png"
+                    alt="T-Bots College Park"
+                    class="location-logo"
+                >
 
-                <p class="address">
+                <p class="location-label">T-Bots Location</p>
+
+                <h2>College Park</h2>
+
+                <p class="location-address">
                     2511 Camp Creek Parkway<br>
                     College Park, GA 30337
                 </p>
-            </header>
 
-            <div class="links">
-                <a href="#" class="link-button primary-button">
-                    <span class="button-icon"><i class="fa-solid fa-bag-shopping"></i></span>
-                    <span>Order Online</span>
-                    <i class="fa-solid fa-chevron-right arrow"></i>
-                </a>
+            </div>
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-car-side"></i></span>
-                    <span>Order on Uber Eats</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
-                </a>
+            <div class="button-list">
 
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-motorcycle"></i></span>
-                    <span>Order on DoorDash</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
-                </a>
-
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-brands fa-google"></i></span>
-                    <span>Leave Us a Google Review</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
-                </a>
-
-                <a href="#" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-diamond-turn-right"></i></span>
-                    <span>Get Directions</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
-                </a>
-
-                <a href="tel:+14045559012" class="link-button">
-                    <span class="button-icon"><i class="fa-solid fa-phone"></i></span>
-
-                    <span class="location-text">
-                        <strong>Call Us</strong>
-                        <small>Update Phone Number</small>
+                <a href="#" class="action-button featured-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-bag-shopping"></i>
                     </span>
 
-                    <i class="fa-solid fa-chevron-right arrow"></i>
+                    <span class="button-content">
+                        <strong>Order Online</strong>
+                        <small>Pickup from this location</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
                 </a>
+
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-car-side"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Uber Eats</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
+                </a>
+
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>DoorDash</strong>
+                        <small>Order delivery</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
+                </a>
+
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-brands fa-google"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Leave a Google Review</strong>
+                        <small>Tell us about your visit</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
+                </a>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=2511+Camp+Creek+Parkway+College+Park+GA+30337"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="action-button"
+                >
+                    <span class="icon-container">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Get Directions</strong>
+                        <small>Open in Google Maps</small>
+                    </span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
+                </a>
+
+                <a href="#" class="action-button">
+                    <span class="icon-container">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+
+                    <span class="button-content">
+                        <strong>Call Us</strong>
+                        <small>Phone number coming soon</small>
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right button-arrow"></i>
+                </a>
+
             </div>
 
         </section>
 
 
         <footer>
+
             <p>© 2026 T-Bots Street Food</p>
 
             <a
@@ -430,13 +690,16 @@
                 <i class="fa-brands fa-instagram"></i>
                 @tbotsatl
             </a>
+
         </footer>
 
     </main>
 
 
     <script>
+
         function showPage(pageId) {
+
             const pages = document.querySelectorAll(".page");
 
             pages.forEach(function(page) {
@@ -447,12 +710,33 @@
 
             if (selectedPage) {
                 selectedPage.classList.add("active");
+
+                window.location.hash = pageId;
+
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
             }
         }
+
+
+        function loadPageFromHash() {
+
+            const pageId = window.location.hash.replace("#", "");
+
+            if (pageId && document.getElementById(pageId)) {
+                showPage(pageId);
+            } else {
+                showPage("home");
+            }
+        }
+
+
+        window.addEventListener("load", loadPageFromHash);
+
+        window.addEventListener("hashchange", loadPageFromHash);
+
     </script>
 
 </body>
