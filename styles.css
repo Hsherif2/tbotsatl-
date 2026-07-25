@@ -26,3 +26,67 @@ h1{font-size:clamp(2rem,9vw,3rem);line-height:1.05;letter-spacing:-1px}
 footer{text-align:center;margin-top:42px;padding-top:22px;border-top:1px solid var(--border);color:#999;font-size:.82rem}footer a{color:#fff;text-decoration:none}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media(max-width:480px){.site-shell{padding:22px 12px}.logo{width:72px!important;height:72px!important;max-width:72px!important;max-height:72px!important}.link-card{min-height:72px;border-radius:15px;grid-template-columns:43px 1fr 18px}.icon{width:38px;height:38px}.copy strong{font-size:.96rem}.copy small{font-size:.74rem}}
+.instagram-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 660px;
+    margin: 14px auto 0;
+    padding: 20px;
+
+    background: rgba(15, 15, 15, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.instagram-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.instagram-button:visited,
+.instagram-button:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.instagram-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    margin-right: 18px;
+
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 24px;
+}
+
+.instagram-button .button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.instagram-button .button-content strong {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.instagram-button .button-content small {
+    margin-top: 4px;
+    color: #cccccc;
+    font-size: 15px;
+}
