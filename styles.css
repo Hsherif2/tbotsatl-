@@ -6,7 +6,15 @@ a,button{font:inherit}
 .site-shell{width:min(100%,580px);min-height:100vh;margin:auto;padding:28px 16px 24px}
 .page{display:none;animation:fade .25s ease}.page.active{display:block}
 .hero,.location-title{text-align:center}
-.logo{display:block;width:140px!important;height:140px!important;max-width:140px!important;max-height:140px!important;object-fit:contain;margin:0 auto 16px}
+.logo {
+  display: block;
+  width: 180px !important;
+  height: auto !important;
+  max-width: 70vw !important;
+  max-height: none !important;
+  object-fit: contain;
+  margin: 0 auto 16px;
+}
 h1{font-size:clamp(2rem,9vw,3rem);line-height:1.05;letter-spacing:-1px}
 .tagline{font-size:1.18rem;font-weight:800;margin-top:11px}
 .hours{display:flex;flex-direction:column;gap:4px;width:max-content;max-width:100%;margin:18px auto;padding:10px 20px;border:1px solid var(--border);border-radius:14px;background:rgba(0,0,0,.48)}
@@ -37,4 +45,12 @@ footer{text-align:center;margin-top:42px;padding-top:22px;border-top:1px solid v
 
 .instagram-button .copy {
   flex: 1;
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 180px !important;
+    height: auto !important;
+    max-width: 75vw !important;
+    max-height: none !important;
+  }
 }
