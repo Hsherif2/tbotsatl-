@@ -1,145 +1,132 @@
-<header class="main-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="T-Bots Street Food serves fresh tacos, burgers, burritos, hot dogs and wings across metro Atlanta.">
+  <title>T-Bots Street Food</title>
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <main class="site-shell">
+    <section id="home" class="page active">
+      <header class="hero">
+        <img src="logo.png" alt="T-Bots Street Food logo" class="logo">
+        <h1>T-Bots Street Food</h1>
+        <p class="tagline">Fresh Food. Made to Order.</p>
+        <div class="hours">
+          <strong>Monday – Saturday</strong>
+          <span>2:00 PM – 11:00 PM</span>
+        </div>
+        <p class="food-list">Tacos • Burgers • Burritos<br>Hot Dogs • Wings</p>
+      </header>
 
-    <img
-        src="logo.png"
-        alt="T-Bots Street Food"
-        class="logo"
-    >
+      <div class="link-stack top-links">
+        <a class="link-card primary" href="menu.jpg" target="_blank" rel="noopener">
+          <span class="icon">🍽️</span>
+          <span class="copy"><strong>View Menu</strong><small>See our food and prices</small></span>
+          <span class="arrow">›</span>
+        </a>
 
-    <h1>T-Bots Street Food</h1>
+        <a class="link-card" href="https://www.instagram.com/tbotsatl/" target="_blank" rel="noopener">
+          <span class="icon">📸</span>
+          <span class="copy"><strong>Follow Us on Instagram</strong><small>See our latest food photos</small></span>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
 
-    <p class="tagline">
-        Fresh Food. Made to Order.
-    </p>
+      <div class="section-heading">
+        <span>Find T-Bots Near You</span>
+        <h2>Choose Your Location</h2>
+      </div>
 
-    <div class="business-hours">
-        <strong>Monday – Saturday</strong>
-        <span>2:00 PM – 11:00 PM</span>
-    </div>
+      <div class="link-stack">
+        <button class="link-card" type="button" onclick="showPage('riverdale')">
+          <span class="icon">📍</span><span class="copy"><strong>Riverdale</strong><small>199 Upper Riverdale Road</small></span><span class="arrow">›</span>
+        </button>
+        <button class="link-card" type="button" onclick="showPage('ellenwood')">
+          <span class="icon">📍</span><span class="copy"><strong>Ellenwood</strong><small>795 Fairview Road</small></span><span class="arrow">›</span>
+        </button>
+        <button class="link-card" type="button" onclick="showPage('morrow')">
+          <span class="icon">📍</span><span class="copy"><strong>Morrow</strong><small>1186 Morrow Road</small></span><span class="arrow">›</span>
+        </button>
+        <button class="link-card" type="button" onclick="showPage('college-park')">
+          <span class="icon">📍</span><span class="copy"><strong>College Park</strong><small>2511 Camp Creek Parkway</small></span><span class="arrow">›</span>
+        </button>
+      </div>
+    </section>
 
-    <p class="menu-description">
-        Tacos • Burgers • Burritos<br>
-        Hot Dogs • Wings
-    </p>
+    <section id="riverdale" class="page">
+      <button class="back" type="button" onclick="showPage('home')">← Back to All Locations</button>
+      <div class="location-title"><img src="logo.png" alt="" class="location-logo"><span>T-Bots Location</span><h2>Riverdale</h2><p>199 Upper Riverdale Road<br>Jonesboro, GA 30236</p></div>
+      <div class="link-stack location-links">
+        <a class="link-card primary" href="#"><span class="icon">🛒</span><span class="copy"><strong>Order Online</strong><small>Pickup from this location</small></span><span class="arrow">›</span></a>
+        <a class="link-card" href="#"><span class="icon">🚗</span><span class="copy"><strong>Uber Eats</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">🥡</span><span class="copy"><strong>DoorDash</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">⭐</span><span class="copy"><strong>Leave a Google Review</strong><small>Tell us about your visit</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=199+Upper+Riverdale+Road+Jonesboro+GA+30236"><span class="icon">🗺️</span><span class="copy"><strong>Get Directions</strong><small>Open in Google Maps</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="tel:+16782226299"><span class="icon">📞</span><span class="copy"><strong>Call Us</strong><small>(678) 222-6299</small></span><span class="arrow">›</span></a>
+      </div>
+    </section>
 
-</header>
+    <section id="ellenwood" class="page">
+      <button class="back" type="button" onclick="showPage('home')">← Back to All Locations</button>
+      <div class="location-title"><img src="logo.png" alt="" class="location-logo"><span>T-Bots Location</span><h2>Ellenwood</h2><p>795 Fairview Road<br>Ellenwood, GA</p></div>
+      <div class="link-stack location-links">
+        <a class="link-card primary" href="#"><span class="icon">🛒</span><span class="copy"><strong>Order Online</strong><small>Pickup from this location</small></span><span class="arrow">›</span></a>
+        <a class="link-card" href="#"><span class="icon">🚗</span><span class="copy"><strong>Uber Eats</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">🥡</span><span class="copy"><strong>DoorDash</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">⭐</span><span class="copy"><strong>Leave a Google Review</strong><small>Tell us about your visit</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=795+Fairview+Road+Ellenwood+GA"><span class="icon">🗺️</span><span class="copy"><strong>Get Directions</strong><small>Open in Google Maps</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="tel:+16782228305"><span class="icon">📞</span><span class="copy"><strong>Call Us</strong><small>(678) 222-8305</small></span><span class="arrow">›</span></a>
+      </div>
+    </section>
 
-<div class="button-list">
+    <section id="morrow" class="page">
+      <button class="back" type="button" onclick="showPage('home')">← Back to All Locations</button>
+      <div class="location-title"><img src="logo.png" alt="" class="location-logo"><span>T-Bots Location</span><h2>Morrow</h2><p>1186 Morrow Road<br>Morrow, GA 30260</p></div>
+      <div class="link-stack location-links">
+        <a class="link-card primary" href="#"><span class="icon">🛒</span><span class="copy"><strong>Order Online</strong><small>Pickup from this location</small></span><span class="arrow">›</span></a>
+        <a class="link-card" href="#"><span class="icon">🚗</span><span class="copy"><strong>Uber Eats</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">🥡</span><span class="copy"><strong>DoorDash</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">⭐</span><span class="copy"><strong>Leave a Google Review</strong><small>Tell us about your visit</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=1186+Morrow+Road+Morrow+GA+30260"><span class="icon">🗺️</span><span class="copy"><strong>Get Directions</strong><small>Open in Google Maps</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="tel:+16782228305"><span class="icon">📞</span><span class="copy"><strong>Call Us</strong><small>(678) 222-8305</small></span><span class="arrow">›</span></a>
+      </div>
+    </section>
 
-    <a href="#" class="action-button featured-button">
+    <section id="college-park" class="page">
+      <button class="back" type="button" onclick="showPage('home')">← Back to All Locations</button>
+      <div class="location-title"><img src="logo.png" alt="" class="location-logo"><span>T-Bots Location</span><h2>College Park</h2><p>2511 Camp Creek Parkway<br>College Park, GA 30337</p></div>
+      <div class="link-stack location-links">
+        <a class="link-card primary" href="#"><span class="icon">🛒</span><span class="copy"><strong>Order Online</strong><small>Pickup from this location</small></span><span class="arrow">›</span></a>
+        <a class="link-card" href="#"><span class="icon">🚗</span><span class="copy"><strong>Uber Eats</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">🥡</span><span class="copy"><strong>DoorDash</strong><small>Order delivery</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">⭐</span><span class="copy"><strong>Leave a Google Review</strong><small>Tell us about your visit</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=2511+Camp+Creek+Parkway+College+Park+GA+30337"><span class="icon">🗺️</span><span class="copy"><strong>Get Directions</strong><small>Open in Google Maps</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="#"><span class="icon">📞</span><span class="copy"><strong>Call Us</strong><small>Phone number coming soon</small></span><span class="arrow">›</span></a>
+      </div>
+    </section>
 
-        <span class="icon-container">
-            <i class="fa-solid fa-utensils"></i>
-        </span>
+    <footer>© 2026 T-Bots Street Food · <a href="https://www.instagram.com/tbotsatl/" target="_blank" rel="noopener">@tbotsatl</a></footer>
+  </main>
 
-        <span class="button-content">
-            <strong>View Menu</strong>
-            <small>Explore our food and prices</small>
-        </span>
-
-        <i class="fa-solid fa-chevron-right button-arrow"></i>
-
-    </a>
-
-    <a
-        href="https://www.instagram.com/tbotsatl/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="action-button"
-    >
-
-        <span class="icon-container">
-            <i class="fa-brands fa-instagram"></i>
-        </span>
-
-        <span class="button-content">
-            <strong>Follow Us on Instagram</strong>
-            <small>See our latest food photos</small>
-        </span>
-
-        <i class="fa-solid fa-arrow-up-right-from-square button-arrow"></i>
-
-    </a>
-
-</div>
-
-<div class="location-heading">
-
-    <p>Find T-Bots Near You</p>
-
-    <h2>Choose Your Location</h2>
-
-</div>
-
-<div class="button-list">
-
-    <button
-        type="button"
-        class="action-button"
-        onclick="showPage('riverdale')"
-    >
-        <span class="icon-container">
-            <i class="fa-solid fa-location-dot"></i>
-        </span>
-
-        <span class="button-content">
-            <strong>Riverdale</strong>
-            <small>199 Upper Riverdale Road</small>
-        </span>
-
-        <i class="fa-solid fa-chevron-right button-arrow"></i>
-    </button>
-
-    <button
-        type="button"
-        class="action-button"
-        onclick="showPage('ellenwood')"
-    >
-        <span class="icon-container">
-            <i class="fa-solid fa-location-dot"></i>
-        </span>
-
-        <span class="button-content">
-            <strong>Ellenwood</strong>
-            <small>795 Fairview Road</small>
-        </span>
-
-        <i class="fa-solid fa-chevron-right button-arrow"></i>
-    </button>
-
-    <button
-        type="button"
-        class="action-button"
-        onclick="showPage('morrow')"
-    >
-        <span class="icon-container">
-            <i class="fa-solid fa-location-dot"></i>
-        </span>
-
-        <span class="button-content">
-            <strong>Morrow</strong>
-            <small>1186 Morrow Road</small>
-        </span>
-
-        <i class="fa-solid fa-chevron-right button-arrow"></i>
-    </button>
-
-    <button
-        type="button"
-        class="action-button"
-        onclick="showPage('college-park')"
-    >
-        <span class="icon-container">
-            <i class="fa-solid fa-location-dot"></i>
-        </span>
-
-        <span class="button-content">
-            <strong>College Park</strong>
-            <small>2511 Camp Creek Parkway</small>
-        </span>
-
-        <i class="fa-solid fa-chevron-right button-arrow"></i>
-    </button>
-
-</div>
-
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      const target = document.getElementById(id) || document.getElementById('home');
+      target.classList.add('active');
+      history.replaceState(null, '', id === 'home' ? location.pathname : '#' + id);
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const id = location.hash.replace('#', '');
+      showPage(document.getElementById(id) ? id : 'home');
+    });
+    window.addEventListener('hashchange', () => {
+      const id = location.hash.replace('#', '');
+      showPage(document.getElementById(id) ? id : 'home');
+    });
+  </script>
+</body>
+</html>
