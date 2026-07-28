@@ -102,3 +102,19 @@ footer{text-align:center;margin-top:42px;padding-top:22px;border-top:1px solid v
     background: #f59e0b;
     border-radius: 999px;
 }
+.rewards-card {
+    margin: 20px 0;
+    padding: 18px;
+    background: #fff8e1;
+    border: 2px solid #f59e0b;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.rewards-card h3 {
+    margin: 0 0 10px;
+}
+
+.rewards-card p {
+    margin: 6px 0;
+}
