@@ -103,18 +103,25 @@ footer{text-align:center;margin-top:42px;padding-top:22px;border-top:1px solid v
     border-radius: 999px;
 }
 .rewards-card {
-    margin: 20px 0;
-    padding: 18px;
-    background: #fff8e1;
+    background: rgba(20, 20, 20, 0.92);
     border: 2px solid #f59e0b;
-    border-radius: 14px;
+    border-radius: 18px;
+    padding: 20px;
     text-align: center;
+    color: #fff;
+    margin: 20px 0;
 }
 
 .rewards-card h3 {
-    margin: 0 0 10px;
+    color: #fbbf24;
+    margin-bottom: 12px;
+}
+
+.rewards-card strong {
+    color: #ffffff;
 }
 
 .rewards-card p {
-    margin: 6px 0;
+    color: #d1d5db;
+    margin: 8px 0;
 }
