@@ -125,3 +125,24 @@ footer{text-align:center;margin-top:42px;padding-top:22px;border-top:1px solid v
     color: #d1d5db;
     margin: 8px 0;
 }
+.location-hours {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 14px;
+  padding: 12px 22px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 14px;
+}
+
+.location-hours strong {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.location-hours span {
+  color: #ffd54a;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
