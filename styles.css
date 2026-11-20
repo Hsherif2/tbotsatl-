@@ -822,3 +822,23 @@ footer a:hover {
   font-weight: bold;
 }
 
+
+/* College Park - Temporarily Closed */
+.link-card.college-park-closed,
+.link-card.college-park-closed:hover,
+.link-card.college-park-closed:active {
+  opacity: 1;
+  cursor: default;
+  transform: none;
+  background: var(--panel);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.college-park-closed .copy strong {
+  color: var(--white);
+}
+
+.college-park-closed .coming-soon {
+  margin-top: 4px;
+}
