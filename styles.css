@@ -803,3 +803,22 @@ footer a:hover {
   }
 
 }
+
+.link-card.temporarily-closed {
+  opacity: 0.65;
+  cursor: not-allowed;
+  border-color: rgba(255, 213, 74, 0.3);
+}
+
+.link-card.temporarily-closed:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+  background: var(--panel);
+}
+
+.closed-indicator {
+  color: #ffd54a;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
